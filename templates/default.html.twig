@@ -1,0 +1,47 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block page %}
+<header class="menu-bar">
+    <nav>
+        <ul class="flex-line">
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Projets</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="main-container">
+    <aside class="menu-bar left">
+        <ul class="flex-line">
+            <li>Design graphique</li>
+            <li>Édition</li>
+            <li>Web</li>
+            <li>Installation</li>
+            <li>Recherche</li>
+        </ul>
+    </aside>
+    <main>
+    {% block content %}
+        <div id="text">
+            <p>site en construction</p>
+            <p>site en construction</p>
+            <p>site en construction</p>
+            <p>site en construction</p>
+        </div>
+    {% endblock %}
+    </main>
+    <aside class="menu-bar right">
+        <ul class="flex-line">
+            <li><a href="cv.pdf" target="_blank">CV</a></li>
+            <li><a href="book.pdf" target="_blank">Portfolio</a></li>
+            <li><a href="memoire.pdf" target="_blank">Mémoire</a></li>
+        </ul>
+    </aside>
+</div>
+<footer class="menu-bar flex-line">
+{% block footer %}
+    <p>Projets</p>
+{% endblock %}
+</footer>
+
+{% endblock %}

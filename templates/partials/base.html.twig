@@ -1,0 +1,35 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+    <meta property="og:title" content="{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}">
+    <meta property="og:image" content="{% if header.image %}{{ url(page.media[header.image].cropZoom(1200, 628).url, true) }}{% else %}{{ url('theme://images/logo-regles-og.png', true) }}{% endif %}">
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/main.css') %}
+    {% endblock %}
+    {{ assets.css() }}
+
+{% endblock head %}
+</head>
+<body class="{{ page.header.body_classes }}">
+
+{% block page %}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+{{ assets.js() }}
+
+</body>
+</html>

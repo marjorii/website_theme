@@ -1,0 +1,43 @@
+.menu-bar {
+    background-color: red;
+    height: 50px;
+    nav, ul {
+        height: 100%;
+    }
+}
+
+.flex-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+header, footer {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#main-container {
+    display: flex;
+    height: calc(100vh - 100px);
+
+    & > aside {
+        position: absolute;
+        width: calc(100vh - 100px);
+        bottom: 0;
+        &.left {
+            transform: rotate(-90deg);
+            transform-origin: left top;
+        }
+        &.right {
+            transform: rotate(90deg);
+            transform-origin: right top;
+            right: 0;
+        }
+    }
+}
+
+main {
+
+}
