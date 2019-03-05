@@ -1,10 +1,32 @@
 .menu-bar {
     background-color: red;
     height: 50px;
+    color: white;
     nav, ul {
         height: 100%;
     }
+    li, a {
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+    }
+    nav li {
+        &::before {
+            content: "○";
+            margin-right: 10px;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 1px;
+        }
+        &.selected {
+            font-weight: bold;
+            &::before {
+                content: "●";
+            }
+        }
+    }
 }
+
 
 .flex-line {
     display: flex;
@@ -16,6 +38,9 @@
 header, footer {
     padding-left: 50px;
     padding-right: 50px;
+}
+footer.flex-line {
+    justify-content: center;
 }
 
 #main-container {
@@ -29,11 +54,21 @@ header, footer {
         &.left {
             transform: rotate(-90deg);
             transform-origin: left top;
+            & > ul {
+                margin: 0 50px;
+            }
         }
         &.right {
             transform: rotate(90deg);
             transform-origin: right top;
             right: 0;
+            & > ul {
+                justify-content: flex-start;
+                margin-left: 50px;
+                & > li {
+                    margin-right: 50px;
+                }
+            }
         }
     }
 }

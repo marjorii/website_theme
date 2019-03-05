@@ -1,10 +1,8 @@
-{% extends 'partials/base.html.twig' %}
+{% extends 'default.html.twig' %}
 
-{% block page %}
-<main>
-    <div>
-        <h2>Error!</h2>
-        {{ page.content }}
-    </div>
-</main>
+{% block content %}
+<div>
+    <h2>Error!</h2>
+    {{ page.content }}
+</div>
 {% endblock %}
