@@ -1,0 +1,10 @@
+{% extends 'default.html.twig' %}
+
+{% block content %}
+{{ page.media[page.header.picked_image].html('Sunset', 'Sunset', 'postcard') }}
+{{page.header.image_credits|markdown}}
+{% endblock %}
+
+{% block footer %}
+{{page.header.footer|markdown}}
+{% endblock %}

@@ -1,0 +1,22 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.picked_image:
+              type: filepicker
+              folder: '@self'
+              style: vertical
+              label: Select a file
+              preview_images: true
+            header.image_credits:
+              type: textarea
+              style: vertical
+              label: Image credits
+            header.footer:
+              type: textarea
+              style: vertical
+              label: Footer
