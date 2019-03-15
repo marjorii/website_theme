@@ -1,0 +1,26 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.friends:
+              type: list
+              label: Amis
+              fields:
+                .name:
+                  type: text
+                  label: nom
+                .url:
+                  type: text
+                  label: url
+            header.licences:
+              type: textarea
+              style: vertical
+              label: Licences
+            header.footer:
+              type: textarea
+              style: vertical
+              label: Footer

@@ -4,20 +4,20 @@
 <header class="menu-bar">
     <nav>
         <ul class="flex-line">
-            <li><a href="#">À propos</a></li>
-            <li class="selected"><a href="#">Projets</a></li>
-            <li><a href="#">Contact</a></li>
+            {% for page in pages.children.visible %}
+            <li><a href="{{ page.url }}" {% if page.active %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a></li>
+            {% endfor %}
         </ul>
     </nav>
 </header>
 <div id="main-container">
     <aside class="menu-bar left">
         <ul class="flex-line">
-            <li>Design graphique</li>
-            <li>Édition</li>
-            <li>Web</li>
-            <li>Installation</li>
-            <li>Recherche</li>
+            <li><a href="">Design graphique</a></li>
+            <li><a href="">Édition</a></li>
+            <li><a href="">Web</a></li>
+            <li><a href="">Installation</a></li>
+            <li><a href="">Recherche</a></li>
         </ul>
     </aside>
     <main>

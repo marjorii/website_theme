@@ -15,8 +15,8 @@
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
+    {% do assets.addCss('theme://css/main.css') %}
     {% block stylesheets %}
-        {% do assets.addCss('theme://css/main.css') %}
     {% endblock %}
     {{ assets.css() }}
 
