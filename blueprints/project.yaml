@@ -1,0 +1,52 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.categories:
+              type: select
+              size: long
+              classes: fancy
+              multiple: true
+              label: Catégories
+              style: vertical
+              options:
+                graphics: Design graphique
+                edition: Édition
+                web: Web
+                install: installation
+                research: Recherche
+              validate:
+                type: commalist
+            header.links:
+              type: list
+              label: Liens
+              style: vertical
+              fields:
+                .name:
+                  type: text
+                  label: nom
+                .url:
+                  type: text
+                  label: url
+            header.picked_image:
+              type: filepicker
+              folder: '@self'
+              style: vertical
+              label: Select a file
+              preview_images: true
+            header.plusplusegal:
+              type: toggle
+              label: Plus Plus Égal
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+            header.footer:
+              type: textarea
+              style: vertical
+              label: Footer

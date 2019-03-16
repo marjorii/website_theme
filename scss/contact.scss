@@ -28,6 +28,10 @@
         }
         a {
             text-decoration: none;
+            font-style: italic;
+            color: white;
+        }
+        a:hover, a:active {
             color: blue;
         }
     }
