@@ -1,10 +1,9 @@
 {% extends 'default.html.twig' %}
-
 {% block content %}
 <div>
     <ul>
         {% for item in pages.find('/projects/content').collection %}
-        <li><a href=""> {{ item.title }} <span class="plusplusegal"></span></a></li>
+        <li><span {% if item.header.plusplusegal %}class="plusplusegal"{% endif %}><a href=""> {{ item.title }}</a></span></li>
         {% endfor %}
     </ul>
 </div>
