@@ -1,0 +1,9 @@
+{% extends 'default.html.twig' %}
+
+{% block content %}
+<div class="img-container">
+{% for item in pages.find('/projects/content').collection %}
+<div>{{ item.media[item.header.picked_image].resize(500, auto) }}</div>
+{% endfor %}
+</div>
+{% endblock %}

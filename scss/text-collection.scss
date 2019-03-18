@@ -5,6 +5,12 @@
         position: fixed;
         z-index: 999;
     }
+    .menu-bar a:hover, .menu-bar a:active {
+        font-weight: bold;
+    }
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+        font-weight: normal;
+    }
     header, footer {
         right: 20px;
         width: 100%;
@@ -13,63 +19,60 @@
     footer {
         bottom: 0;
     }
-    #main-container {
-        aside.right {
-            right: 20px;
-        }
-        .menu-bar a:hover, .menu-bar a:active {
-            font-weight: bold;
-        }
-        .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
-            font-weight: normal;
-        }
-        main {
-            div {
-                padding: 5%;
-                width: 100%;
-                height: auto;
-                ul {
-                    li {
-                        margin-bottom: 6vh;
-                        width: calc(100% - 40px);
+    #main-container aside.right {
+        right: 20px;
+    }
+    main {
+        margin: 25px 50px;
+        div {
+            padding: 5%;
+            width: 100%;
+            height: auto;
+            ul {
+                li {
+                    margin-bottom: 5.5vh;
+                    width: calc(100% - 40px);
 
-                        a {
-                            color: black;
-                            text-decoration: none;
-                            font-size: 2.25rem;
-                            line-height: 1.25;
-                            &::before {
-                                content: "●";
-                                margin-left: 7vw;
-                                margin-right: 2%;
-                                font-size: 1rem;
-                                position: relative;
-                                bottom: 5px;
-                            }
-                            &:hover, &:active, &:focus {
-                                color: blue;
-                            }
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        font-size: 2.25rem;
+                        line-height: 1.25;
+                        &::before {
+                            content: "●";
+                            margin-left: 7vw;
+                            // retirer indentation (margin) + titres plus courts ?
+                            // autre piste : créer un champ dans le formulaire pour ajouter
+                            //un descriptif technique, les crédits, etc. et réduire le corps
+                            //du texte petit à peit > du + important au - important
+                            margin-right: 2%;
+                            font-size: 1rem;
+                            position: relative;
+                            bottom: 5px;
                         }
+                        &:hover, &:active, &:focus {
+                            color: blue;
+                        }
+                    }
 
-                        span.plusplusegal {
-                            &::before {
-                                background-image: url('/projects/content/++=.png');
-                                background-size: 40px 40px;
-                                display: inline-block;
-                                width: 40px;
-                                height: 40px;
-                                content:"";
-                                pointer-events: none;
-                                position: relative;
-                                left: 100%;
-                                bottom: -7px;
-                            }
-                            &:hover::before, &:active::before, &:focus::before {
-                                background-image: url('/projects/content/++=2.png');
-                            }
-                            a {
-                                margin-left: -40px;
-                            }
+                    span.plusplusegal {
+                        &::before {
+                            background-image: url('/projects/content/++=.png');
+                            background-size: 40px 40px;
+                            display: inline-block;
+                            width: 40px;
+                            height: 40px;
+                            content:"";
+                            pointer-events: none;
+                            position: relative;
+                            left: 100%;
+                            bottom: -7px;
+                        }
+                        &:hover::before, &:active::before, &:focus::before {
+                            background-image: url('/projects/content/++=2.png');
+                        }
+                        a {
+                            margin-left: -40px;
                         }
                     }
                 }
