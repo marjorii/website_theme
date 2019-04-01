@@ -9,7 +9,7 @@ main {
     .text-collection {
         overflow-y: hidden;
     }
-    #list {
+    .item, span.plusplusegal::before {
         opacity: 0.15;
     }
     #project-container {
@@ -70,6 +70,10 @@ main {
             justify-content: center;
             p {
                 align-self: center;
+                em {
+                    font-family: $font;
+                    font-style: normal;
+                }
             }
         }
 
@@ -95,8 +99,13 @@ main {
             }
         }
     }
-    #txt, #links {
+    .green #txt, .green #links {
         background-color: $ghost-green;
+    }
+    .yellow #txt, .yellow #links {
+        background-color: $ghost-yellow;
+    }
+    #txt, #links {
         width: 55%;
         font-family: $altfont;
         line-height: 1.3;
@@ -132,9 +141,5 @@ main {
             color: blue;
             text-decoration: none;
         }
-    }
-    #links {
-        // margin-bottom: calc(5vw + 50px);
-        // margin-bottom: 0;
     }
 }

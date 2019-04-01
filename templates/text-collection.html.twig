@@ -5,7 +5,8 @@
         {% for item in pages.find('/projects/content').collection %}
         <li><span {% if item.header.plusplusegal %}class="plusplusegal"{% endif %}>
             <a href="{{ item.url }}" class="item">
-                <img class="tooltip-img" src="{{ item.media[item.header.picked_image].resize(500, auto).url }}"/>
+                {% set img = item.media[item.header.picked_image] %}
+                <img class="tooltip-img" src="{{ img.resize(img.height >= img.width ? 350 : 500, auto).url }}"/>
                 <span class="tooltip-text">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}.</span>
             </a>
         </span></li>
@@ -23,7 +24,7 @@
             </ul>
         </nav>
     </header>
-    <article class="project">
+    <article class="project green">
         <!-- content in json file -->
     </article>
     <aside class="menu-bar right">

@@ -17,7 +17,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
                     this.classList.add('selected');
                 })
             })
-            document.querySelector('footer p').innerHTML = json.title;
+            document.querySelector('footer p').innerHTML = json.title + '.';
         })
     })
 })
@@ -32,6 +32,5 @@ document.querySelectorAll('#list li > span').forEach(function(elem) {
             y = (e.pageY - 100) + 'px';
         elem.querySelector('img').style.top = y;
         elem.querySelector('img').style.left = x;
-        console.log(elem.querySelector('img').src);
     }
 })

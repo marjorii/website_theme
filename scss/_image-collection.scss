@@ -3,7 +3,7 @@
     background-color: $ghost-yellow;
     .menu-bar {
         position: fixed;
-        z-index: 999;
+        z-index: 997;
     }
     .menu-bar a:hover, .menu-bar a:active {
         font-weight: bold;
@@ -33,11 +33,28 @@
             grid-column-gap: 9vh;
             grid-row-gap: 9vh;
             div {
+                &:hover {
+                    .hover-text {
+                        display: block;
+                    }
+                }
                 &:first-of-type {
                     grid-column: 1;
                 }
                 img {
                     width: 100%;
+                }
+                .hover-text {
+                    display: none;
+                    font-family: $altfont;
+                    font-size: 0.7rem;
+                    line-height: 1.5;
+                    text-align: justify;
+                    padding-top: 20px;
+                    p::before {
+                        content: "";
+                        margin-left: 2vw;
+                    }
                 }
             }
 
