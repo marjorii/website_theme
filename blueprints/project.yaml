@@ -6,6 +6,11 @@ form:
       fields:
         content:
           fields:
+            header.subtitle:
+              type: text
+              style: vertical
+              label: Sous-titre
+              'ordering@': header.title
             header.categories:
               type: select
               size: long

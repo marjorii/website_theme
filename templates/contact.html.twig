@@ -1,7 +1,7 @@
 {% extends 'default.html.twig' %}
 
 {% block content %}
-{{ page.media[page.header.picked_image].html('Postcard', 'Postcard', 'postcard') }}
+{{ page.media[page.header.picked_image].html('postcard', 'postcard', 'postcard') }}
 {{page.header.image_credits|markdown}}
 {% endblock %}
 

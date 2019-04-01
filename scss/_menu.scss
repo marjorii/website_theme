@@ -10,6 +10,9 @@
         color: white;
         text-decoration: none;
     }
+    a.selected {
+        font-weight: bold;
+    }
     nav li a {
         &::before {
             content: "○";
@@ -18,13 +21,11 @@
             position: relative;
             bottom: 1px;
         }
-        &.selected {
-            font-weight: bold;
-            &::before {
-                content: "●";
-            }
+        &.selected::before {
+            content: "●";
         }
     }
+
 }
 
 

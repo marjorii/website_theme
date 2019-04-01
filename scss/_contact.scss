@@ -1,10 +1,18 @@
 .contact {
-    footer a {
-        text-transform: none;
-    }
     footer.flex-line {
         justify-content: space-between;
+        span:first-of-type {
+            &::after {
+                content: "@"
+            }
+        }
+        span:last-of-type {
+            &::after {
+                content: ".com"
+            }
+        }
     }
+
     .menu-bar a:hover, .menu-bar a:active {
         font-weight: bold;
     }

@@ -1,0 +1,21 @@
+{% set payload %}
+<section id="img">
+    {% for image in page.media.images %}
+    {% if image.height >= image.width %}
+    {{ image.html('', '', 'portrait') }}
+    {% else %}
+    {{ image.html() }}
+    {% endif %}
+    {% endfor %}
+</section>
+    <section id="txt">
+        {{ page.content }}
+    </section>
+    <section id="links">
+        {% for link in page.header.links %}
+        <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+        {% endfor %}
+    </section>
+{% endset %}
+{% set json = { 'content': payload, 'title': page.title } %}
+{{ json|json_encode|raw }}
