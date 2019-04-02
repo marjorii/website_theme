@@ -3,7 +3,7 @@
 <div id="list">
     <ul>
         {% for item in pages.find('/projects/content').collection %}
-        <li><span {% if item.header.plusplusegal %}class="plusplusegal"{% endif %}>
+        <li><span class="project-list {% if item.header.plusplusegal %}plusplusegal{% endif %}" data-type="{{ item.header.categories|join(',') }}">
             <a href="{{ item.url }}" class="item">
                 {% set img = item.media[item.header.picked_image] %}
                 <img class="tooltip-img" src="{{ img.resize(img.height >= img.width ? 350 : 500, auto).url }}"/>

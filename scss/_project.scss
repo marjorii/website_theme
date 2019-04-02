@@ -5,6 +5,7 @@ main {
     }
 }
 
+
 .show-project {
     .text-collection {
         overflow-y: hidden;
@@ -61,6 +62,9 @@ main {
                     margin-left: 50px;
                     & > li {
                         margin-right: 50px;
+                    }
+                    a:not(.selected):hover, a:not(.selected):active {
+                        font-weight: normal;
                     }
                 }
             }

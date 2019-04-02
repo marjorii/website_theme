@@ -3,8 +3,11 @@
         text-transform: none;
 
     }
-    .menu-bar a:hover, .menu-bar a:active {
+    .menu-bar:not(.left) a:hover, .menu-bar:not(.left) a:active {
         font-weight: bold;
+    }
+    .menu-bar.left a {
+        pointer-events: none;
     }
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
         font-weight: normal;

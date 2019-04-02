@@ -13,8 +13,11 @@
         }
     }
 
-    .menu-bar a:hover, .menu-bar a:active {
+    .menu-bar.right a:hover, .menu-bar.right a:active {
         font-weight: bold;
+    }
+    .menu-bar.left a {
+        pointer-events: none;
     }
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
         font-weight: normal;

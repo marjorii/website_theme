@@ -5,7 +5,7 @@
         position: fixed;
         z-index: 997;
     }
-    .menu-bar a:hover, .menu-bar a:active {
+    .menu-bar .right a:hover, .menu-bar .right a:active {
         font-weight: bold;
     }
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
@@ -33,6 +33,11 @@
             grid-column-gap: 9vh;
             grid-row-gap: 9vh;
             div {
+                &.match {
+                    img {
+                        border: 5px solid red;
+                    }
+                }
                 &:hover {
                     .hover-text {
                         display: block;
