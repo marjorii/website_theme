@@ -1,0 +1,29 @@
+{% extends 'usg/default-usg.html.twig' %}
+
+{% block content %}
+<div>
+    <section class="left">
+        {{page.content}}
+    </section>
+    <section class="right">
+        <div>
+            <h3>Amis</h3>
+            <div>
+                <ul>
+                    {% for friend in page.header.friends %}
+                    <li><a href="{{friend.url}}" target="_blank">{{friend.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3>Licences</h3>
+            {{page.header.licences|markdown}}
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block footer %}
+{{page.header.footer}}
+{% endblock %}

@@ -1,0 +1,33 @@
+
+    .show-project {
+
+        #img, #links {
+            display: none;
+        }
+        #txt {
+            img {
+                width: 100%;
+                margin-bottom: 5vw;
+                &.portrait {
+                    width: 55%;
+                }
+            }
+            width: 55%;
+            font-family: $altfont;
+            line-height: 1.3;
+            margin: auto;
+            margin-bottom: 5vw;
+            justify-content: center;
+            p:first-of-type {
+                margin-top: 0;
+            }
+            p::before {
+                content: "";
+                margin-left: 3vw;
+            }
+            a {
+                color: blue;
+                text-decoration: none;
+            }
+        }
+    }

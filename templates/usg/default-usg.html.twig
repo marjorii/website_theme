@@ -1,0 +1,33 @@
+{% extends 'partials/base.html.twig' %}
+{% block stylesheets %}
+{% do assets.addCss('theme://css/usg/usg.css') %}
+{% endblock %}
+
+{% block page %}
+<header class="menu-bar">
+    <nav>
+        <ul class="flex-line">
+            {% for page in page.find('/usg19').children.visible %}
+            <li><a href="{{ page.url }}" {% if page.active %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
+<div id="main-container">
+    <aside class="menu-bar left">
+    </aside>
+    <main>
+    {% block content %}
+
+    {% endblock %}
+    </main>
+    <aside class="menu-bar right">
+    </aside>
+</div>
+<footer class="menu-bar flex-line">
+{% block footer %}
+    <p>Une Saison Graphique 2019.</p>
+{% endblock %}
+</footer>
+
+{% endblock %}

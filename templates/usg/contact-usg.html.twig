@@ -1,0 +1,10 @@
+{% extends 'usg/default-usg.html.twig' %}
+
+{% block content %}
+{{ page.media[page.header.picked_image].html('postcard', 'postcard', 'postcard') }}
+{{page.header.image_credits|markdown}}
+{% endblock %}
+
+{% block footer %}
+{{page.header.footer|markdown}}
+{% endblock %}
