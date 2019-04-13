@@ -1,0 +1,21 @@
+{% extends 'usg/default-usg.html.twig' %}
+{% block content %}
+<div class="postcard-container">
+    {% for image in page.media.images %}
+    <div>
+        {{ image.html() }}
+        <div class="hover-credits">
+            <p>
+                Prénom Nom
+            </p>
+            <p>
+                Technique utilisée.
+                <br>
+                Avril 2019.
+            </p>
+        </div>
+    </div>
+{% endfor %}
+</div>
+<a href="../" id="cross">✕</a>
+{% endblock %}

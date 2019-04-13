@@ -58,7 +58,6 @@ document.querySelectorAll('aside.left a').forEach(function(elem) {
         if (other) {
             other.classList.remove('selected');
             if (other === this) {
-                console.log('bip bip');
                 projects.forEach(function(proj) {
                     proj.classList.remove('match');
                     console.log(proj);

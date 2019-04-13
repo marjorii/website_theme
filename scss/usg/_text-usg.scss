@@ -1,0 +1,118 @@
+.text-usg {
+    nav {
+        display: none;
+    }
+}
+.menu-bar {
+    position: fixed;
+    z-index: 997;
+}
+
+header, footer {
+    width: 100%;
+}
+footer {
+    bottom: 0;
+}
+#main-container {
+    height: 100%;
+}
+#main-container aside.right {
+    right: 20px;
+}
+main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+#cross {
+    position: fixed;
+    top: 70px;
+    right: 90px;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    z-index: 999;
+}
+#top-div, #bottom-div {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    z-index: 998;
+    div {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+#top-div {
+    border-bottom: 5px solid black;
+    div {
+        margin-top: 100px;
+    }
+    p {
+        margin: 0;
+        width:55%;
+        font-family: $altfont;
+        line-height: 1.3;
+        z-index: 998;
+        &::before {
+            content: "";
+            margin-left: 3vw;
+        }
+        span {
+            margin-left: 2vw;
+        }
+    }
+    p:first-child {
+        &::before {
+            content: "";
+            margin-left: 0;
+        }
+    }
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+}
+
+#bottom-div {
+    div {
+        margin-top: 50px;
+    }
+    img {
+        width: 100%;
+        margin-bottom: 1.5vw;
+        z-index: 998;
+        &.portrait {
+            width: 55%;
+        }
+    }
+    h1 {
+        font-family: $altfont;
+        width: 55%;
+        margin-bottom: 3.5vw;
+        z-index: 998;
+    }
+    p {
+        width: 55%;
+        font-family: $altfont;
+        text-align: center;
+        line-height: 1.3;
+        margin-top: 0;
+        margin-bottom: 3.5vw;
+        z-index: 998;
+        &:last-of-type {
+            margin-bottom: 6vw;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+    }
+}

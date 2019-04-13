@@ -4,10 +4,11 @@
     <ul>
         {% for item in pages.find('/usg19/project').collection %}
         <li><span class="project-list">
-            <a href="{{ item.url }}" class="item">
+            {{ dump(item.template) }}
+            <a href="{{ item.url }}" class="item {% if item.template == 'usg/page-usg' %}json{% endif %}">
                 {% set img = item.media[item.header.picked_image] %}
                 <img class="tooltip-img" src="{{ img.resize(img.height >= img.width ? 350 : 500, auto).url }}"/>
-                <span class="tooltip-text">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}.</span>
+                <span class="tooltip-text">{{ item.header.used_title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}.</span>
             </a>
         </span></li>
         {% endfor %}
@@ -17,14 +18,8 @@
 <div id="project-container">
     <a href="#" id="cross">✕</a>
     <header class="menu-bar">
-        <nav>
-            <ul>
-                <li><a href="#">< Projet précédent</a></li>
-                <li><a href="#">Projet suivant ></a></li>
-            </ul>
-        </nav>
     </header>
-    <article class="project green">
+    <article class="project">
 
     </article>
     <aside class="menu-bar right">

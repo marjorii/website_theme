@@ -103,12 +103,12 @@ main {
             }
         }
     }
-    .green #txt, .green #links {
-        background-color: $ghost-green;
-    }
-    .yellow #txt, .yellow #links {
-        background-color: $ghost-yellow;
-    }
+    // .green #txt, .green #links {
+    //     background-color: $ghost-green;
+    // }
+    // .yellow #txt, .yellow #links {
+    //     background-color: $ghost-yellow;
+    // }
     #txt, #links {
         width: 55%;
         font-family: $altfont;

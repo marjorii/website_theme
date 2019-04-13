@@ -1,4 +1,4 @@
-document.querySelectorAll('.item').forEach(function(elem) {
+document.querySelectorAll('.item.json').forEach(function(elem) {
     elem.addEventListener('click', function(event) {
         event.preventDefault();
         fetch(this.href + ".json")
