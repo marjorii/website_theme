@@ -2,7 +2,7 @@
 {% block content %}
 <div class="postcard-container">
     {% for image in page.media.images %}
-    <div>
+    <div class="cell">
         {{ image.html() }}
         <div class="hover-credits">
             <p>
@@ -18,4 +18,8 @@
 {% endfor %}
 </div>
 <a href="../" id="cross">✕</a>
+{% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script-usg19.js') %}
 {% endblock %}
