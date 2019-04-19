@@ -9,7 +9,8 @@ document.querySelectorAll('.item.json').forEach(function(elem) {
             document.querySelector('article.project').innerHTML = json.content;
             document.querySelector('main').classList.add('show-project');
             window.location.hash = 'img' ;
-            document.querySelector('footer p').innerHTML = json.title + '.';
+            document.querySelector('footer p').innerHTML = json.footer + '.';
+            console.log();
         });
     });
 });
@@ -17,7 +18,7 @@ document.querySelectorAll('.item.json').forEach(function(elem) {
 document.querySelectorAll('#list li > span').forEach(function(elem) {
     elem.onmousemove = function(e) {
         var x = (e.pageX - 100) + 'px',
-            y = (e.pageY - 100) + 'px';
+        y = (e.pageY - 100) + 'px';
         elem.querySelector('img').style.top = y;
         elem.querySelector('img').style.left = x;
     }
@@ -26,21 +27,66 @@ document.querySelectorAll('#list li > span').forEach(function(elem) {
 document.querySelector('#cross').addEventListener('click', function(event) {
     document.querySelector('main').classList.remove('show-project');
 });
+if (!(window.location.pathname == '/usg19/project')) {
+    console.log('hello');
+    document.querySelectorAll('header').forEach(function(bar) {
+        bar.style.cssText = 'right: 20px;';
+    });
+    document.querySelectorAll('footer').forEach(function(bar) {
+        bar.style.cssText = 'right: 20px;';
+    });
+}
 
 document.querySelectorAll('.cell').forEach(function(elem) {
     elem.addEventListener('click', function(event) {
-        if (elem.classList.contains('full-screen')) {
-            elem.classList.remove('full-screen');
-            document.querySelector('aside.right').style.cssText = 'right: 20px;';
-            document.querySelector('header').style.cssText = 'right: 20px;';
-            document.querySelector('footer').style.cssText = 'right: 20px;';
-            document.querySelector('#cross').style.cssText = 'display: flex;';
-        } else {
-        elem.setAttribute('class', 'full-screen');
-        document.querySelector('aside.right').style.cssText = 'right: 0;';
-        document.querySelector('header').style.cssText = 'right: 0;';
-        document.querySelector('footer').style.cssText = 'right: 0;';
-        document.querySelector('#cross').style.cssText = 'display: none;';
+        if (!elem.classList.contains('full-screen')) {
+            elem.classList.add('full-screen');
+            document.querySelectorAll('header').forEach(function(bar) {
+                bar.style.cssText = 'right: 0;';
+            });
+            document.querySelectorAll('footer').forEach(function(bar) {
+                bar.style.cssText = 'right: 0;';
+            });
+            document.querySelector('aside.right').style.cssText = 'right: 0;';
+            document.querySelector('#cross').style.cssText = 'display: none;';
+            document.querySelector('#arrows').style.cssText = 'display: flex;';
         }
     });
 });
+
+document.querySelector('#back').addEventListener('click', function(event) {
+    var fullscreen = document.querySelector('.full-screen');
+    fullscreen.classList.remove('full-screen');
+    fullscreen.querySelector('.verso').classList.add('hide');
+    document.querySelector('#show-verso').textContent = 'Verso >';
+    document.querySelectorAll('header').forEach(function(bar) {
+        bar.style.cssText = 'right: 20px;';
+    });
+    document.querySelectorAll('footer').forEach(function(bar) {
+        bar.style.cssText = 'right: 20px;';
+    });
+    document.querySelector('aside.right').style.cssText = 'right: 20px;';
+    document.querySelector('#cross').style.cssText = 'display: flex;';
+    document.querySelector('#arrows').style.cssText = 'display: none;';
+});
+
+document.querySelector('#show-verso').addEventListener('click', function(event) {
+    var verso = document.querySelector('.full-screen .verso');
+    if (verso.classList.contains('hide')) {
+        verso.classList.remove('hide');
+        this.textContent = '< Recto';
+    } else {
+        verso.classList.add('hide');
+        this.textContent = 'Verso >';
+    }
+});
+
+if (window.innerHeight > window.innerWidth){
+    document.querySelector('aside.right').style.cssText = 'right: 0;';
+    document.querySelectorAll('header').forEach(function(bar) {
+        bar.style.cssText = 'right: 0;';
+    });
+    document.querySelectorAll('footer').forEach(function(bar) {
+        bar.style.cssText = 'right: 0;';
+    });
+}

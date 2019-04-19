@@ -1,24 +1,29 @@
 .postcard-usg {
-    nav {
-        display: none;
-    }
-    header, footer {
-        right: 20px;
-    }
-
-    .postcard-container {
+    .initial-container {
         overflow-y: scroll;
-        width: 100%;
-        height: 100%;
+        padding-bottom: 140px;
+    }
+    .postcard-container {
         padding: 140px 50px;
         display: grid;
         grid-template-columns: repeat(auto-fit, 33vh);
         grid-auto-flow: row;
         justify-content: center;
-        grid-column-gap: 9vh;
-        grid-row-gap: 9vh;
+        grid-gap: 9vh;
         &:first-of-type {
             grid-column: 1;
+        }
+        nav {
+            #arrows {
+                display: none;
+                justify-content: space-between;
+                align-items: center;
+                #back, #show-verso {
+                    &::before {
+                    content: none;
+                    }
+                }
+            }
         }
         div {
             height: 100%;
@@ -52,7 +57,7 @@
                 img {
                     display: flex;
                     object-fit: cover;
-                    //to do : change aspect ratio considering viewport size 
+                    object-position: top center;
                     width: calc(100% - 100px);
                     height: calc(100% - 100px);
                 }
@@ -63,6 +68,25 @@
             font-family: $altfont;
             font-size: 1rem;
             text-align: center;
+            padding: 10%;
+        }
+    }
+    .verso {
+        position: fixed;
+        background-color: white;
+        border: 0 !important;
+        &:hover {
+            cursor: auto;
+        }
+        img {
+            object-fit: contain !important;
+            object-position: unset !important;
+        }
+        @media (orientation: portrait) {
+            img {
+                transform: rotate(-90deg);
+                width: 100% !important;
+            }
         }
     }
 }

@@ -3,5 +3,5 @@
     {{ page.content }}
 </div>
 {% endset %}
-{% set json = { 'content': payload, 'title': page.header.used_title } %}
+{% set json = { 'content': payload, 'title': page.header.used_title, 'footer': page.header.footer } %}
 {{ json|json_encode|raw }}
