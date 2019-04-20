@@ -1,0 +1,44 @@
+.contact-usg {
+    #main-container aside.right {
+        right: 0;
+    }
+    footer.flex-line {
+        justify-content: center;
+        span:first-of-type {
+            &::after {
+                content: "@"
+            }
+        }
+        span:last-of-type {
+            &::after {
+                content: ".com"
+            }
+        }
+    }
+
+    main {
+        padding: 0;
+        .postcard {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+        p {
+            position: absolute;
+            bottom: 60px;
+            right: 80px;
+            font-family: $altfont;
+            color: white;
+            font-size: 0.75rem;
+        }
+        a {
+            text-decoration: none;
+            font-style: italic;
+            color: white;
+        }
+        a:hover, a:active {
+            color: blue;
+        }
+    }
+}

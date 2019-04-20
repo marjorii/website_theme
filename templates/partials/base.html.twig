@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
     <meta property="og:title" content="{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}">
-    <meta property="og:image" content="{% if header.image %}{{ url(page.media[header.image].cropZoom(1200, 628).url, true) }}{% else %}{{ url('theme://images/logo-regles-og.png', true) }}{% endif %}">
+    <meta property="og:image" content="{% if header.image %}{{ url(page.media[header.image].cropZoom(1200, 628).url, true) }}{% else %}{{ url('', true) }}{% endif %}">
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="icon" type="image/png" href="{% if 'usg19' in page.url %}{{ url('theme://images/favicon-usg.png') }}{% endif %}{{ url('theme://images/favicon.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% do assets.addCss('theme://css/main.css') %}

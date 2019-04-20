@@ -7,21 +7,24 @@
     </section>
     <section class="right">
         <div>
-            <h3>Amis</h3>
+            <h3>Références, ressources</h3>
             <div>
                 <ul>
-                    {% for friend in page.header.friends %}
-                    <li><a href="{{friend.url}}" target="_blank">{{friend.name}}</a></li>
+                    {% for ref in page.header.references %}
+                    <li><a href="{{ref.url}}" target="_blank">{{ref.name}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
         <div>
-            <h3>Licences</h3>
-            {{page.header.licences|markdown}}
+            <h3>Crédits</h3>
+            {% for mention in page.header.credits %}
+            <p>{{ mention }}</p>
+            {% endfor %}
         </div>
     </section>
 </div>
+{{ dump(page.path) }}
 {% endblock %}
 
 {% block footer %}
