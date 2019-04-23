@@ -8,12 +8,17 @@ document.querySelectorAll('.item.json').forEach(function(elem) {
         .then(function(json) {
             document.querySelector('article.project').innerHTML = json.content;
             document.querySelector('main').classList.add('show-project');
-            window.location.hash = 'img' ;
+            window.location.hash = 'img';
             document.querySelector('footer p').innerHTML = json.footer + '.';
-            console.log();
+            if (elem.pathname == '/usg19/project/posters') {
+                document.querySelectorAll('#img img').forEach(function(pic) {
+                    pic.classList.add('portrait');
+                });
+            }
         });
     });
 });
+
 
 document.querySelectorAll('#list li > span').forEach(function(elem) {
     elem.onmousemove = function(e) {

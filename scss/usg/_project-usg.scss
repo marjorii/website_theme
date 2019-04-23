@@ -51,7 +51,10 @@ aside.left.menu-bar {
     .project {
         margin-top: 0;
         #img {
-            width: 55%;
+            width: 100%;
+            .portrait {
+                width: 55%;
+            }
             p {
                 font-family: $altfont;
                 text-align: center;
@@ -68,7 +71,7 @@ aside.left.menu-bar {
                     color: blue;
                     text-decoration: none;
                 }
-                img {
+                img, video {
                     width: 100%;
                     margin-bottom: 1.5vw;
                 }

@@ -65,8 +65,12 @@ main {
             content: "";
             margin-left: 3vw;
         }
-        span {
+        span.margin-left {
             margin-left: 2vw;
+        }
+        span.align-right {
+            text-align: right;
+            display: block;
         }
     }
     p:first-child {
@@ -115,4 +119,8 @@ main {
             text-decoration: none;
         }
     }
+}
+
+span.red {
+    color: red;
 }
