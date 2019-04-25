@@ -52,40 +52,74 @@ aside.left.menu-bar {
         margin-top: 0;
         #img {
             width: 100%;
-            .portrait {
-                width: 55%;
-            }
-            p {
-                font-family: $altfont;
-                text-align: center;
-                line-height: 1.3;
-                margin-top: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 3.5vw;
-                &:last-of-type {
-                    margin-bottom: 6vw;
+            @media (orientation:portrait) {
+                .portrait {
+                    width: 100%;
                 }
-                a {
-                    color: blue;
-                    text-decoration: none;
+            }
+            @media (orientation:landscape) {
+                .portrait {
+                    width: 55%;
+                }
+            }
+            @media (min-width: 280px) {
+                p {
+                    font-family: $altfont;
+                    text-align: center;
+                    line-height: 1.3;
+                    margin-top: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    &:last-of-type {
+                        margin-bottom: 6vw;
+                    }
+                    a {
+                        color: blue;
+                        text-decoration: none;
+                    }
+                    img, video {
+                        width: 100%;
+                    }
+                }
+            }
+            @media (min-width: 280px) and (orientation: portrait) {
+                p {
+                    margin-bottom: 15vw;
+                    &:last-of-type {
+                        margin-bottom: 15vw;
+                    }
                 }
                 img, video {
-                    width: 100%;
+                    margin-bottom: 7vw;
+                }
+            }
+            @media (min-width: 767px) {
+                p {
+                    margin-bottom: 3.5vw;
+                }
+                img, video {
                     margin-bottom: 1.5vw;
                 }
             }
-
         }
-
     }
     #project-container {
-        header, footer {
-            right: 20px;
+        @media (min-width: 280px) {
+            header, footer {
+                right: 0;
+            }
+            aside.right {
+                right: 0;
+            }
         }
-        aside.right {
-            right: 20px;
+        @media (min-width: 1367px) {
+            header, footer {
+                right: 20px;
+            }
+            aside.right {
+                right: 20px;
+            }
         }
     }
 }

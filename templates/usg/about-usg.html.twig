@@ -24,9 +24,12 @@
         </div>
     </section>
 </div>
-{{ dump(page.path) }}
 {% endblock %}
 
 {% block footer %}
 {{page.header.footer}}
+{% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script-usg19.js') %}
 {% endblock %}

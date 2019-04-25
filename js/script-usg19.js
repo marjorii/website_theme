@@ -23,36 +23,47 @@ document.querySelectorAll('.item.json').forEach(function(elem) {
 document.querySelectorAll('#list li > span').forEach(function(elem) {
     elem.onmousemove = function(e) {
         var x = (e.pageX - 100) + 'px',
-        y = (e.pageY - 100) + 'px';
+            y = (e.pageY - 100) + 'px';
         elem.querySelector('img').style.top = y;
         elem.querySelector('img').style.left = x;
     }
 });
 
-document.querySelector('#cross').addEventListener('click', function(event) {
-    document.querySelector('main').classList.remove('show-project');
-});
+if ((!window.location.pathname == '/usg19/about')) {
+    document.querySelector('#cross').addEventListener('click', function(event) {
+        document.querySelector('main').classList.remove('show-project');
+    });
+}
 
-if (!(window.location.pathname == '/usg19/project')) {
+if ((window.location.pathname == '/usg19/project/text')) {
     document.querySelectorAll('header').forEach(function(bar) {
-        bar.style.cssText = 'right: 20px;';
+        bar.classList.add('scroll-bar');
     });
     document.querySelectorAll('footer').forEach(function(bar) {
-        bar.style.cssText = 'right: 20px;';
+        bar.classList.add('scroll-bar');
     });
+    document.querySelector('aside.right').classList.add('scroll-bar');
+}
 
-
+if ((window.location.pathname == '/usg19/project/postcard')) {
+    document.querySelectorAll('header').forEach(function(bar) {
+        bar.classList.add('scroll-bar');
+    });
+    document.querySelectorAll('footer').forEach(function(bar) {
+        bar.classList.add('scroll-bar');
+    });
+    document.querySelector('aside.right').classList.add('scroll-bar');
     document.querySelectorAll('.cell').forEach(function(elem) {
         elem.addEventListener('click', function(event) {
             if (!elem.classList.contains('full-screen')) {
                 elem.classList.add('full-screen');
                 document.querySelectorAll('header').forEach(function(bar) {
-                    bar.style.cssText = 'right: 0;';
+                    bar.classList.remove('scroll-bar');
                 });
                 document.querySelectorAll('footer').forEach(function(bar) {
-                    bar.style.cssText = 'right: 0;';
+                    bar.classList.remove('scroll-bar');
                 });
-                document.querySelector('aside.right').style.cssText = 'right: 0;';
+                document.querySelector('aside.right').classList.remove('scroll-bar');
                 document.querySelector('#cross').style.cssText = 'display: none;';
                 document.querySelector('#arrows').style.cssText = 'display: flex;';
             }
@@ -64,13 +75,15 @@ if (!(window.location.pathname == '/usg19/project')) {
         fullscreen.classList.remove('full-screen');
         fullscreen.querySelector('.verso').classList.add('hide');
         document.querySelector('#show-verso').textContent = 'Verso >';
-        document.querySelectorAll('header').forEach(function(bar) {
-            bar.style.cssText = 'right: 20px;';
-        });
-        document.querySelectorAll('footer').forEach(function(bar) {
-            bar.style.cssText = 'right: 20px;';
-        });
-        document.querySelector('aside.right').style.cssText = 'right: 20px;';
+        if (!isTactile) {
+            document.querySelectorAll('header').forEach(function(bar) {
+                bar.classList.add('scroll-bar');
+            });
+            document.querySelectorAll('footer').forEach(function(bar) {
+                bar.classList.add('scroll-bar');
+            });
+            document.querySelector('aside.right').classList.add('scroll-bar');
+        }
         document.querySelector('#cross').style.cssText = 'display: flex;';
         document.querySelector('#arrows').style.cssText = 'display: none;';
     });
@@ -87,12 +100,31 @@ if (!(window.location.pathname == '/usg19/project')) {
     });
 }
 
-if (window.innerHeight > window.innerWidth){
-    document.querySelector('aside.right').style.cssText = 'right: 0;';
+
+
+var isTactile = false;
+if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    isTactile = true;
+    document.querySelectorAll('.tooltip-img').forEach(function(elem) {
+        elem.style.cssText = 'display: none';
+    });
+    document.querySelectorAll('.hover-credits').forEach(function(elem) {
+        elem.style.cssText = 'display: none';
+    });
+    document.querySelectorAll('.postcard-usg img').forEach(function(elem) {
+        elem.style.cssText = 'display: flex';
+    });
+    document.querySelector('aside.right').classList.remove('scroll-bar');
     document.querySelectorAll('header').forEach(function(bar) {
-        bar.style.cssText = 'right: 0;';
+        bar.classList.remove('scroll-bar');
     });
     document.querySelectorAll('footer').forEach(function(bar) {
-        bar.style.cssText = 'right: 0;';
+        bar.classList.remove('scroll-bar');
     });
+    if ((window.location.pathname == '/usg19/about')) {
+        document.querySelector('footer p:first-of-type').textContent = 'Conception : Marjorie Ober';
+        document.querySelector('footer p:nth-of-type(2)').innerHTML = 'Fontes : <a href="https://usemodify.com/fonts/karmilla/" target="_blank">Karmilla</a> et <a href="http://vollkorn-typeface.com/" target="_blank">Vollkorn</a>';
+    }
+} else {
+    isTactile = false;
 }
