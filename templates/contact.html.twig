@@ -8,3 +8,7 @@
 {% block footer %}
 {{page.header.footer|markdown}}
 {% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script.js') %}
+{% endblock %}

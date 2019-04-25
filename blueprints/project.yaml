@@ -31,9 +31,12 @@ form:
               label: Liens
               style: vertical
               fields:
-                .name:
+                .info:
                   type: text
                   label: nom
+                .name:
+                  type: text
+                  label: adresse
                 .url:
                   type: text
                   label: url

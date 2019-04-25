@@ -5,7 +5,18 @@
     <nav>
         <ul class="flex-line">
             {% for page in pages.children.visible %}
-            <li><a href="{{ page.url }}" {% if page.active %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a></li>
+            <li>
+                <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a>
+                {% if page.title == 'Projets' %}
+                <ul id="select-page" class="hide">
+                    {% for child in page.children.visible %}
+                    <li>
+                        <a href="{{ child.url }}">{{ child.header.used_title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
             {% endfor %}
         </ul>
     </nav>
@@ -21,21 +32,21 @@
         </ul>
     </aside>
     <main>
-    {% block content %}
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
     </main>
     <aside class="menu-bar right">
         <ul class="flex-line">
-            <li><a href="cv.pdf" target="_blank">CV</a></li>
-            <li><a href="book.pdf" target="_blank">Portfolio</a></li>
-            <li><a href="memoire.pdf" target="_blank">Mémoire</a></li>
+            <li><a href=" {{ url('theme://docs/cv.pdf') }}" target="_blank">CV</a></li>
+            <li><a href=" {{ url('theme://docs/book.pdf') }}" target="_blank">Portfolio</a></li>
+            <li><a href=" {{ url('theme://docs/memoire.pdf') }}" target="_blank">Mémoire</a></li>
         </ul>
     </aside>
 </div>
 <footer class="menu-bar flex-line">
 {% block footer %}
-    <p>Projets 2019 — 2015.</p>
+<p>Projets 2019 — 2015.</p>
 {% endblock %}
 </footer>
 

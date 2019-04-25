@@ -27,3 +27,7 @@
 {% block footer %}
 {{page.header.footer}}
 {% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script.js') %}
+{% endblock %}

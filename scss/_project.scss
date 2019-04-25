@@ -1,10 +1,12 @@
-
+#prev, #next {
+    pointer-events: none;
+    // display: none;
+}
 main {
     #project-container {
         display: none;
     }
 }
-
 
 .show-project {
     .text-collection {
@@ -117,12 +119,6 @@ main {
             }
         }
     }
-    // .green #txt, .green #links {
-    //     background-color: $ghost-green;
-    // }
-    // .yellow #txt, .yellow #links {
-    //     background-color: $ghost-yellow;
-    // }
     #txt, #links {
         width: 55%;
         font-family: $altfont;
@@ -132,10 +128,6 @@ main {
         justify-content: center;
         p:first-of-type {
             margin-top: 0;
-        }
-        p::before {
-            content: "";
-            margin-left: 3vw;
         }
         dl {
             dt {
@@ -158,6 +150,20 @@ main {
         a {
             color: blue;
             text-decoration: none;
+        }
+    }
+    #txt {
+        p::before {
+            content: "";
+            margin-left: 3vw;
+        }
+    }
+    #links {
+        p {
+            margin: 0;
+        }
+        br {
+            margin-bottom: 20px;
         }
     }
 }

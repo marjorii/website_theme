@@ -25,6 +25,11 @@
     #main-container aside.right {
         right: 20px;
     }
+    @supports (-webkit-appearance:none) {
+        header, footer, #main-container aside.right {
+            right: 15px;
+        }
+    }
     main {
         margin: 25px 50px;
         #list {
@@ -48,6 +53,11 @@
                                 font-size: 1rem;
                                 position: relative;
                                 bottom: 5px;
+                            }
+                        }
+                        @supports (-webkit-appearance:none) {
+                            a::before {
+                                font-size: 1.75rem;
                             }
                         }
                     }

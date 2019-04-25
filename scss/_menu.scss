@@ -2,7 +2,7 @@
     background-color: red;
     height: 50px;
     color: white;
-    nav, ul {
+    nav, ul:not(#select-page) {
         height: 100%;
     }
     li, a {
@@ -13,7 +13,7 @@
     a.selected {
         font-weight: bold;
     }
-    nav li a {
+    nav > ul > li > a {
         &::before {
             content: "○";
             margin-right: 10px;
@@ -23,6 +23,42 @@
         }
         &.selected::before {
             content: "●";
+        }
+    }
+    @supports (-webkit-appearance:none) {
+        nav > ul > li > a::before {
+            font-size: 1.5rem;
+            bottom: -2px;
+        }
+    }
+}
+
+#select-page {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 5.5rem;
+    top: 50px;
+    z-index: 1000;
+    li {
+        padding: 10px 0;
+        border: 1px solid red;
+        border-top: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        &:hover, &:focus, &:active {
+            background-color: red;
+            a {
+                color: white;
+                font-weight: bold;
+            }
+        }
+        a {
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: red;
         }
     }
 
