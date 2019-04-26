@@ -87,6 +87,12 @@ if (loc == '/projects/text' || loc == '/projects/image' || loc == '/about' || lo
         e.preventDefault();
         document.getElementById('select-page').classList.toggle('hide');
     }
+    document.querySelector('header nav li:nth-of-type(3) a').onmouseenter = function() {
+        document.getElementById('dancing-banana').classList.remove('hide');
+    }
+    document.querySelector('header nav li:nth-of-type(3) a').onmouseleave = function() {
+        document.getElementById('dancing-banana').classList.add('hide');
+    }
 }
 
 if (loc == '/projects/text') {

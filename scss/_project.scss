@@ -1,7 +1,13 @@
 #prev, #next {
-    pointer-events: none;
-    // display: none;
+    cursor: default;
+    &.selected {
+        font-weight: normal;
+    }
+    &:active, &:focus {
+        pointer-events: none;
+    }
 }
+
 main {
     #project-container {
         display: none;
@@ -28,9 +34,9 @@ main {
         display: flex;
         justify-content: center;
         header {
-            a:not(.selected):hover, a:not(.selected):active {
-                font-weight: bold;
-            }
+            // a:not(.selected):hover, a:not(.selected):active {
+            //     font-weight: bold;
+            // }
         }
         @media (min-width: 280px) {
             #cross {

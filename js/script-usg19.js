@@ -29,7 +29,7 @@ document.querySelectorAll('#list li > span').forEach(function(elem) {
     }
 });
 
-if ((!window.location.pathname == '/usg19/about')) {
+if (!(window.location.pathname == '/usg19/about')) {
     document.querySelector('#cross').addEventListener('click', function(event) {
         document.querySelector('main').classList.remove('show-project');
     });
