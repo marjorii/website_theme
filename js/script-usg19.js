@@ -103,7 +103,7 @@ if ((window.location.pathname == '/usg19/project/postcard')) {
 
 
 var isTactile = false;
-if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+if ( /Android|webOS|iPhone|iPad|Kindle|Tablet|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     isTactile = true;
     document.querySelectorAll('.tooltip-img').forEach(function(elem) {
         elem.style.cssText = 'display: none';

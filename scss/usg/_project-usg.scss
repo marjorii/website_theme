@@ -43,6 +43,28 @@ aside.left.menu-bar {
                     }
                 }
             }
+            @media (min-width: 280px) and (orientation: portrait) {
+                li {
+                    padding: 0 20px !important;
+                }
+            }
+            @media (min-width: 321px) and (orientation: portrait) {
+                li {
+                    padding: 0 40px !important;
+                }
+            }
+            @media (max-width: 767px) and (orientation: landscape) {
+                li {
+                    @supports (-webkit-appearance:none) {
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+            @media (min-width: 1023px) and (max-width: 1279px) and (orientation: landscape) {
+                li {
+                    margin-bottom: 2vh !important;
+                }
+            }
         }
     }
 }
@@ -94,7 +116,7 @@ aside.left.menu-bar {
                     margin-bottom: 7vw;
                 }
             }
-            @media (min-width: 767px) {
+            @media (min-width: 767px), (orientation: landscape) {
                 p {
                     margin-bottom: 3.5vw;
                 }

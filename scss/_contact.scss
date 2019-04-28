@@ -12,6 +12,14 @@
             }
         }
     }
+    @media (max-width: 767px) and (orientation: portrait) {
+        footer.flex-line {
+            justify-content: center;
+            p:first-of-type {
+                display: none;
+            }
+        }
+    }
 
     .menu-bar.right a:hover, .menu-bar.right a:active {
         font-weight: bold;
@@ -36,6 +44,13 @@
             font-family: $altfont;
             color: white;
             font-size: 0.75rem;
+        }
+        @media (max-width: 767px) and (orientation: portrait) {
+            p {
+                right: 0;
+                padding: 0 50px;
+                text-align: center;
+            }
         }
         a {
             text-decoration: none;

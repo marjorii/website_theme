@@ -1,6 +1,10 @@
 .image-collection {
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: $ghost-yellow;
+    // .initial-container {
+    //     overflow-y: auto;
+    //     padding-bottom: 70px;
+    // }
     .menu-bar {
         position: fixed;
         z-index: 997;
@@ -21,6 +25,16 @@
     }
     #main-container aside.right {
         right: 20px;
+    }
+    @supports (-webkit-appearance:none) {
+        header, footer, #main-container aside.right {
+            right: 15px;
+        }
+    }
+    @media (max-width: 1024px) {
+        header, footer, #main-container aside.right {
+            right: 0;
+        }
     }
     main {
         margin: 25px 50px;
@@ -48,6 +62,9 @@
                 }
                 img {
                     width: 100%;
+                }
+                &:last-of-type {
+                    padding-bottom: 70px;
                 }
                 .hover-text {
                     display: none;

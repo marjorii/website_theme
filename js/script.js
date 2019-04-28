@@ -56,7 +56,6 @@ if (loc == '/projects/text' || loc == '/projects/image') {
 
     document.querySelectorAll('aside.left a').forEach(function(elem) {
         elem.onclick = function(e) {
-            // e.preventDefault();
             var projects = document.querySelectorAll('.project-list');
             let other = document.querySelector('aside.left a.selected');
             if (other) {
@@ -112,4 +111,40 @@ if (loc == '/about') {
 }
 if (loc == '/contact') {
     document.getElementById('select-page').style.cssText = 'background-color: white';
+}
+
+var isTactile = false;
+if ( /Android|webOS|iPhone|iPad|Kindle|Tablet|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    isTactile = true;
+    document.querySelectorAll('.tooltip-img').forEach(function(elem) {
+        elem.style.cssText = 'display: none';
+    });
+    document.querySelectorAll('.hover-text').forEach(function(elem) {
+        elem.style.cssText = 'display: none';
+    });
+    document.getElementById('dancing-banana').style.cssText = 'display: none';
+    document.querySelector('header').style.cssText = 'right: 0';
+    document.querySelector('footer.flex-line').style.cssText = 'right: 0';
+    document.querySelector('aside.right').style.cssText = 'right: 0';
+    if (loc == '/projects/text' || loc == '/projects/image') {
+    document.querySelector('#project-container > aside.right').style.cssText = 'right: 0';
+    document.getElementById('prev').style.cssText = 'display: none';
+    document.getElementById('next').style.cssText = 'display: none';
+    }
+    if (loc == '/about') {
+        document.querySelector('footer p:first-of-type').textContent = 'Conception : Marjorie Ober';
+        document.querySelector('footer p:nth-of-type(2)').innerHTML = 'Fontes : <a href="https://usemodify.com/fonts/karmilla/" target="_blank">Karmilla</a> et <a href="http://vollkorn-typeface.com/" target="_blank">Vollkorn</a>';
+    }
+} else {
+    isTactile = false;
+}
+
+var isPhone = false;
+if ( /Android|iPhone|BlackBerry/i.test(navigator.userAgent) && window.innerWidth > window.innerHeight) {
+    isPhone = true;
+    document.querySelector('aside.left ul').style.cssText = 'display: none';
+    document.querySelector('aside.right > ul').style.cssText = 'margin-left: 0';
+}
+else {
+    isPhone = false;
 }

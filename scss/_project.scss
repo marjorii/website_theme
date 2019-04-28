@@ -124,6 +124,18 @@ main {
                 width: 55%;
             }
         }
+        @media (orientation: portrait) {
+            img {
+                &.portrait {
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width: 767px) and (orientation: portrait) {
+            img {
+                margin-bottom: 15vw;
+            }
+        }
     }
     #txt, #links {
         width: 55%;
@@ -132,6 +144,7 @@ main {
         margin: auto;
         margin-bottom: 5vw;
         justify-content: center;
+        word-wrap: break-word;
         p:first-of-type {
             margin-top: 0;
         }
@@ -156,6 +169,22 @@ main {
         a {
             color: blue;
             text-decoration: none;
+        }
+    }
+    @media (orientation: portrait) {
+        #txt, #links {
+            width: 100%;
+        }
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+        #txt, #links {
+        padding: 0 20px;
+        margin-bottom: 15vw;
+        }
+    }
+    @media (max-width: 1024px) and (orientation: landscape) {
+        #txt, #links {
+            width: 100%;
         }
     }
     #txt {

@@ -54,7 +54,7 @@ main {
     height: 50%;
     display: flex;
     justify-content: center;
-    overflow-y: scroll;
+    overflow-y: auto;
     z-index: 998;
     div {
         width: 55%;

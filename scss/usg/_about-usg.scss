@@ -91,7 +91,7 @@
         }
         div:first-of-type {
             flex-direction: column;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
         section {
             width: 100% !important;

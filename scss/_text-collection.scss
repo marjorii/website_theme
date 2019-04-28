@@ -2,7 +2,7 @@
     visibility: hidden;
 }
 .text-collection {
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: $ghost-green;
     .menu-bar {
         position: fixed;
@@ -30,17 +30,34 @@
             right: 15px;
         }
     }
+    @media (max-width: 1024px) {
+        header, footer, #main-container aside.right {
+            right: 0;
+        }
+    }
     main {
-        margin: 25px 50px;
-        #list {
-            padding: 5%;
+        @media (min-width: 280px) {
+            margin: 25px;
             width: 100%;
-            height: auto;
-            ul {
-                li {
-                    margin-bottom: 5.5vh;
-                    width: calc(100% - 40px);
-                    @media (min-width: 280px) {
+        }
+        @media (min-width: 767px) and (orientation: portrait) {
+            margin: 50px 25px;
+        }
+        @media (min-width: 1023px) {
+            margin: 25px 50px;
+            width: calc(100% - 100px);
+        }
+
+        @media (min-width: 280px) {
+            #list {
+                width: 95%;
+                padding: 0;
+                height: auto;
+                ul {
+                    li {
+                        width: 100%;
+                        padding: 0;
+                        margin-bottom: 5.5vh;
                         a {
                             color: black;
                             text-decoration: none;
@@ -52,7 +69,6 @@
                                 margin-right: 2%;
                                 font-size: 1rem;
                                 position: relative;
-                                bottom: 5px;
                             }
                         }
                         @supports (-webkit-appearance:none) {
@@ -60,65 +76,88 @@
                                 font-size: 1.75rem;
                             }
                         }
-                    }
-                    @media (min-width: 768px) {
-                        a {
-                            font-size: 1.5rem;
+                        &::before {
+                            bottom: 2px;
+                        }
+                        &:last-of-type {
+                            margin-bottom: 15vh;
+                        }
+                        span.plusplusegal {
+                            &.match::before {
+                                background-image: url('/projects/content/++=2.png');
+                            }
+                            &::before {
+                                background-image: url('/projects/content/++=.png');
+                                display: inline-block;
+                                content:"";
+                                pointer-events: none;
+                                position: relative;
+                                left: 100%;
+                                bottom: -7px;
+                                background-size: 20px 20px;
+                                width: 20px;
+                                height: 20px;
+                            }
+                            a {
+                                margin-left: -20px;
+                            }
+                        }
+                        .match a {
+                            color: red;
+                        }
+                        &:hover {
+                            position: relative;
+                            z-index: 999;
+                            .tooltip-img {
+                                display: block;
+                                overflow: hidden;
+                                position: fixed;
+                            }
+                        }
+                        .tooltip-img {
+                            display: none;
+                            pointer-events: none;
+                            z-index: -1;
                         }
                     }
-                    @media (min-width: 1023px) {
+                }
+            }
+        }
+        @media (min-width: 767px) {
+            #list ul li a {
+                font-size: 1.5rem;
+                &::before {
+                    bottom: 5px;
+                }
+            }
+        }
+        @media (min-width: 1023px) {
+            #list {
+                width: 100%;
+                padding: 5%;
+                ul {
+                    li {
+                        width: calc(100% - 40px);
                         a {
                             font-size: 2.25rem;
                         }
-                    }
-                    &:hover {
-                        position: relative;
-                        z-index: 999;
-                        .tooltip-img {
-                            display: block;
-                            overflow: hidden;
-                            position: fixed;
+                        &::before {
+                            bottom: 5px;
+                        }
+                        &:last-of-type {
+                            margin-bottom: 5.5vh;
+                        }
+                        span.plusplusegal {
+                            &::before {
+                                background-size: 40px 40px;
+                                width: 40px;
+                                height: 40px;
+                            }
+                            a {
+                                margin-left: -40px;
+                            }
                         }
                     }
-                    .tooltip-img {
-                        display: none;
-                        pointer-events: none;
-                        z-index: -1;
-                    }
-                }
-                @media (min-width: 280px) and (orientation: portrait) {
-                    li {
-                        padding: 0 20px;
-                    }
-                }
-                @media (min-width: 321px) and (orientation: portrait) {
-                    li {
-                        padding: 0 40px;
-                    }
-                }
-
-                span.plusplusegal {
-                    &.match::before {
-                        background-image: url('/projects/content/++=2.png');
-                    }
-                    &::before {
-                        background-image: url('/projects/content/++=.png');
-                        background-size: 40px 40px;
-                        display: inline-block;
-                        width: 40px;
-                        height: 40px;
-                        content:"";
-                        pointer-events: none;
-                        position: relative;
-                        left: 100%;
-                        bottom: -7px;
-                    }
-                    a {
-                        margin-left: -40px;
-                    }
-                }
-                .match a {
-                    color: red;
                 }
             }
         }
