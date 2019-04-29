@@ -32,6 +32,12 @@ if (loc == '/projects/text' || loc == '/projects/image') {
                     });
                 });
                 document.querySelector('footer p').innerHTML = json.title + '.';
+                if (!json.links) {
+                    document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.add('hide');
+                }
+                else {
+                    document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.remove('hide');
+                }
             });
         });
     });

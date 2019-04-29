@@ -15,6 +15,11 @@ aside.right {
 footer {
     z-index: 0 !important;
 }
+@media (max-width: 767px) {
+    .menu-bar {
+        font-size: 0.75rem !important;
+    }
+}
 .postcard-usg {
     .initial-container {
         overflow-y: auto;

@@ -33,6 +33,25 @@
             content: "●";
         }
     }
+    @media (max-width: 767px) {
+        nav > ul > li > a::before {
+            font-size: 0.75rem !important;
+            margin-right: 5px;
+        }
+        .menu-bar, .menu-bar a, .menu-bar p {
+            font-size: 0.75rem !important;
+        }
+        header {
+            padding-left: 50px;
+        }
+        aside.left > ul {
+            margin: 0 !important;
+            width: 100%;
+        }
+        footer {
+            padding: 0 !important;
+        }
+    }
     @supports (-webkit-appearance:none) {
         nav > ul > li > a::before {
             font-size: 1.5rem;
@@ -69,9 +88,12 @@
             color: red;
         }
     }
-
 }
-
+@media (max-width: 767px) {
+    #select-page {
+        width: 4rem;
+    }
+}
 
 .flex-line {
     display: flex;
@@ -121,7 +143,10 @@ footer.flex-line {
             }
             @media (max-width: 767px) and (orientation: landscape) {
                 & > ul {
-                    margin-left: 0;
+                    margin-left: 25px;
+                    li {
+                        margin-right: 25px;
+                    }
                 }
             }
         }

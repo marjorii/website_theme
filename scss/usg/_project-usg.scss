@@ -53,11 +53,12 @@ aside.left.menu-bar {
                     padding: 0 40px !important;
                 }
             }
-            @media (max-width: 767px) and (orientation: landscape) {
+            @media (max-width: 767px) {
                 li {
-                    @supports (-webkit-appearance:none) {
-                        margin-bottom: 0 !important;
-                    }
+                    margin-bottom: 1.5vh !important;
+                    // @supports (-webkit-appearance:none) {
+                    //     margin-bottom: 0 !important;
+                    // }
                 }
             }
             @media (min-width: 1023px) and (max-width: 1279px) and (orientation: landscape) {

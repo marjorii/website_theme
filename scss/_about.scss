@@ -12,6 +12,21 @@
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
         font-weight: normal;
     }
+    @media (max-width: 767px) {
+        .menu-bar, .menu-bar a, .menu-bar p {
+            font-size: 0.75rem !important;
+        }
+        header {
+            padding-left: 50px;
+        }
+        aside.left > ul {
+            margin: 0 !important;
+            width: 100%;
+        }
+        footer {
+            padding: 0 !important;
+        }
+    }
     main {
         font-family: $altfont;
         line-height: 1.3;

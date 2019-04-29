@@ -7,6 +7,9 @@
     {{ image.html() }}
     {% endif %}
     {% endfor %}
+    {% for video in page.media.videos %}
+    {{ video.html() }}
+    {% endfor %}
 </section>
     <section id="txt">
         {{ page.content }}
@@ -20,5 +23,5 @@
         {% endfor %}
     </section>
 {% endset %}
-{% set json = { 'content': payload, 'title': page.title } %}
+{% set json = { 'content': payload, 'title': page.title, 'links': page.header.links } %}
 {{ json|json_encode|raw }}
