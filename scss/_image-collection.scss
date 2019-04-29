@@ -1,15 +1,11 @@
 .image-collection {
     overflow-y: auto;
     background-color: $ghost-yellow;
-    // .initial-container {
-    //     overflow-y: auto;
-    //     padding-bottom: 70px;
-    // }
     .menu-bar {
         position: fixed;
         z-index: 997;
     }
-    .menu-bar .right a:hover, .menu-bar .right a:active {
+    .menu-bar.right a:hover, .menu-bar.right a:active {
         font-weight: bold;
     }
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
