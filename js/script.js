@@ -16,9 +16,23 @@ if (loc == '/projects/text' || loc == '/projects/image') {
                 var category = elem.parentElement.dataset.type;
                 var categories = document.querySelectorAll('aside.left a');
                 if (document.querySelector('main').classList.contains('show-project')) {
+                    if (elem.href.includes('/projects/content/usg19')) {
+                        document.querySelector('main').classList.remove('show-project');
+                        window.open('/usg19', '_blank');
+                    }
+                    if (elem.href.includes('/projects/content/edgar')) {
+                        document.querySelector('main').classList.remove('show-project');
+                        window.open('http://e-d-g-a-r.fr/super-image-2/', '_blank');
+                    }
                     categories.forEach(function(cat) {
                         if (!category.includes(cat.dataset.type)) {
                             cat.classList.add('hide');
+                            if (elem.href.includes('/projects/content/edgar')) {
+                                cat.classList.remove('hide');
+                            }
+                            if (elem.href.includes('/projects/content/usg19')) {
+                                cat.classList.remove('hide');
+                            }
                         }
                     });
                 }
@@ -41,6 +55,7 @@ if (loc == '/projects/text' || loc == '/projects/image') {
             });
         });
     });
+
 
     document.querySelectorAll('#list li > span').forEach(function(elem) {
         elem.onmousemove = function(e) {
