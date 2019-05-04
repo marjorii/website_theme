@@ -3,7 +3,7 @@
 <div id="list">
     <ul>
         {% for item in pages.find('/usg19/project').collection %}
-        <li><span class="project-list logo">
+        <li><span class="project-list">
             <a href="{{ item.url }}" class="item {% if item.template == 'usg/page-usg' %}json{% endif %}">
                 {% set img = item.media[item.header.picked_image] %}
                 <img class="tooltip-img" src="{{ img.resize(img.height >= img.width ? 350 : 500, auto).url }}"/>
