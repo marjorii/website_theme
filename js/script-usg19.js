@@ -29,6 +29,8 @@ document.querySelectorAll('#list li > span').forEach(function(elem) {
     }
 });
 
+document.querySelector('#list li > span:first-of-type').classList.add('logo');
+
 if (!(window.location.pathname == '/usg19/about')) {
     document.querySelector('#cross').addEventListener('click', function(event) {
         document.querySelector('main').classList.remove('show-project');

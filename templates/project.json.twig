@@ -7,6 +7,9 @@
     {{ image.html() }}
     {% endif %}
     {% endfor %}
+    {% for animated in page.media.files %}
+    {{ animated.html() }}
+    {% endfor %}
     {% for video in page.media.videos %}
     {{ video.html() }}
     {% endfor %}
