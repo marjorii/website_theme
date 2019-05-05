@@ -68,6 +68,11 @@ if (loc == '/projects/text' || loc == '/projects/image') {
 
     document.querySelector('#cross').addEventListener('click', function(event) {
         document.querySelector('main').classList.remove('show-project');
+        document.querySelectorAll('video').forEach(function(vid){
+        vid.pause();
+        vid.currentTime = 0;
+        });
+        document.querySelector('video').currentTime = 0;
         document.querySelector('#project-container aside.right a.selected').classList.remove('selected');
         document.querySelector('#project-container aside.right a').classList.add('selected');
         document.querySelectorAll('aside.left a').forEach(function(elem) {
