@@ -11,8 +11,17 @@ document.querySelectorAll('.item.json').forEach(function(elem) {
             window.location.hash = 'img';
             document.querySelector('footer p').innerHTML = json.footer + '.';
             if (elem.pathname == '/usg19/project/posters') {
-                document.querySelectorAll('#img img').forEach(function(pic) {
+                document.querySelectorAll('#img img').forEach(function(pic, index) {
+                    if (index != 4 && index != 5 && index != 9 && index != 10) {
                     pic.classList.add('portrait');
+                    }
+                });
+            }
+            if (elem.pathname == '/usg19/project/installation') {
+                document.querySelectorAll('#img img').forEach(function(pic, index) {
+                    if (index == 36 || index == 38) {
+                    pic.classList.add('portrait');
+                    }
                 });
             }
         });
@@ -66,6 +75,43 @@ if ((window.location.pathname == '/usg19/project/postcard')) {
                 document.querySelector('aside.right').classList.remove('scroll-bar');
                 document.querySelector('#cross').style.cssText = 'display: none;';
                 document.querySelector('#arrows').style.cssText = 'display: flex;';
+                if (elem.querySelector('img').src.includes('postcard_01.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan01.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_02.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan02.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_03.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan03.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_04.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan04.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_05.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan05.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_06.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan06.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_08.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan08.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_09.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan09.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_10.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan10.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_11.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan11.jpg'
+                    elem.querySelector('img').style.cssText = 'object-position: bottom center';
+                }
+                if (elem.querySelector('img').src.includes('postcard_12.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan12.jpg'
+                }
+                if (elem.querySelector('img').src.includes('postcard_16.jpg')) {
+                    elem.querySelector('img').src = '/user/pages/usg19/02.project/02.postcard/scan16.jpg'
+                }
             }
         });
     });
@@ -73,6 +119,42 @@ if ((window.location.pathname == '/usg19/project/postcard')) {
     document.querySelector('#back').addEventListener('click', function(event) {
         var fullscreen = document.querySelector('.full-screen');
         fullscreen.classList.remove('full-screen');
+        if (document.querySelector('.cell:nth-of-type(1) > img')) {
+            document.querySelector('.cell:nth-of-type(1) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_01.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(2) > img')) {
+            document.querySelector('.cell:nth-of-type(2) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_02.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(3) > img')) {
+            document.querySelector('.cell:nth-of-type(3) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_03.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(4) > img')) {
+            document.querySelector('.cell:nth-of-type(4) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_04.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(5) > img')) {
+            document.querySelector('.cell:nth-of-type(5) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_05.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(6) > img')) {
+            document.querySelector('.cell:nth-of-type(6) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_06.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(8) > img')) {
+            document.querySelector('.cell:nth-of-type(8) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_08.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(9) > img')) {
+            document.querySelector('.cell:nth-of-type(9) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_09.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(10) > img')) {
+            document.querySelector('.cell:nth-of-type(10) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_10.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(11) > img').src.includes('scan11.jpg')) {
+            document.querySelector('.cell:nth-of-type(11) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_11.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(12) > img').src.includes('scan12.jpg')) {
+            document.querySelector('.cell:nth-of-type(12) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_12.jpg'
+        }
+        if (document.querySelector('.cell:nth-of-type(16) > img').src.includes('scan16.jpg')) {
+            document.querySelector('.cell:nth-of-type(16) > img').src = '/user/pages/usg19/02.project/02.postcard/postcard_16.jpg'
+        }
         fullscreen.querySelector('.verso').classList.add('hide');
         document.querySelector('#show-verso').textContent = 'Verso >';
         if (!isTactile) {

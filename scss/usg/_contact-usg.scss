@@ -48,6 +48,13 @@
             color: white;
             font-size: 0.75rem;
         }
+        @media (max-width: 767px) and (orientation: portrait) {
+            p {
+                right: 0;
+                padding: 0 50px;
+                text-align: center;
+            }
+        }
         a {
             text-decoration: none;
             font-style: italic;

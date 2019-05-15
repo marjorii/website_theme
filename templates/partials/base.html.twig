@@ -7,12 +7,12 @@
     <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     {% include 'partials/metadata.html.twig' %}
     <meta property="og:title" content="{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}">
     <meta property="og:image" content="{% if header.image %}{{ url(page.media[header.image].cropZoom(1200, 628).url, true) }}{% else %}{{ url('', true) }}{% endif %}">
 
-    <link rel="icon" type="image/png" href="{% if 'usg19' in page.url %}{{ url('theme://images/favicon-usg.png') }}{% endif %}{{ url('theme://images/favicon.png') }}" />
+    <link rel="icon" type="image/png" href="{% if 'usg19' in page.url %}{{ url('theme://images/favicon-usg.png') }}{% else %}{{ url('theme://images/favicon.png') }}{% endif %}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% do assets.addCss('theme://css/main.css') %}
