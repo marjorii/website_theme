@@ -124,6 +124,9 @@ main {
             &.portrait {
                 width: 55%;
             }
+            &::before {
+                display: none;
+            }
         }
         @media (orientation: portrait) {
             img {

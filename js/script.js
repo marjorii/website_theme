@@ -24,6 +24,9 @@ if (loc == '/projects/text' || loc == '/projects/image') {
                         document.querySelector('main').classList.remove('show-project');
                         window.open('http://e-d-g-a-r.fr/super-image-2/', '_blank');
                     }
+                    if (elem.href.includes('/projects/content/super-image')) {
+                        document.querySelector('#img > img:first-of-type').classList.add('portrait');
+                    }
                     categories.forEach(function(cat) {
                         if (!category.includes(cat.dataset.type)) {
                             cat.classList.add('hide');

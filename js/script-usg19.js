@@ -12,7 +12,7 @@ document.querySelectorAll('.item.json').forEach(function(elem) {
             document.querySelector('footer p').innerHTML = json.footer + '.';
             if (elem.pathname == '/usg19/project/posters') {
                 document.querySelectorAll('#img img').forEach(function(pic, index) {
-                    if (index != 4 && index != 5 && index != 9 && index != 10) {
+                    if (index != 2 && index != 3 && index != 6 && index != 7 && index != 8 && index != 10) {
                     pic.classList.add('portrait');
                     }
                 });
