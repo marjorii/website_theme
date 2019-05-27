@@ -19,7 +19,7 @@ document.querySelectorAll('.item.json').forEach(function(elem) {
             }
             if (elem.pathname == '/usg19/project/installation') {
                 document.querySelectorAll('#img img').forEach(function(pic, index) {
-                    if (index == 36 || index == 38) {
+                    if (index == 36 || index == 38 || index == 41) {
                     pic.classList.add('portrait');
                     }
                 });
