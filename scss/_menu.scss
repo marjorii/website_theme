@@ -34,10 +34,10 @@
         }
     }
     @media (max-width: 767px) {
-    //     nav > ul > li > a::before {
-    //         font-size: 0.75rem !important;
-    //         margin-right: 5px;
-    //     }
+        nav > ul > li > a::before {
+            font-size: 0.75rem !important;
+            margin-right: 5px;
+        }
         .menu-bar, .menu-bar a, .menu-bar p {
             font-size: 0.75rem !important;
         }
