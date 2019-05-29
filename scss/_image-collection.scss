@@ -91,7 +91,11 @@
                     p {
                         margin: 0;
                     }
-                    p:first-of-type::before {
+                    // p:first-of-type::before {
+                    //     content: "";
+                    //     margin-left: 2vw;
+                    // }
+                    p::before {
                         content: "";
                         margin-left: 2vw;
                     }
