@@ -33,16 +33,12 @@
         }
     }
     @media (max-width: 767px) {
+        nav > ul > li > a::before {
+            font-size: 0.75rem !important;
+            margin-right: 5px;
+        }
         .menu-bar, .menu-bar a, .menu-bar p {
             font-size: 0.75rem !important;
-        }
-        nav > ul > li > a::before {
-            font-size: 0.9rem !important;
-            margin-right: 5px;
-        }
-        nav > ul > li > a.selected::before {
-            font-size: 0.9rem !important;
-            margin-right: 5px;
         }
         header {
             padding-left: 50px;
@@ -82,7 +78,7 @@
                 img {
                     width: 100%;
                 }
-                .last {
+                &:last-of-type {
                     padding-bottom: 70px;
                 }
                 .hover-text {

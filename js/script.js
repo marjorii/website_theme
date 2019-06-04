@@ -107,6 +107,17 @@ if (loc == '/projects/text' || loc == '/projects/image') {
             });
         }
     });
+    document.querySelectorAll('.project-list').forEach(function(proj) {
+        if (proj.querySelector('.item').href.includes('/projects/content/cache_cache')) {
+            proj.querySelector('img').classList.add('last');
+            proj.onmouseenter = function(e) {
+                proj.querySelector('img').classList.remove('last');
+            }
+            proj.onmouseleave = function(e) {
+                proj.querySelector('img').classList.add('last');
+            }
+        }
+    });
 }
 
 if (loc == '/projects/text' || loc == '/projects/image' || loc == '/about' || loc == '/contact') {
