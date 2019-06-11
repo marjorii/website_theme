@@ -91,7 +91,6 @@ if (loc == '/projects/text' || loc == '/projects/image') {
                 if (other === this) {
                     projects.forEach(function(proj) {
                         proj.classList.remove('match');
-                        console.log(proj);
                     });
                     return;
                 }
