@@ -48,7 +48,7 @@ if (loc == '/projects/text' || loc == '/projects/image') {
                         this.classList.add('selected');
                     });
                 });
-                document.querySelector('footer p').innerHTML = json.title + '.';
+                document.querySelector('footer p').innerHTML = json.footer + '.';
                 if (!json.links) {
                     document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.add('hide');
                 }

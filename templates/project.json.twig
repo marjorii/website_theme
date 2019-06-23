@@ -26,5 +26,5 @@
         {% endfor %}
     </section>
 {% endset %}
-{% set json = { 'content': payload, 'title': page.title, 'links': page.header.links } %}
+{% set json = { 'content': payload, 'title': page.title, 'links': page.header.links, 'footer': page.header.footer } %}
 {{ json|json_encode|raw }}
