@@ -7,7 +7,7 @@
     </section>
     <section class="right">
         <div>
-            <h3>À découvrir</h3>
+            <h3>{{ "ABOUT.SEE_ALSO"|t }}</h3>
             <div>
                 <ul>
                     {% for friend in page.header.friends %}
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div>
-            <h3>Licences</h3>
+            <h3>{{ "ABOUT.LICENSES"|t }}</h3>
             {{page.header.licences|markdown}}
         </div>
     </section>
@@ -30,4 +30,5 @@
 
 {% block javascripts %}
 {% do assets.addJs('theme://js/script.js') %}
+{% do assets.addJs('theme://js/about.js') %}
 {% endblock %}

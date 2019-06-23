@@ -15,8 +15,8 @@
     <header class="menu-bar">
         <nav>
             <ul>
-                <li><a id="prev" href="#" title="coming soon !">< Projet précédent</a></li>
-                <li><a id="next" href="#" title="coming soon !">Projet suivant ></a></li>
+                <li><a id="prev" href="#" title="coming soon !">{{ "PROJECT.PREV"|t }}</a></li>
+                <li><a id="next" href="#" title="coming soon !">{{ "PROJECT.NEXT"|t }}</a></li>
             </ul>
         </nav>
     </header>
@@ -26,8 +26,8 @@
     <aside class="menu-bar right">
         <ul>
             <li><a href="#img" class="selected">Images</a></li>
-            <li><a href="#txt">Texte</a></li>
-            <li><a href="#links">Liens</a></li>
+            <li><a href="#txt">{{ "PROJECT.MENU_TXT"|t }}</a></li>
+            <li><a href="#links">{{ "PROJECT.MENU_LKS"|t }}</a></li>
         </ul>
     </aside>
     <footer class="menu-bar">
@@ -38,4 +38,6 @@
 
 {% block javascripts %}
 {% do assets.addJs('theme://js/script.js') %}
+{% do assets.addJs('theme://js/projects.js') %}
+{% do assets.addJs('theme://js/image.js') %}
 {% endblock %}

@@ -7,7 +7,7 @@
             {% for page in pages.children.visible %}
             <li>
                 <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a>
-                {% if page.title == 'Projets' %}
+                {% if page.slug == 'projects' %}
                 <ul id="select-page" class="hide">
                     {% for child in page.children.visible %}
                     <li>
@@ -24,11 +24,11 @@
 <div id="main-container">
     <aside class="menu-bar left">
         <ul class="flex-line">
-            <li><a href="#" data-type="graphics"><span>Design graphique</span></a></li>
-            <li><a href="#" data-type="edition">Édition</a></li>
+            <li><a href="#" data-type="graphics"><span>{{ "MENU_LEFT.GRAPHIC_DESIGN"|t }}</span></a></li>
+            <li><a href="#" data-type="edition">{{ "MENU_LEFT.BOOK_DESIGN"|t }}</a></li>
             <li><a href="#" data-type="web">Web</a></li>
             <li><a href="#" data-type="install">Installation</a></li>
-            <li><a href="#" data-type="research">Recherche</a></li>
+            <li><a href="#" data-type="research">{{ "MENU_LEFT.RESEARCH"|t }}</a></li>
         </ul>
     </aside>
     <main>
@@ -39,17 +39,17 @@
     </main>
     <aside class="menu-bar right">
         <ul class="flex-line">
-            <li><a href=" {{ url('theme://docs/cv.pdf') }}" target="_blank">CV</a></li>
-            <li><a href=" {{ url('theme://docs/book.pdf') }}" target="_blank">Portfolio</a></li>
-            <li><a href=" {{ url('theme://docs/memoire.pdf') }}" target="_blank">Mémoire</a></li>
+            {% set alt_locale = grav.language.getActive ? 'fr' : 'en' %}
+            <li><a href=" {{ alt_locale == 'fr' ? url('theme://docs/cv_en.pdf') : url('theme://docs/cv.pdf') }}" target="_blank">CV</a></li>
+            <li><a href=" {{ alt_locale == 'fr' ? url('theme://docs/book_en.pdf') : url('theme://docs/book.pdf') }}" target="_blank">Portfolio</a></li>
+            <li><a href=" {{ url('theme://docs/memoire.pdf') }}" target="_blank">{{ "MENU_RIGHT.MASTER_THESIS"|t }}</a></li>
         </ul>
-        {% set alt_locale = grav.language.getActive ? 'fr' : 'en' %}
         <a href="{{ alt_locale == 'fr' ? page.url[3:] : '/' ~ alt_locale ~ page.url }}">{{ alt_locale }}</a>
     </aside>
 </div>
 <footer class="menu-bar flex-line">
 {% block footer %}
-<p>Projets 2019 — 2015.</p>
+<p>{{ "MENU_BOTTOM.PROJ"|t }}</p>
 {% endblock %}
 </footer>
 
