@@ -78,11 +78,16 @@ main {
                 & > ul {
                     justify-content: flex-start;
                     margin-left: 50px;
-                    & > li {
-                        margin-right: 50px;
-                    }
                     a:not(.selected):hover, a:not(.selected):active {
                         font-weight: normal;
+                    }
+                }
+                @media (max-width: 600px), (max-height: 600px) {
+                    & > ul {
+                        margin-left: 0;
+                        a {
+                            margin-right: 25px;
+                        }
                     }
                 }
             }

@@ -43,6 +43,8 @@
             <li><a href=" {{ url('theme://docs/book.pdf') }}" target="_blank">Portfolio</a></li>
             <li><a href=" {{ url('theme://docs/memoire.pdf') }}" target="_blank">Mémoire</a></li>
         </ul>
+        {% set alt_locale = grav.language.getActive ? 'fr' : 'en' %}
+        <a href="{{ alt_locale == 'fr' ? page.url[3:] : '/' ~ alt_locale ~ page.url }}">{{ alt_locale }}</a>
     </aside>
 </div>
 <footer class="menu-bar flex-line">

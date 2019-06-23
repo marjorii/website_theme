@@ -98,7 +98,14 @@
         width: 4rem;
     }
 }
-
+.menu-bar.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+        margin-right: 50px;
+    }
+}
 .flex-line {
     display: flex;
     justify-content: space-between;
@@ -141,16 +148,17 @@ footer.flex-line {
             & > ul {
                 justify-content: flex-start;
                 margin-left: 50px;
-                & > li {
-                    margin-right: 50px;
-                }
             }
-            @media (max-width: 767px) and (orientation: landscape) {
+            @media (max-width: 600px), (max-height: 600px) {
                 & > ul {
-                    margin-left: 25px;
+                    justify-content: space-between;
+                    margin-left: 0;
                     li {
                         margin-right: 25px;
                     }
+                }
+                a {
+                    margin-right: 0;
                 }
             }
         }
