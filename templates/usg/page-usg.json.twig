@@ -1,7 +1,0 @@
-{% set payload %}
-<div id="img">
-    {{ page.content }}
-</div>
-{% endset %}
-{% set json = { 'content': payload, 'title': page.header.used_title, 'footer': page.header.footer } %}
-{{ json|json_encode|raw }}
