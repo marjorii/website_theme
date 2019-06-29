@@ -1,0 +1,30 @@
+@import 'base/vars';
+@import 'blog/text';
+@import 'blog/contact';
+@import 'blog/posts';
+@import 'blog/ressources';
+@import 'blog/texts';
+
+.menu-bar {
+    background-color:$magenta;
+    // background-color: #00ff40;
+}
+.hide {
+    display: none;
+}
+#select-page {
+    li {
+        border: 1px solid $magenta;
+        border-top: none;
+        &:hover, &:focus, &:active {
+            background-color: $magenta;
+            a {
+                color: white;
+                font-weight: bold;
+            }
+        }
+        a {
+            color: $magenta;
+        }
+    }
+}
