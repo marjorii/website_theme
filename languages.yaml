@@ -1,4 +1,5 @@
 fr:
+    MONTHS: [janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
     MENU_LEFT:
       GRAPHIC_DESIGN: Design graphique
       BOOK_DESIGN: Édition
