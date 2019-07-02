@@ -1,1 +1,32 @@
 {% extends 'blog/default-blog.html.twig' %}
+{% block content %}
+<div id="list">
+    <ul>
+        {% for item in page.collection %}
+        <li><span class="project-list"  data-type="{{ item.header.categories|join(',') }}"  >
+            <a href="{{ item.url }}" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
+            </a>
+            <time datetime="{{ item.date|date('c') }}">
+                {{ [item.date|date('d'), 'MONTHS'|ta(item.date|date('n') -1), item.date|date('Y') ]|join(' ') }}
+            </time>
+            <div class="content hide">
+                {{ item.content }}
+                <!-- {% for image in item.media.images %}
+                {% if image.height >= image.width %}
+                {{ image.html('', '', 'portrait') }}
+                {% else %}
+                {{ image.html() }}
+                {% endif %}
+                {% endfor %}
+                {% for video in item.media.videos %}
+                {{ video.html() }}
+                {% endfor %}
+                {{ dump(item.content) }} -->
+            </div>
+        </span></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+{% do assets.addJs('theme://js/script-blog.js') %}
+{% do assets.addJs('theme://js/posts.js') %}

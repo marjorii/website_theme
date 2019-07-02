@@ -1,0 +1,32 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.subtitle:
+              type: text
+              style: vertical
+              label: Sous-titre
+              'ordering@': header.title
+            header.categories:
+              type: select
+              size: long
+              classes: fancy
+              multiple: true
+              label: Catégories
+              style: vertical
+              options:
+                images: Images
+                grrrls: ♀
+                culture: Culture
+                society: Société
+                else: Autres
+              validate:
+                type: commalist
+            header.footer:
+              type: textarea
+              style: vertical
+              label: Footer

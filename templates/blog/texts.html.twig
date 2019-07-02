@@ -1,0 +1,15 @@
+{% extends 'blog/default-blog.html.twig' %}
+{% block content %}
+<div id="list">
+    <ul>
+        {% for item in page.collection %}
+        <li><span class="project-list"  data-type="{{ item.header.categories|join(',') }}"  >
+            <a href="{{ item.url }}" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
+            </a>
+        </span></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+{% do assets.addJs('theme://js/script-blog.js') %}
+{% do assets.addJs('theme://js/texts-blog.js') %}

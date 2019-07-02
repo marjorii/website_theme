@@ -1,0 +1,6 @@
+{% extends 'blog/default-blog.html.twig' %}
+{% block content %}
+{{ page.content }}
+{% endblock %}
+{% do assets.addJs('theme://js/script-blog.js') %}
+{% do assets.addJs('theme://js/text-blog.js') %}

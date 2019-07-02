@@ -12,10 +12,19 @@
 .hide {
     display: none;
 }
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.portrait {
+    width: 55%;
+}
 #select-page {
     li {
         border: 1px solid $magenta;
         border-top: none;
+        background-color: white;
         &:hover, &:focus, &:active {
             background-color: $magenta;
             a {

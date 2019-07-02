@@ -1,5 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/blog.css') %}
+{% endblock %}
+
 {% block page %}
 <header class="menu-bar">
     <nav>
