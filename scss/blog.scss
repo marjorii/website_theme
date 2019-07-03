@@ -20,6 +20,11 @@
 .portrait {
     width: 55%;
 }
+@media (max-width: 767px) and (orientation: portrait) {
+    .portrait {
+        width: 100%;
+    }
+}
 #select-page {
     li {
         border: 1px solid $magenta;

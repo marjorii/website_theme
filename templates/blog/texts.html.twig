@@ -11,5 +11,8 @@
     </ul>
 </div>
 {% endblock %}
+
+{% block javascripts %}
 {% do assets.addJs('theme://js/script-blog.js') %}
 {% do assets.addJs('theme://js/texts-blog.js') %}
+{% endblock %}

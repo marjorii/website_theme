@@ -2,4 +2,8 @@
 {% block content %}
 {% endblock %}
 
+{% block footer %}
+{{page.header.footer}}
+{% endblock %}
+
 {% do assets.addJs('theme://js/script-blog.js') %}

@@ -28,5 +28,12 @@
     </ul>
 </div>
 {% endblock %}
+
+{% block footer %}
+{{page.header.footer}}
+{% endblock %}
+
+{% block javascripts %}
 {% do assets.addJs('theme://js/script-blog.js') %}
 {% do assets.addJs('theme://js/posts.js') %}
+{% endblock %}

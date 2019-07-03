@@ -1,0 +1,64 @@
+.text {
+    .menu-bar.right a:hover, .menu-bar.right a:active, footer a:hover, footer.flex-line a.active {
+        font-weight: bold;
+    }
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+        font-weight: normal;
+    }
+    @media (max-width: 767px) {
+        .menu-bar, .menu-bar a, .menu-bar p {
+            font-size: 0.75rem !important;
+        }
+        nav > ul > li > a::before {
+            font-size: 0.9rem !important;
+            margin-right: 5px;
+        }
+        nav > ul > li > a.selected::before {
+            font-size: 0.9rem !important;
+            margin-right: 5px;
+        }
+        header {
+            padding-left: 50px;
+        }
+        aside.left > ul {
+            margin: 0 !important;
+            width: 100%;
+        }
+        footer {
+            padding: 0 !important;
+        }
+    }
+    aside.left a {
+        pointer-events: none;
+    }
+    footer {
+        bottom: 0;
+    }
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        padding: 50px 100px;
+        margin: 0;
+        article {
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 50%;
+            img {
+                width: 100% !important;
+            }
+            p {
+                font-family: 'Vollkorn';
+            }
+            &.one {
+
+            }
+            &.two {
+                p {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+}

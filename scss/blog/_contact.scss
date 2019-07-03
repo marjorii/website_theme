@@ -1,0 +1,18 @@
+.contact {
+    aside.left a {
+        pointer-events: none;
+    }
+    footer.flex-line {
+        justify-content: center;
+        span:first-of-type {
+            &::after {
+                content: "@"
+            }
+        }
+        span:last-of-type {
+            &::after {
+                content: ".com"
+            }
+        }
+    }
+}

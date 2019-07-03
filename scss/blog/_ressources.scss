@@ -1,1 +1,17 @@
+.ressources {
+    .menu-bar.right a:hover, .menu-bar.right a:active, footer a:hover, footer.flex-line a.active {
+        font-weight: bold;
+    }
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+        font-weight: normal;
+    }
 
+    aside.left a {
+        pointer-events: none;
+    }
+    footer.flex-line {
+        a {
+            text-transform: none;
+        }
+    }
+}

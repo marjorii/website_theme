@@ -5,7 +5,7 @@
         position: fixed;
         z-index: 997;
     }
-    .menu-bar.right a:hover, .menu-bar.right a:active {
+    .menu-bar.right a:hover, .menu-bar.right a:active, footer a:hover, footer.flex-line a.active {
         font-weight: bold;
     }
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
@@ -15,6 +15,12 @@
         right: 20px;
         width: 100%;
         padding-left: 70px;
+    }
+    footer.flex-line {
+        justify-content: space-between;
+        a {
+            text-transform: none;
+        }
     }
     @media (max-width: 767px) {
         .menu-bar, .menu-bar a, .menu-bar p {
@@ -145,6 +151,7 @@
                 a:before, time, figcaption {
                     font-size: 0.75rem !important;
                 }
+
                 time {
                     padding-top: 0.5rem !important;
                 }

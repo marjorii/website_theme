@@ -11,6 +11,10 @@ form:
               style: vertical
               label: Sous-titre
               'ordering@': header.title
+            header.illustrations:
+              type: textarea
+              style: vertical
+              label: Images
             header.categories:
               type: select
               size: long
