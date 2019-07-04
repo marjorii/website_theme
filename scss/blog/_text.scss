@@ -57,7 +57,6 @@
                 padding: 50px 50px 0 0;
                 p {
                     padding-bottom: 1rem;
-
                     &::before {
                         content: "";
                         margin-left: 3vw;
@@ -65,6 +64,11 @@
                     &:last-of-type {
                         text-align: right;
                         padding: 2rem 0;
+                    }
+                }
+                em {
+                    &::before, &::after {
+                        content: none;
                     }
                 }
                 blockquote {
