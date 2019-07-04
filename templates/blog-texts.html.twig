@@ -1,4 +1,4 @@
-{% extends 'blog/default-blog.html.twig' %}
+{% extends 'blog-default.html.twig' %}
 {% block content %}
 <div id="list">
     <ul>
@@ -13,6 +13,6 @@
 {% endblock %}
 
 {% block javascripts %}
-{% do assets.addJs('theme://js/script-blog.js') %}
-{% do assets.addJs('theme://js/texts-blog.js') %}
+{% do assets.addJs('theme://js/blog-script.js') %}
+{% do assets.addJs('theme://js/blog-texts.js') %}
 {% endblock %}

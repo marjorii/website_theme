@@ -1,0 +1,9 @@
+{% extends 'blog-default.html.twig' %}
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+{{page.header.footer}}
+{% endblock %}
+
+{% do assets.addJs('theme://js/blog-script.js') %}

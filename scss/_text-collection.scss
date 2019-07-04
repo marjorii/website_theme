@@ -19,6 +19,9 @@
         width: 100%;
         padding-left: 70px;
     }
+    footer.flex-line {
+        justify-content: center;
+    }
     @media (max-width: 767px) {
         .menu-bar, .menu-bar a, .menu-bar p {
             font-size: 0.75rem !important;

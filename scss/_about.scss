@@ -1,7 +1,9 @@
 .about {
     footer a {
         text-transform: none;
-
+    }
+    footer p:last-of-type {
+        text-align: right;
     }
     .menu-bar:not(.left) a:hover, .menu-bar:not(.left) a:active {
         font-weight: bold;
@@ -22,9 +24,6 @@
         aside.left > ul {
             margin: 0 !important;
             width: 100%;
-        }
-        footer {
-            padding: 0 !important;
         }
     }
     main {
@@ -97,6 +96,9 @@
                 width: 100% !important;
             }
         }
+        main {
+            padding: 8% 12%;
+        }
         div:first-of-type {
             flex-direction: column;
             overflow-y: auto;
@@ -129,7 +131,7 @@
     @media (max-width: 767px) and (orientation: portrait) {
         div:first-of-type {
             main {
-                // padding: 20%;
+                padding: 20px;
                 h3 {
                     font-weight: bold;
                 }

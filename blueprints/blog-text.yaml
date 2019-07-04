@@ -11,11 +11,14 @@ form:
               style: vertical
               label: Sous-titre
               'ordering@': header.title
-            header.date:
-              type: datetime
+            header.notes:
+              type: list
               style: vertical
-              label: Date
-              'ordering@': header.subtitle
+              label: Légendes
+              fields:
+                .text:
+                  type: text
+                  style: vertical
             header.categories:
               type: select
               size: long
@@ -35,3 +38,15 @@ form:
               type: textarea
               style: vertical
               label: Footer
+
+
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    header.body_classes:
+                      type: text
+                      label: PLUGIN_ADMIN.BODY_CLASSES
+                      default: text

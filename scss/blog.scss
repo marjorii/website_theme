@@ -18,7 +18,7 @@
     align-items: center;
 }
 .portrait {
-    width: 55%;
+    width: 55% !important;
 }
 @media (max-width: 767px) and (orientation: portrait) {
     .portrait {

@@ -3,13 +3,6 @@ document.querySelectorAll('.item').forEach(function(elem) {
         event.preventDefault();
         event.target.parentElement.lastElementChild.classList.toggle('hide');
         event.target.parentElement.lastElementChild.classList.toggle('flex');
-        document.querySelectorAll('p').forEach(function(media) {
-            if (!media.classList.contains('text-content')) {
-                if (media.offsetWidth < media.offsetHeight) {
-                    media.classList.add('portrait');
-                }
-            }
-        });
     });
 });
 document.querySelectorAll('aside.left a').forEach(function(elem) {

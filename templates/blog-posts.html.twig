@@ -1,4 +1,4 @@
-{% extends 'blog/default-blog.html.twig' %}
+{% extends 'blog-default.html.twig' %}
 {% block content %}
 <div id="list">
     <ul>
@@ -10,18 +10,18 @@
                 {{ [item.date|date('d'), 'MONTHS'|ta(item.date|date('n') -1), item.date|date('Y') ]|join(' ') }}
             </time>
             <div class="content hide">
-                {{ item.content }}
-                <!-- {% for image in item.media.images %}
-                {% if image.height >= image.width %}
-                {{ image.html('', '', 'portrait') }}
+                {% for med in item.media.all %}
+                {% if med.items.type == 'image' and med.height >= med.width %}
+                {{ med.html('', '', 'portrait') }}
                 {% else %}
-                {{ image.html() }}
+                {{ med.html() }}
+                {% endif %}
+                {% set note = item.header.notes[loop.index0].text %}
+                {% if note != ' ' %}
+                <figcaption>{{ note }}</figcaption>
                 {% endif %}
                 {% endfor %}
-                {% for video in item.media.videos %}
-                {{ video.html() }}
-                {% endfor %}
-                {{ dump(item.content) }} -->
+                {{ item.content }}
             </div>
         </span></li>
         {% endfor %}
@@ -34,6 +34,6 @@
 {% endblock %}
 
 {% block javascripts %}
-{% do assets.addJs('theme://js/script-blog.js') %}
-{% do assets.addJs('theme://js/posts.js') %}
+{% do assets.addJs('theme://js/blog-script.js') %}
+{% do assets.addJs('theme://js/blog-posts.js') %}
 {% endblock %}

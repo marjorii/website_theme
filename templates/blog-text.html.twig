@@ -1,0 +1,39 @@
+{% extends 'blog-default.html.twig' %}
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+{% for item in pages.find('/blog/publications/texts').collection %}
+{% if item.url == page.url %}
+<div class="hide data" data-type="{{ item.header.categories|join(',') }}">
+</div>
+{% endif %}
+{% endfor %}
+<article class="one">
+{{ page.content }}
+</article>
+<article class="two">
+    {% for med in page.media.all %}
+    {% if med.items.type == 'image' and med.height >= med.width %}
+    {{ med.html('', '', 'portrait') }}
+    {% else %}
+    {{ med.html() }}
+    {% endif %}
+    {% set note = page.header.notes[loop.index0].text %}
+    {% if note != ' ' %}
+    <figcaption>{{ note }}</figcaption>
+    {% endif %}
+    {% endfor %}
+</article>
+
+{% endblock %}
+
+{% block footer %}
+{{page.header.footer}}
+{% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/blog-script.js') %}
+{% do assets.addJs('theme://js/blog-text.js') %}
+{% endblock %}
