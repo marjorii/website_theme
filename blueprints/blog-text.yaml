@@ -34,6 +34,10 @@ form:
                 else: Autres
               validate:
                 type: commalist
+            header.link:
+              type: text
+              style: vertical
+              label: Lien
             header.footer:
               type: textarea
               style: vertical

@@ -1,0 +1,88 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.books:
+              type: list
+              label: Bibliographie
+              fields:
+                .graphics:
+                  type: list
+                  label: Design graphique
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .image:
+                  type: list
+                  label: Image
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .feminism:
+                  type: list
+                  label: Féminisme
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .novel:
+                  type: list
+                  label: Romans
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+            header.web:
+              label: Sitographie
+              type: list
+              fields:
+                .news:
+                  type: list
+                  label: Actualités
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+                .tools:
+                  type: list
+                  label: Outils
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+                .refs:
+                  type: list
+                  label: Références
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+                .theory:
+                  type: list
+                  label: Théorie
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+            header.footer:
+              type: textarea
+              style: vertical
+              label: Footer

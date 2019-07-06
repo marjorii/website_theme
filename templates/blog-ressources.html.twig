@@ -1,5 +1,81 @@
 {% extends 'blog-default.html.twig' %}
+
 {% block content %}
+<section class="reads">
+    <h1>Bibliographie</h1>
+    {% for read in page.header.books %}
+        <h2>Design graphique</h2>
+        <ul>
+            {% for graphic in read.graphics %}
+                <li>
+                    <p>{{ graphic.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Image</h2>
+        <ul>
+            {% for image in read.image %}
+                <li>
+                    <p>{{ image.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Essais féministes</h2>
+        <ul>
+            {% for fem in read.feminism %}
+                <li>
+                    <p>{{ fem.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Romans, nouvelles</h2>
+        <ul>
+            {% for nov in read.novel %}
+                <li>
+                    <p>{{ nov.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</section>
+<a href="" target="_blank"></a>
+<section class="web">
+    <h1>Sitographie</h1>
+    {% for nav in page.header.web %}
+        <h2>Actualités</h2>
+        <ul>
+        {% for new in nav.news %}
+            <li>
+                <a href="{{ new.url }}" target="_blank">{{ new.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+        <h2>Outils, Logiciels</h2>
+        <ul>
+            {% for tool in nav.tools %}
+                <li>
+                    <a href="{{ tool.url }}" target="_blank">{{ tool.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Références</h2>
+        <ul>
+            {% for ref in nav.refs %}
+                <li>
+                    <a href="{{ ref.url }}" target="_blank">{{ ref.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Théorie</h2>
+        <ul>
+            {% for theo in nav.theory %}
+                <li>
+                    <a href="{{ theo.url }}" target="_blank">{{ theo.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</section>
 {% endblock %}
 
 {% block footer %}

@@ -26,7 +26,13 @@
     {% endif %}
     {% endfor %}
 </article>
-
+<a href="../texts" id="cross">✕</a>
+<aside class="menu-bar right plus">
+    <ul>
+        {{ dump(page.header.link) }}
+        <li><a href="{{ page.header.link }}" target="_blank">Lien</a></li>
+    </ul>
+</aside>
 {% endblock %}
 
 {% block footer %}
