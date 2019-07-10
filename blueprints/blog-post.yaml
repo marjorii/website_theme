@@ -44,6 +44,14 @@ form:
               style: vertical
               label: Footer
 
+        options:
+          fields:
+            publishing:
+              fields:
+                header.date:
+                   unset@: true
+
+
 
         advanced:
           fields:
