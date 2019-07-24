@@ -4,11 +4,11 @@
 <section class="reads">
     <h1>Bibliographie</h1>
     {% for read in page.header.books %}
-        <h2>Design graphique</h2>
+        <h2>Design</h2>
         <ul>
-            {% for graphic in read.graphics %}
+            {% for design in read.design %}
                 <li>
-                    <p>{{ graphic.name }}</p>
+                    <p>{{ design.name }}</p>
                 </li>
             {% endfor %}
         </ul>
@@ -20,6 +20,22 @@
                 </li>
             {% endfor %}
         </ul>
+        <h2>Revues, magazines</h2>
+        <ul>
+            {% for mag in read.magazine %}
+                <li>
+                    <p>{{ mag.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Catalogues d'expositions</h2>
+        <ul>
+            {% for cat in read.expo %}
+                <li>
+                    <p>{{ cat.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
         <h2>Essais féministes</h2>
         <ul>
             {% for fem in read.feminism %}
@@ -28,11 +44,27 @@
                 </li>
             {% endfor %}
         </ul>
+        <h2>Société</h2>
+        <ul>
+            {% for soc in read.society %}
+                <li>
+                    <p>{{ soc.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
         <h2>Romans, nouvelles</h2>
         <ul>
             {% for nov in read.novel %}
                 <li>
                     <p>{{ nov.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Bandes dessinées, romans graphiques</h2>
+        <ul>
+            {% for bd in read.bd %}
+                <li>
+                    <p>{{ bd.name }}</p>
                 </li>
             {% endfor %}
         </ul>
@@ -50,19 +82,27 @@
             </li>
         {% endfor %}
         </ul>
-        <h2>Outils, Logiciels</h2>
+        <h2>Expositions</h2>
         <ul>
-            {% for tool in nav.tools %}
+        {% for expo in nav.expositions %}
+            <li>
+                <a href="{{ expo.url }}" target="_blank">{{ expo.name }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+        <h2>Articles, Publications</h2>
+        <ul>
+            {% for art in nav.articles %}
                 <li>
-                    <a href="{{ tool.url }}" target="_blank">{{ tool.name }}</a>
+                    <a href="{{ art.url }}" target="_blank">{{ art.name }}</a>
                 </li>
             {% endfor %}
         </ul>
-        <h2>Références</h2>
+        <h2>Émissions, interviews, conférences, documentaires</h2>
         <ul>
-            {% for ref in nav.refs %}
+            {% for show in nav.shows %}
                 <li>
-                    <a href="{{ ref.url }}" target="_blank">{{ ref.name }}</a>
+                    <a href="{{ show.url }}" target="_blank">{{ show.name }}</a>
                 </li>
             {% endfor %}
         </ul>
@@ -71,6 +111,38 @@
             {% for theo in nav.theory %}
                 <li>
                     <a href="{{ theo.url }}" target="_blank">{{ theo.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Outils, Logiciels</h2>
+        <ul>
+            {% for tool in nav.tools %}
+                <li>
+                    <a href="{{ tool.url }}" target="_blank">{{ tool.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Typographie</h2>
+        <ul>
+            {% for typo in nav.typo %}
+                <li>
+                    <a href="{{ typo.url }}" target="_blank">{{ typo.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Édition</h2>
+        <ul>
+            {% for ed in nav.editions %}
+                <li>
+                    <a href="{{ ed.url }}" target="_blank">{{ ed.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Références</h2>
+        <ul>
+            {% for ref in nav.refs %}
+                <li>
+                    <a href="{{ ref.url }}" target="_blank">{{ ref.name }}</a>
                 </li>
             {% endfor %}
         </ul>

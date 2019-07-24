@@ -8,32 +8,69 @@ form:
           fields:
             header.books:
               type: list
+              style: vertical
               label: Bibliographie
               fields:
-                .graphics:
+                .design:
                   type: list
-                  label: Design graphique
+                  style: vertical
+                  label: Design
                   fields:
                     .name:
                       type: text
                       label: nom
                 .image:
                   type: list
+                  style: vertical
                   label: Image
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .magazine:
+                  type: list
+                  style: vertical
+                  label: Magazines
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .expo:
+                  type: list
+                  style: vertical
+                  label: Catalogues d'exposition
                   fields:
                     .name:
                       type: text
                       label: nom
                 .feminism:
                   type: list
+                  style: vertical
                   label: Féminisme
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .society:
+                  type: list
+                  style: vertical
+                  label: Société
                   fields:
                     .name:
                       type: text
                       label: nom
                 .novel:
                   type: list
+                  style: vertical
                   label: Romans
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .bd:
+                  type: list
+                  style: vertical
+                  label: BD
                   fields:
                     .name:
                       type: text
@@ -41,9 +78,11 @@ form:
             header.web:
               label: Sitographie
               type: list
+              style: vertical
               fields:
                 .news:
                   type: list
+                  style: vertical
                   label: Actualités
                   fields:
                     .name:
@@ -52,9 +91,10 @@ form:
                     .url:
                       type: text
                       label: url
-                .tools:
+                .expositions:
                   type: list
-                  label: Outils
+                  style: vertical
+                  label: Expositions
                   fields:
                     .name:
                       type: text
@@ -62,9 +102,21 @@ form:
                     .url:
                       type: text
                       label: url
-                .refs:
+                .articles:
                   type: list
-                  label: Références
+                  style: vertical
+                  label: Articles, Publications
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+                .shows:
+                  type: list
+                  style: vertical
+                  label: Émissions, interviews, conférences, documentaires
                   fields:
                     .name:
                       type: text
@@ -74,6 +126,7 @@ form:
                       label: url
                 .theory:
                   type: list
+                  style: vertical
                   label: Théorie
                   fields:
                     .name:
@@ -82,6 +135,51 @@ form:
                     .url:
                       type: text
                       label: url
+                .tools:
+                  type: list
+                  style: vertical
+                  label: Outils, Logiciels
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+                .typo:
+                  type: list
+                  style: vertical
+                  label: Typographie
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+                .editions:
+                  type: list
+                  style: vertical
+                  label: Édition
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+                .refs:
+                  type: list
+                  style: vertical
+                  label: Références
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                    .url:
+                      type: text
+                      label: url
+
             header.footer:
               type: textarea
               style: vertical
