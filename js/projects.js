@@ -14,7 +14,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
             if (document.querySelector('main').classList.contains('show-project')) {
                 if (elem.href.includes('/projects/content/usg19')) {
                     document.querySelector('main').classList.remove('show-project');
-                    window.open('/usg19', '_blank');
+                    window.open('http://marjorieober.com/usg19', '_blank');
                 }
                 if (elem.href.includes('/projects/content/edgar')) {
                     document.querySelector('main').classList.remove('show-project');

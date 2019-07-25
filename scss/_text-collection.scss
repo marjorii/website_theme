@@ -110,10 +110,10 @@
                         }
                         span.plusplusegal {
                             &.match::before {
-                                background-image: url('/projects/content/++=2.png');
+                                background-image: url('/home/projects/content/++=2.png');
                             }
                             &::before {
-                                background-image: url('/projects/content/++=.png');
+                                background-image: url('/home/projects/content/++=.png');
                                 display: inline-block;
                                 content:"";
                                 pointer-events: none;

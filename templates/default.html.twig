@@ -45,7 +45,12 @@
             <li><a href=" {{ url('theme://docs/memoire.pdf') }}" target="_blank">{{ "MENU_RIGHT.MASTER_THESIS"|t }}</a></li>
             <li><a href=" {{ url('/blog') }}" target="_blank">Blog</a></li>
         </ul>
-        <a href="{{ alt_locale == 'fr' ? page.url[3:] : '/' ~ alt_locale ~ page.url }}">{{ alt_locale }}</a>
+        <!-- FIXME -->
+        {% if '/home' in page.url %}
+            <a href="{{ alt_locale == 'fr' ? page.url|replace({'/en': ''}) : '/home/' ~  alt_locale ~ page.url[5:] }}">{{ alt_locale }}</a>
+        {% else %}
+            <a href="{{ alt_locale == 'fr' ? page.url[3:] : '/' ~  alt_locale ~ page.url }}">{{ alt_locale }}</a>
+        {% endif %}
     </aside>
 </div>
 <footer class="menu-bar flex-line">

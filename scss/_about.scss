@@ -5,6 +5,9 @@
     footer p:last-of-type {
         text-align: right;
     }
+    footer.flex-line {
+        justify-content: space-between;
+    }
     .menu-bar:not(.left) a:hover, .menu-bar:not(.left) a:active {
         font-weight: bold;
     }

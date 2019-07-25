@@ -1,5 +1,6 @@
 .contact {
     footer.flex-line {
+        justify-content: space-between;
         span:first-of-type {
             &::after {
                 content: "@"
