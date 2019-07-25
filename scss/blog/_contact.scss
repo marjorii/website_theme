@@ -2,6 +2,9 @@
     aside.left a {
         pointer-events: none;
     }
+    .postcard {
+        object-position: bottom;
+    }
     footer.flex-line {
         justify-content: center;
         span:first-of-type {

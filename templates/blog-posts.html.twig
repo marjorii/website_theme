@@ -30,7 +30,21 @@
 {% endblock %}
 
 {% block footer %}
-{{page.header.footer}}
+<ul>
+    {% set maxPage = ((page.children|length / 15)|round-1)|number_format(0) %}
+    {% set currentPage = uri.param('page')|default(maxPage) %}
+    <li>
+        {% if currentPage > 0 %}
+        <a href="{{ page.url ~ '/page' ~ system.param_sep ~ (currentPage - 1) }}">< Page précédente</a>
+        {% endif %}
+    </li>
+    <li>
+        {% if currentPage < maxPage %}
+        <a href="{{ page.url ~ '/page' ~ system.param_sep ~ (currentPage + 1) }}">Page suivante ></a>
+        {% endif %}
+    </li>
+</ul>
+<p class="title">Blog</p>
 {% endblock %}
 
 {% block javascripts %}

@@ -43,6 +43,7 @@
             <li><a href=" {{ alt_locale == 'fr' ? url('theme://docs/cv_en.pdf') : url('theme://docs/cv.pdf') }}" target="_blank">CV</a></li>
             <li><a href=" {{ alt_locale == 'fr' ? url('theme://docs/book_en.pdf') : url('theme://docs/book.pdf') }}" target="_blank">Portfolio</a></li>
             <li><a href=" {{ url('theme://docs/memoire.pdf') }}" target="_blank">{{ "MENU_RIGHT.MASTER_THESIS"|t }}</a></li>
+            <li><a href=" {{ url('/blog') }}" target="_blank">Blog</a></li>
         </ul>
         <a href="{{ alt_locale == 'fr' ? page.url[3:] : '/' ~ alt_locale ~ page.url }}">{{ alt_locale }}</a>
     </aside>
