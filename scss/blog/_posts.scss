@@ -231,6 +231,11 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        li {
+            span {
+                text-transform: none;
+            }
+        }
     }
     .title {
         position: absolute;
