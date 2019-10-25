@@ -8,7 +8,7 @@
             <li>
                 <a href="{{ p.url }}" {% if p.active or p.activeChild or (p.slug =='projects' and page.template=='text-collection') %}class="selected" aria-current="p"{% endif %} >{{ p.title }}</a>
                 {% if p.slug == 'projects' %}
-                <ul id="select-p" class="hide">
+                <ul id="select-page" class="hide">
                     {% for child in p.children.visible %}
                     <li>
                         <a href="{{ child.url }}">{{ child.header.used_title }}</a>
