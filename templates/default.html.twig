@@ -4,12 +4,12 @@
 <header class="menu-bar">
     <nav>
         <ul class="flex-line">
-            {% for page in pages.children.visible %}
+            {% for p in pages.children.visible %}
             <li>
-                <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a>
-                {% if page.slug == 'projects' %}
-                <ul id="select-page" class="hide">
-                    {% for child in page.children.visible %}
+                <a href="{{ p.url }}" {% if p.active or p.activeChild or (p.slug =='projects' and page.template=='text-collection') %}class="selected" aria-current="p"{% endif %} >{{ p.title }}</a>
+                {% if p.slug == 'projects' %}
+                <ul id="select-p" class="hide">
+                    {% for child in p.children.visible %}
                     <li>
                         <a href="{{ child.url }}">{{ child.header.used_title }}</a>
                     </li>
