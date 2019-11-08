@@ -24,10 +24,10 @@ if ( /Android|webOS|iPhone|iPad|Kindle|Tablet|iPod|BlackBerry|IEMobile|Opera Min
         elem.style.cssText = 'display: none';
     });
     document.getElementById('dancing-banana').style.cssText = 'display: none';
-    document.querySelector('header').style.cssText = 'right: 0';
-    document.querySelector('footer.flex-line').style.cssText = 'right: 0';
-    document.querySelector('aside.right').style.cssText = 'right: 0';
-    document.querySelector('header').style.cssText = 'padding-left: 50px';
+    // document.querySelector('header').style.cssText = 'right: 0';
+    // document.querySelector('footer.flex-line').style.cssText = 'right: 0';
+    // document.querySelector('aside.right').style.cssText = 'right: 0';
+    // document.querySelector('header').style.cssText = 'padding-left: 50px';
 }
 else {
     isTactile = false;

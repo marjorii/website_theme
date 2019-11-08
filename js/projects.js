@@ -51,6 +51,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
             else {
                 document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.remove('hide');
             }
+            document.querySelector('main').classList.add('no-scroll');
         });
     });
 });
@@ -63,6 +64,7 @@ document.querySelectorAll('#list li > span').forEach(function(elem) {
     }
 });
 document.querySelector('#cross').addEventListener('click', function(event) {
+    document.querySelector('main').classList.remove('no-scroll');
     document.querySelector('main').classList.remove('show-project');
     document.querySelectorAll('video').forEach(function(vid){
     vid.pause();

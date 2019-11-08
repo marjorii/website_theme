@@ -18,6 +18,9 @@
         color: white;
         text-decoration: none;
     }
+    a {
+        line-height: 1rem;
+    }
     a.selected {
         font-weight: bold;
     }
@@ -25,6 +28,7 @@
         &::before {
             content: "○";
             margin-right: 10px;
+            font-family: Verdana, "Liberation Sans", "DejaVu Sans";
             font-size: 0.9rem;
             position: relative;
             bottom: 1px;
@@ -114,7 +118,6 @@ header, footer {
 
 #main-container {
     display: flex;
-    height: calc(100vh - 100px);
 
     & > aside {
         position: absolute;
@@ -157,9 +160,14 @@ header, footer {
 }
 
 main {
-    width: calc(100% - 100px);
-    margin-left: 50px;
-    padding: 50px;
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin: 0 50px;
+    padding: 25px 50px;
+    &.no-scroll {
+        overflow-y: hidden;
+    }
 }
 footer.flex-line {
     justify-content: center;

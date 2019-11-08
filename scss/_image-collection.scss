@@ -1,10 +1,9 @@
 .image-collection {
-    overflow-y: auto;
     background-color: $ghost-yellow;
-    .menu-bar {
-        position: fixed;
-        z-index: 997;
-    }
+    // .menu-bar {
+    //     position: fixed;
+    //     z-index: 997;
+    // }
     .menu-bar.right a:hover, .menu-bar.right a:active {
         font-weight: bold;
     }
@@ -12,29 +11,29 @@
         font-weight: normal;
     }
     header, footer {
-        right: 20px;
+        // right: 20px;
         width: 100%;
-        padding-left: 70px;
+        // padding-left: 70px;
     }
-    footer {
-        bottom: 0;
-    }
+    // footer {
+    //     bottom: 0;
+    // }
     footer.flex-line {
         justify-content: center;
     }
-    #main-container aside.right {
-        right: 20px;
-    }
-    @supports (-webkit-appearance:none) {
-        header, footer, #main-container aside.right {
-            right: 15px;
-        }
-    }
-    @media (max-width: 1024px) {
-        header, footer, #main-container aside.right {
-            right: 0;
-        }
-    }
+    // #main-container aside.right {
+    //     right: 20px;
+    // }
+    // @supports (-webkit-appearance:none) {
+    //     header, footer, #main-container aside.right {
+    //         right: 15px;
+    //     }
+    // }
+    // @media (max-width: 1024px) {
+    //     header, footer, #main-container aside.right {
+    //         right: 0;
+    //     }
+    // }
     @media (max-width: 767px) {
         .menu-bar, .menu-bar a, .menu-bar p {
             font-size: 0.75rem !important;
@@ -59,7 +58,11 @@
         }
     }
     main {
-        margin: 25px 50px;
+        // margin: 0 50px;
+        // overflow-y: auto;
+        @media (max-width: 767px) and (orientation: landscape) {
+            padding: 0;
+        }
         .img-container {
             padding: 5%;
             display: grid;
@@ -85,9 +88,9 @@
                 img {
                     width: 100%;
                 }
-                .last {
-                    margin-bottom: 70px;
-                }
+                // .last {
+                //     margin-bottom: 70px;
+                // }
                 .hover-text {
                     display: none;
                     font-family: $altfont;
