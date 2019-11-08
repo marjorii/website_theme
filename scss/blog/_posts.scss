@@ -1,9 +1,9 @@
 .posts {
-    overflow-y: auto;
-    .menu-bar {
-        position: fixed;
-        z-index: 997;
-    }
+    // overflow-y: auto;
+    // .menu-bar {
+    //     position: fixed;
+    //     z-index: 997;
+    // }
     .menu-bar.right a:hover, .menu-bar.right a:active, footer a:hover, footer.flex-line a.active {
         font-weight: bold ;
     }
@@ -40,34 +40,34 @@
             width: 100%;
         }
     }
-    footer {
-        bottom: 0;
-    }
-    #main-container aside.right {
-        right: 20px;
-    }
-    @supports (-webkit-appearance:none) {
-        header, footer, #main-container aside.right {
-            right: 15px;
-        }
-    }
-    @media (max-width: 1024px) {
-        header, footer, #main-container aside.right {
-            right: 0;
-        }
-    }
+    // footer {
+    //     bottom: 0;
+    // }
+    // #main-container aside.right {
+    //     right: 20px;
+    // }
+    // @supports (-webkit-appearance:none) {
+    //     header, footer, #main-container aside.right {
+    //         right: 15px;
+    //     }
+    // }
+    // @media (max-width: 1024px) {
+    //     header, footer, #main-container aside.right {
+    //         right: 0;
+    //     }
+    // }
     main {
-        @media (min-width: 280px) {
-            margin: 25px;
-            width: 100%;
-        }
-        @media (min-width: 767px) and (orientation: portrait) {
-            margin: 50px 25px;
-        }
-        @media (min-width: 1023px) {
-            margin: 25px 50px;
-            width: calc(100% - 100px);
-        }
+        // @media (min-width: 280px) {
+        //     margin: 25px;
+        //     width: 100%;
+        // }
+        // @media (min-width: 767px) and (orientation: portrait) {
+        //     margin: 50px 25px;
+        // }
+        // @media (min-width: 1023px) {
+        //     margin: 25px 50px;
+        //     width: calc(100% - 100px);
+        // }
 
         @media (min-width: 280px) {
             #list {
@@ -88,6 +88,7 @@
                                 content: "●";
                                 margin-left: 7vw;
                                 margin-right: 2%;
+                                font-family: Verdana, "Liberation Sans", "DejaVu Sans";
                                 font-size: 1rem;
                                 position: relative;
                             }
@@ -158,6 +159,7 @@
             }
         }
         @media (max-width: 767px) {
+            padding: 20px;
             #list {
                 a:before, time, figcaption, figcaption a.content-link {
                     font-size: 0.75rem !important;

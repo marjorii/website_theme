@@ -100,19 +100,24 @@ em {
     margin-right: 10px;
     font-family: Verdana, "Liberation Sans", "DejaVu Sans";
     font-size: 0.9rem;
-    position: relative;
-    bottom: 1px; }
+    position: relative; }
   .menu-bar nav > ul > li > a.selected::before {
     content: "●"; }
+  @supports (-webkit-appearance: none) {
+    .menu-bar nav > ul > li > a::before {
+      font-size: 1.5rem;
+      bottom: -2px; } }
   @media (max-width: 767px) {
     .menu-bar .menu-bar, .menu-bar .menu-bar a, .menu-bar .menu-bar p {
       font-size: 0.75rem !important; }
     .menu-bar nav > ul > li > a::before {
       font-size: 0.9rem !important;
-      margin-right: 5px; }
+      margin-right: 5px;
+      bottom: -1px; }
     .menu-bar nav > ul > li > a.selected::before {
       font-size: 0.9rem !important;
-      margin-right: 5px; }
+      margin-right: 5px;
+      bottom: -1px; }
     .menu-bar header {
       padding-left: 50px; }
     .menu-bar aside.left > ul {
@@ -120,10 +125,6 @@ em {
       width: 100%; }
     .menu-bar footer {
       padding: 0 !important; } }
-  @supports (-webkit-appearance: none) {
-    .menu-bar nav > ul > li > a::before {
-      font-size: 1.5rem;
-      bottom: -2px; } }
 
 #select-page {
   display: flex;
@@ -543,11 +544,12 @@ main #project-container {
   font-family: "Vollkorn";
   line-height: 1.3;
   padding: 12%;
-  background-color: #f7eef3; }
+  background-color: #f7eef3;
+  display: flex;
+  align-items: center; }
   .about main > div {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
     padding-bottom: 20px;
     width: 100%;
     height: auto; }
@@ -587,7 +589,11 @@ main #project-container {
   .about .about-usg *:not(p) {
     width: 100% !important; }
   .about main {
-    padding: 8% 12%; }
+    padding: 8% 12%;
+    align-items: flex-start; }
+    .about main > div {
+      display: block;
+      padding-bottom: 50px; }
   .about section {
     width: 100% !important; }
     .about section *:not(p) {
@@ -605,7 +611,11 @@ main #project-container {
       color: blue; } }
 @media (max-width: 767px) and (orientation: portrait) {
   .about div:first-of-type main {
+    flex-direction: column;
     padding: 20px; }
+    .about div:first-of-type main > div {
+      flex-direction: column;
+      padding-bottom: 20px; }
     .about div:first-of-type main h3 {
       font-weight: bold; }
   .about div:first-of-type section.left p, .about div:first-of-type section.left p:last-of-type {
