@@ -24,12 +24,9 @@ document.querySelectorAll('aside.left a').forEach(function(elem) {
 });
 document.querySelectorAll('.item').forEach(function(elem) {
     elem.addEventListener('click', function(event) {
-        var category = elem.parentElement.dataset.type;
-        var categories = document.querySelectorAll('aside.left a');
-        categories.forEach(function(cat) {
-            if (!category.includes(cat.dataset.type)) {
-                cat.classList.add('hide');
-            }
-        });
+        console.log(elem.href);
+        if (elem.href.includes('/blog/publications/texts/si_2019')) {
+            elem.href = 'https://marjorieober.com/home/user/themes/website_theme/docs/SI_2019.pdf';
+        }
     });
 });
