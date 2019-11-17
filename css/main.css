@@ -270,9 +270,9 @@ footer.flex-line {
         .text-collection main #list ul li::before {
           bottom: 2px; }
         .text-collection main #list ul li span.plusplusegal.match::before {
-          background-image: url("/home/projects/content/++=2.png"); }
+          background-image: url("/user/themes/website_theme/images/++=2.png"); }
         .text-collection main #list ul li span.plusplusegal::before {
-          background-image: url("/home/projects/content/++=.png");
+          background-image: url("/user/themes/website_theme/images/++=.png");
           display: inline-block;
           content: "";
           pointer-events: none;
