@@ -255,6 +255,8 @@ footer.flex-line {
           text-decoration: none;
           font-size: 1rem;
           line-height: 1.25; }
+          .text-collection main #list ul li a * {
+            pointer-events: none; }
           .text-collection main #list ul li a::before {
             content: "●";
             font-family: Verdana, "Liberation Sans", "DejaVu Sans";

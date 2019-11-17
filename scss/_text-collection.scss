@@ -95,6 +95,9 @@
                             text-decoration: none;
                             font-size: 1rem;
                             line-height: 1.25;
+                            & * {
+                                pointer-events: none;
+                            }
                             &::before {
                                 content: "●";
                                 font-family: Verdana, "Liberation Sans", "DejaVu Sans";

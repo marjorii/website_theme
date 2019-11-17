@@ -12,24 +12,24 @@ document.querySelectorAll('.item').forEach(function(elem) {
             var category = elem.parentElement.dataset.type;
             var categories = document.querySelectorAll('aside.left a');
             if (document.querySelector('main').classList.contains('show-project')) {
-                if (elem.href.includes('/projects/content/usg19')) {
+                if (elem.href.includes('usg19')) {
                     document.querySelector('main').classList.remove('show-project');
                     window.open('http://marjorieober.com/usg19', '_blank');
                 }
-                if (elem.href.includes('/projects/content/edgar')) {
+                if (elem.href.includes('edgar')) {
                     document.querySelector('main').classList.remove('show-project');
                     window.open('http://e-d-g-a-r.fr/super-image-2/', '_blank');
                 }
-                if (elem.href.includes('/projects/content/super-image')) {
+                if (elem.href.includes('super-image')) {
                     document.querySelector('#img > img:first-of-type').classList.add('portrait');
                 }
                 categories.forEach(function(cat) {
                     if (!category.includes(cat.dataset.type)) {
                         cat.classList.add('hide');
-                        if (elem.href.includes('/projects/content/edgar')) {
+                        if (elem.href.includes('edgar')) {
                             cat.classList.remove('hide');
                         }
-                        if (elem.href.includes('/projects/content/usg19')) {
+                        if (elem.href.includes('usg19')) {
                             cat.classList.remove('hide');
                         }
                     }
@@ -51,7 +51,9 @@ document.querySelectorAll('.item').forEach(function(elem) {
             else {
                 document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.remove('hide');
             }
-            document.querySelector('main').classList.add('no-scroll');
+            if (!elem.href.includes('usg19') && !elem.href.includes('edgar')) {
+                document.querySelector('main').classList.add('no-scroll');
+            }
         });
     });
 });
