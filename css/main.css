@@ -356,7 +356,7 @@ footer.flex-line {
   .image-collection main .img-container {
     padding: 5%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 33vh);
+    grid-template-columns: repeat(auto-fit, 30vh);
     grid-auto-flow: row;
     justify-content: center;
     grid-column-gap: 9vh;
