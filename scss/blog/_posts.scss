@@ -137,6 +137,7 @@
                                 &::before {
                                     content: "";
                                     margin: 0;
+                                    bottom: 0 !important;
                                 }
                             }
                         }
