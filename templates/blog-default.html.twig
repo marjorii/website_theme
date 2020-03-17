@@ -10,7 +10,7 @@
         <ul class="flex-line">
             {% for page in page.find('/blog').children.visible %}
             <li>
-                <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a>
+                <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} {% if page.slug == 'publications' %}aria-expanded="false"{% endif %} >{{ page.title }}</a>
                 {% if page.slug == 'publications' %}
                 <ul id="select-page" class="hide">
                     {% for child in page.children.visible %}
