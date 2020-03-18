@@ -2,7 +2,7 @@ var currentWidth = document.querySelector('header nav li:nth-of-type(2)').offset
 document.querySelectorAll('#select-page li').forEach(function(elem) {
     elem.style.cssText = 'width: ' + currentWidth + 'px';
 });
-document.querySelector('header nav li:nth-of-type(2) a').onclick = function(e) {
+document.querySelector('header nav li button').onclick = function(e) {
     e.preventDefault();
     this.setAttribute('aria-expanded', 'true');
     document.getElementById('select-page').classList.toggle('hide');

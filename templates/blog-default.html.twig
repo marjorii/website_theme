@@ -10,8 +10,10 @@
         <ul class="flex-line">
             {% for page in page.find('/blog').children.visible %}
             <li>
-                <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} {% if page.slug == 'publications' %}aria-expanded="false"{% endif %} >{{ page.title }}</a>
-                {% if page.slug == 'publications' %}
+                {% if page.slug != 'publications' %}
+                <a href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} >{{ page.title }}</a>
+                {% else %}
+                <button href="{{ page.url }}" {% if page.active or page.activeChild %}class="selected" aria-current="page"{% endif %} aria-expanded="false" aria-label="{{ page.title}} : Choisir entre les billets ou les textes." >{{ page.title }}</button>
                 <ul id="select-page" class="hide">
                     {% for child in page.children.visible %}
                     <li>

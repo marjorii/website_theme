@@ -6,8 +6,10 @@
         <ul class="flex-line">
             {% for p in pages.children.visible %}
             <li>
-                <a href="{{ p.url }}" {% if p.active or p.activeChild or (p.slug =='projects' and page.template=='text-collection') %}class="selected" aria-current="p"{% endif %} {% if p.slug == 'projects' %}aria-expanded="false"{% endif %} >{{ p.title }}</a>
-                {% if p.slug == 'projects' %}
+                {% if p.slug != 'projects' %}
+                <a href="{{ p.url }}" {% if p.active or p.activeChild %}class="selected" aria-current="p"{% endif %}  >{{ p.title }}</a>
+                {% else %}
+                <button href="{{ p.url }}" {% if p.active or p.activeChild or page.template=='text-collection' %}class="selected" aria-current="p"{% endif %}aria-expanded="false" aria-label="{{ p.title ~ ': ' ~ 'MENU_TOP.BUTTON'|t }}" >{{ p.title }}</button>
                 <ul id="select-page" class="hide">
                     {% for child in p.children.visible %}
                     <li>

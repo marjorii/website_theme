@@ -1,5 +1,9 @@
 fr:
     MONTHS: [janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
+
+    MENU_TOP:
+      BUTTON: Choisir entre le mode texte ou le mode image.
+
     MENU_LEFT:
       GRAPHIC_DESIGN: Design graphique
       BOOK_DESIGN: Édition
@@ -22,6 +26,9 @@ fr:
       NEXT: Projet suivant >
 
 en:
+    MENU_TOP:
+      BUTTON: Choose between text mode or image mode.
+
     MENU_LEFT:
       GRAPHIC_DESIGN: Graphic design
       BOOK_DESIGN: Book design

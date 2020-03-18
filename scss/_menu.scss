@@ -13,18 +13,25 @@
     nav, ul:not(#select-page) {
         height: 100%;
     }
-    li, a {
+    li, a, button {
         text-transform: uppercase;
         color: white;
         text-decoration: none;
     }
-    a {
+    a, button {
         line-height: 1rem;
     }
-    a.selected {
+    button {
+        background-color: transparent;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    a.selected, button.selected {
         font-weight: bold;
     }
-    nav > ul > li > a {
+    nav > ul > li > a, nav > ul > li > button {
         &::before {
             content: "○";
             margin-right: 10px;
@@ -37,21 +44,21 @@
         }
     }
     @supports (-webkit-appearance:none) {
-        nav > ul > li > a::before {
+        nav > ul > li > a::before, nav > ul > li > button::before {
             font-size: 1.5rem;
             bottom: -2px;
         }
     }
     @media (max-width: 767px) {
-        .menu-bar, .menu-bar a, .menu-bar p {
+        .menu-bar, .menu-bar a, .menu-bar p, .menu-bar button {
             font-size: 0.75rem !important;
         }
-        nav > ul > li > a::before {
+        nav > ul > li > a::before, nav > ul > li > button::before {
             font-size: 0.9rem !important;
             margin-right: 5px;
             bottom: -1px;
         }
-        nav > ul > li > a.selected::before {
+        nav > ul > li > a.selected::before, nav > ul > li > button.selected::before {
             font-size: 0.9rem !important;
             margin-right: 5px;
             bottom: -1px;

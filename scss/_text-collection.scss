@@ -22,14 +22,14 @@
         justify-content: center;
     }
     @media (max-width: 767px) {
-        .menu-bar, .menu-bar a, .menu-bar p {
+        .menu-bar, .menu-bar a, .menu-bar p, .menu-bar button {
             font-size: 0.75rem !important;
         }
-        nav > ul > li > a::before {
+        nav > ul > li > a::before, nav > ul > li > button::before {
             font-size: 0.9rem !important;
             margin-right: 5px;
         }
-        nav > ul > li > a.selected::before {
+        nav > ul > li > a.selected::before, nav > ul > li > button.selected::before {
             font-size: 0.9rem !important;
             margin-right: 5px;
         }
