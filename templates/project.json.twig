@@ -14,12 +14,12 @@
     <video controls="1" alt=""><source src="{{ video.url }}">Your browser does not support the video tag.</video>
     {% endfor %}
 </section>
-    <section id="txt">
+    <section id="txt" tabindex="0">
         {{ page.content }}
     </section>
     <section id="links">
         {% for link in page.header.links %}
-        <p>{{ link.info }}</p>
+        <p tabindex="0">{{ link.info }}</p>
         <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
         <br>
         <br>

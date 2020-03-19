@@ -20,6 +20,7 @@ fr:
       LICENSES: Licences
 
     PROJECT:
+      CLOSE: Fermer la page projet.
       MENU_TXT: Texte
       MENU_LKS: Liens
       PREV: < Projet précédent
@@ -45,6 +46,7 @@ en:
       LICENSES: Licenses
 
     PROJECT:
+      CLOSE: Close project page.
       MENU_TXT: Text
       MENU_LKS: Links
       PREV: Previous project

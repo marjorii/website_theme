@@ -1,3 +1,7 @@
+document.querySelectorAll('footer > *').forEach(function(element) {
+    element.setAttribute('tabindex', '0');
+});
+
 var isTactile = false;
 if ( /Android|webOS|iPhone|iPad|Kindle|Tablet|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     isTactile = true;

@@ -8,7 +8,25 @@ document.querySelectorAll('.item').forEach(function(elem) {
         .then(function(json) {
             document.querySelector('article.project').innerHTML = json.content;
             document.querySelector('main').classList.add('show-project');
-            window.location.hash = 'img' ;
+            window.location.hash = 'img';
+            // accessibility
+            selectors = '#main-container > aside.right, footer, body > header, #list';
+            document.querySelectorAll(selectors).forEach(function(element) {
+                element.setAttribute('aria-hidden', 'true');
+            });
+            document.querySelectorAll('body > header > nav > ul > li > *').forEach(function(element) {
+                element.setAttribute('tabindex', '-1');
+            });
+            document.querySelectorAll('.item').forEach(function(element) {
+                element.setAttribute('tabindex', '-1');
+            });
+            document.querySelectorAll('#main-container > aside.right > *').forEach(function(element) {
+                element.setAttribute('tabindex', '-1');
+            });
+            document.querySelectorAll('#main-container > aside.right > ul > li > *').forEach(function(element) {
+                element.setAttribute('tabindex', '-1');
+            });
+
             var category = elem.parentElement.dataset.type;
             var categories = document.querySelectorAll('aside.left a');
             if (document.querySelector('main').classList.contains('show-project')) {
@@ -25,7 +43,9 @@ document.querySelectorAll('.item').forEach(function(elem) {
                 }
                 categories.forEach(function(cat) {
                     if (!category.includes(cat.dataset.type)) {
-                        cat.classList.add('hide');
+                        if (!elem.href.includes('edgar') || !elem.href.includes('usg19')) {
+                            cat.classList.add('hide');
+                        }
                         if (elem.href.includes('edgar')) {
                             cat.classList.remove('hide');
                         }
@@ -69,14 +89,37 @@ document.querySelector('#cross').addEventListener('click', function(event) {
     document.querySelector('main').classList.remove('no-scroll');
     document.querySelector('main').classList.remove('show-project');
     document.querySelectorAll('video').forEach(function(vid){
-    vid.pause();
-    vid.currentTime = 0;
+        vid.pause();
+        vid.currentTime = 0;
+    });
+    // accessibility
+    selectors = '#main-container > aside.right, footer, body > header, #list';
+    document.querySelectorAll(selectors).forEach(function(element) {
+        element.setAttribute('aria-hidden', 'false');
+    });
+    document.querySelectorAll('body > header > nav > ul > li > *').forEach(function(element) {
+        element.setAttribute('tabindex', '0');
+    });
+    document.querySelectorAll('.item').forEach(function(element) {
+        element.setAttribute('tabindex', '0');
+    });
+    document.querySelectorAll('#main-container > aside.right > *').forEach(function(element) {
+        element.setAttribute('tabindex', '0');
+    });
+    document.querySelectorAll('#main-container > aside.right > ul > li > *').forEach(function(element) {
+        element.setAttribute('tabindex', '0');
     });
     document.querySelector('#project-container aside.right a.selected').classList.remove('selected');
     document.querySelector('#project-container aside.right a').classList.add('selected');
     document.querySelectorAll('aside.left a').forEach(function(elem) {
         elem.classList.remove('hide');
     });
+    if (document.querySelector('body').classList.contains('text-collection')) {
+        document.querySelector('#list > ul > li > span > a').focus();
+    }
+    else if (document.querySelector('body').classList.contains('image-collection')) {
+        document.querySelector('.item').focus();
+    }
 });
 document.querySelectorAll('aside.left a').forEach(function(elem) {
     elem.onclick = function(e) {

@@ -26,10 +26,9 @@
     {% endif %}
     {% endfor %}
 </article>
-<a href="../texts" id="cross">✕</a>
+<button id="cross" tabindex="0" aria-label="Fermer la page texte">✕</button>
 <aside class="menu-bar right plus">
     <ul>
-        {{ dump(page.header.link) }}
         <li><a href="{{ page.header.link }}" target="_blank">Lien</a></li>
     </ul>
 </aside>

@@ -16,9 +16,7 @@ main {
 }
 
 .show-project {
-    .text-collection {
-        overflow-y: hidden;
-    }
+    overflow-y: hidden;
     .item, span.plusplusegal::before {
         opacity: 0.15;
     }
