@@ -10,22 +10,25 @@ document.querySelectorAll('.item').forEach(function(elem) {
             document.querySelector('main').classList.add('show-project');
             window.location.hash = 'img';
             // accessibility
-            selectors = '#main-container > aside.right, footer, body > header, #list';
-            document.querySelectorAll(selectors).forEach(function(element) {
-                element.setAttribute('aria-hidden', 'true');
-            });
-            document.querySelectorAll('body > header > nav > ul > li > *').forEach(function(element) {
-                element.setAttribute('tabindex', '-1');
-            });
-            document.querySelectorAll('.item').forEach(function(element) {
-                element.setAttribute('tabindex', '-1');
-            });
-            document.querySelectorAll('#main-container > aside.right > *').forEach(function(element) {
-                element.setAttribute('tabindex', '-1');
-            });
-            document.querySelectorAll('#main-container > aside.right > ul > li > *').forEach(function(element) {
-                element.setAttribute('tabindex', '-1');
-            });
+            if ((!elem.href.includes('usg19')) && (!elem.href.includes('edgar'))) {
+                console.log(elem);
+                selectors = '#main-container > aside.right, footer, body > header, #list';
+                document.querySelectorAll(selectors).forEach(function(element) {
+                    element.setAttribute('aria-hidden', 'true');
+                });
+                document.querySelectorAll('body > header > nav > ul > li > *').forEach(function(element) {
+                    element.setAttribute('tabindex', '-1');
+                });
+                document.querySelectorAll('.item').forEach(function(element) {
+                    element.setAttribute('tabindex', '-1');
+                });
+                document.querySelectorAll('#main-container > aside.right > *').forEach(function(element) {
+                    element.setAttribute('tabindex', '-1');
+                });
+                document.querySelectorAll('#main-container > aside.right > ul > li > *').forEach(function(element) {
+                    element.setAttribute('tabindex', '-1');
+                });
+            }
 
             var category = elem.parentElement.dataset.type;
             var categories = document.querySelectorAll('aside.left a');
@@ -77,6 +80,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
         });
     });
 });
+
 document.querySelectorAll('#list li > span').forEach(function(elem) {
     elem.onmousemove = function(e) {
         var x = (e.pageX - 100) + 'px',
@@ -85,7 +89,8 @@ document.querySelectorAll('#list li > span').forEach(function(elem) {
         elem.querySelector('img').style.left = x;
     }
 });
-document.querySelector('#cross').addEventListener('click', function(event) {
+
+function onClose() {
     document.querySelector('main').classList.remove('no-scroll');
     document.querySelector('main').classList.remove('show-project');
     document.querySelectorAll('video').forEach(function(vid){
@@ -120,7 +125,19 @@ document.querySelector('#cross').addEventListener('click', function(event) {
     else if (document.querySelector('body').classList.contains('image-collection')) {
         document.querySelector('.item').focus();
     }
+}
+
+document.querySelector('#cross').addEventListener('click', function(event) {
+    onClose();
 });
+window.addEventListener('keyup', function(event) {
+    if (event.keyCode == 27) {
+        if (document.querySelector('main').classList.contains('show-project')) {
+            onClose();
+        }
+    }
+});
+
 document.querySelectorAll('aside.left a').forEach(function(elem) {
     elem.onclick = function(e) {
         var projects = document.querySelectorAll('.project-list');
@@ -145,6 +162,7 @@ document.querySelectorAll('aside.left a').forEach(function(elem) {
         });
     }
 });
+
 document.querySelectorAll('.project-list').forEach(function(proj) {
     if (proj.querySelector('.item').href.includes('/projects/content/cache_cache')) {
         proj.querySelector('img').classList.add('last');
@@ -156,7 +174,6 @@ document.querySelectorAll('.project-list').forEach(function(proj) {
         }
     }
 });
-
 
 
 var isTactile = false;
