@@ -593,11 +593,11 @@ main #project-container {
           color: black; }
         .about main > div section.right div a:hover, .about main > div section.right div a:active, .about main > div section.right div div a:hover, .about main > div section.right div div a:active {
           color: blue; }
-@media (max-width: 1024px) {
+@media (max-width: 1280px), (max-height: 900px) {
   .about .about-usg *:not(p) {
     width: 100% !important; }
   .about main {
-    padding: 8% 12%;
+    padding: 8%;
     align-items: flex-start; }
     .about main > div {
       display: block;
@@ -606,7 +606,7 @@ main #project-container {
     width: 100% !important; }
     .about section *:not(p) {
       width: 100% !important;
-      overflow-x: hidden; }
+      overflow: hidden; }
     .about section.left {
       margin-bottom: 50px; }
       .about section.left p, .about section.left p:last-of-type {

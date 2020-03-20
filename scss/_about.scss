@@ -95,14 +95,14 @@
             }
         }
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px), (max-height: 900px) {
         .about-usg {
             *:not(p) {
                 width: 100% !important;
             }
         }
         main {
-            padding: 8% 12%;
+            padding: 8%;
             align-items: flex-start;
             & > div {
                 display: block;
@@ -117,7 +117,7 @@
             width: 100% !important;
             *:not(p) {
                 width: 100% !important;
-                overflow-x: hidden;
+                overflow: hidden;
             }
             &.left {
                 margin-bottom: 50px;
