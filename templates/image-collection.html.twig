@@ -4,7 +4,7 @@
 <div class="img-container">
 {% for item in pages.find('/projects/content').collection %}
     <div class="project-list" data-type="{{ item.header.categories|join(',') }}">
-        <a href="{{ item.url }}" class="item">{{ item.media[item.header.picked_image].resize(500, auto) }}</a>
+        <a href="{% if item.slug in ['usg19', 'edgar'] %}{{ item.url }} {% else %}javascript:void(0);{% endif %}" data-url="{{ item.url }}" class="item" id="{{ item.slug }}">{{ item.media[item.header.picked_image].resize(500, auto) }}</a>
         <div class="hover-text">{{ item.summary }}</div>
     </div>
 {% endfor %}
@@ -24,10 +24,10 @@
     </article>
     <button href="#" id="cross" tabindex="0" aria-label="{{ "PROJECT.CLOSE"|t }}">✕</button>
     <aside class="menu-bar right" aria-hidden="true">
-        <ul aria-hidden="true">
-            <li><a href="#img" class="selected" tabindex="-1">Images</a></li>
-            <li><a href="#txt" tabindex="-1">{{ "PROJECT.MENU_TXT"|t }}</a></li>
-            <li><a href="#links" tabindex="-1">{{ "PROJECT.MENU_LKS"|t }}</a></li>
+        <ul id="anchors" aria-hidden="true">
+            <li><a href="" data-anchor="#img" class="selected" tabindex="-1">Images</a></li>
+            <li><a href="" data-anchor="#txt" tabindex="-1">{{ "PROJECT.MENU_TXT"|t }}</a></li>
+            <li><a href="" data-anchor="#links" tabindex="-1">{{ "PROJECT.MENU_LKS"|t }}</a></li>
         </ul>
     </aside>
     <footer class="menu-bar">
