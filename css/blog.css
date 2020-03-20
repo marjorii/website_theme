@@ -236,7 +236,7 @@
           pointer-events: auto;
           word-wrap: break-word; }
           .posts main #list ul li .content .content-link::before {
-            content: "";
+            content: none;
             margin: 0; }
       @supports (-webkit-appearance: none) {
         .posts main #list ul li a::before {

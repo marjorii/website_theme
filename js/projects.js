@@ -1,6 +1,8 @@
+var activeLink;
 document.querySelectorAll('.item').forEach(function(elem) {
     elem.addEventListener('click', function(event) {
         event.preventDefault();
+        activeLink = elem;
         fetch(this.href + ".json")
         .then(function(response) {
             return response.json();
@@ -11,21 +13,12 @@ document.querySelectorAll('.item').forEach(function(elem) {
             window.location.hash = 'img';
             // accessibility
             if ((!elem.href.includes('usg19')) && (!elem.href.includes('edgar'))) {
-                console.log(elem);
-                selectors = '#main-container > aside.right, footer, body > header, #list';
-                document.querySelectorAll(selectors).forEach(function(element) {
+                ariaSelectors = '#main-container > aside.right, footer, body > header, #list';
+                document.querySelectorAll(ariaSelectors).forEach(function(element) {
                     element.setAttribute('aria-hidden', 'true');
                 });
-                document.querySelectorAll('body > header > nav > ul > li > *').forEach(function(element) {
-                    element.setAttribute('tabindex', '-1');
-                });
-                document.querySelectorAll('.item').forEach(function(element) {
-                    element.setAttribute('tabindex', '-1');
-                });
-                document.querySelectorAll('#main-container > aside.right > *').forEach(function(element) {
-                    element.setAttribute('tabindex', '-1');
-                });
-                document.querySelectorAll('#main-container > aside.right > ul > li > *').forEach(function(element) {
+                tabSelectors = 'body > header > nav > ul > li > *, .item, #main-container > aside.right > *, #main-container > aside.right > ul > li > *';
+                document.querySelectorAll(tabSelectors).forEach(function(element) {
                     element.setAttribute('tabindex', '-1');
                 });
             }
@@ -98,20 +91,12 @@ function onClose() {
         vid.currentTime = 0;
     });
     // accessibility
-    selectors = '#main-container > aside.right, footer, body > header, #list';
-    document.querySelectorAll(selectors).forEach(function(element) {
+    ariaSelectors = '#main-container > aside.right, footer, body > header, #list';
+    document.querySelectorAll(ariaSelectors).forEach(function(element) {
         element.setAttribute('aria-hidden', 'false');
     });
-    document.querySelectorAll('body > header > nav > ul > li > *').forEach(function(element) {
-        element.setAttribute('tabindex', '0');
-    });
-    document.querySelectorAll('.item').forEach(function(element) {
-        element.setAttribute('tabindex', '0');
-    });
-    document.querySelectorAll('#main-container > aside.right > *').forEach(function(element) {
-        element.setAttribute('tabindex', '0');
-    });
-    document.querySelectorAll('#main-container > aside.right > ul > li > *').forEach(function(element) {
+    tabSelectors = 'body > header > nav > ul > li > *, .item, #main-container > aside.right > *, #main-container > aside.right > ul > li > *';
+    document.querySelectorAll(tabSelectors).forEach(function(element) {
         element.setAttribute('tabindex', '0');
     });
     document.querySelector('#project-container aside.right a.selected').classList.remove('selected');
@@ -119,11 +104,8 @@ function onClose() {
     document.querySelectorAll('aside.left a').forEach(function(elem) {
         elem.classList.remove('hide');
     });
-    if (document.querySelector('body').classList.contains('text-collection')) {
-        document.querySelector('#list > ul > li > span > a').focus();
-    }
-    else if (document.querySelector('body').classList.contains('image-collection')) {
-        document.querySelector('.item').focus();
+    if (document.querySelector('body').classList.contains('text-collection') || document.querySelector('body').classList.contains('image-collection')) {
+        activeLink.focus();
     }
 }
 
