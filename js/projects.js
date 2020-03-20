@@ -5,13 +5,16 @@ window.onload = function(event) {
 };
 var activeLink;
 document.querySelectorAll('.item').forEach(function(elem) {
+    elem.addEventListener('auxclick', function(event) {
+            event.preventDefault();
+    });
     elem.addEventListener('click', function(event) {
         event.preventDefault();
         activeLink = elem;
         if (!['usg19', 'edgar'].includes(elem.id)) {
             location.hash = elem.id;
         }
-        fetch(this.href + ".json")
+        fetch(this.dataset.url + ".json")
         .then(function(response) {
             return response.json();
         })
