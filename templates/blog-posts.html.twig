@@ -4,7 +4,7 @@
     <ul>
         {% for item in page.collection %}
         <li><span class="project-list"  data-type="{{ item.header.categories|join(',') }}"  >
-            <a href="{{ item.url }}" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
+            <a href="javascript:void(0);" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
             </a>
             <time datetime="{{ item.date|date('c') }}">
                 {{ [item.date|date('d'), 'MONTHS'|ta(item.date|date('n') -1), item.date|date('Y') ]|join(' ') }}

@@ -4,8 +4,13 @@
     <ul>
         {% for item in page.collection %}
         <li><span class="project-list"  data-type="{{ item.header.categories|join(',') }}"  >
+            {% if item.slug == 'si_2019' %}
+            <a href="javascript:void(0);" class="item" id="{{ item.slug }}">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
+            </a>
+            {% else %}
             <a href="{{ item.url }}" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
             </a>
+            {% endif %}
         </span></li>
         {% endfor %}
     </ul>

@@ -23,10 +23,12 @@ document.querySelectorAll('aside.left a').forEach(function(elem) {
     }
 });
 document.querySelectorAll('.item').forEach(function(elem) {
-    elem.addEventListener('click', function(event) {
-        console.log(elem.href);
-        if (elem.href.includes('/blog/publications/texts/si_2019')) {
-            elem.href = 'https://marjorieober.com/home/user/themes/website_theme/docs/SI_2019.pdf';
-        }
-    });
+    if (elem.id == 'si_2019') {
+        elem.addEventListener('auxclick', function(event) {
+            event.preventDefault();
+        });
+        elem.addEventListener('click', function(event) {
+            window.open('https://marjorieober.com/home/user/themes/website_theme/docs/SI_2019.pdf', '_self');
+        });
+    }
 });

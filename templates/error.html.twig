@@ -6,3 +6,7 @@
     <p>Il semble que cette page n'existe pas.</p>
 </div>
 {% endblock %}
+
+{% block javascripts %}
+{% do assets.addJs('theme://js/script.js') %}
+{% endblock %}

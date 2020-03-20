@@ -1,4 +1,7 @@
 document.querySelectorAll('.item').forEach(function(elem) {
+    elem.addEventListener('auxclick', function(event) {
+        event.preventDefault();
+    });
     elem.addEventListener('click', function(event) {
         event.preventDefault();
         event.target.parentElement.lastElementChild.classList.toggle('hide');
