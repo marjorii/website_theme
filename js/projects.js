@@ -1,8 +1,16 @@
+window.onload = function(event) {
+    if (window.location.hash !== '') {
+        document.querySelector(window.location.hash).click();
+    }
+};
 var activeLink;
 document.querySelectorAll('.item').forEach(function(elem) {
     elem.addEventListener('click', function(event) {
         event.preventDefault();
         activeLink = elem;
+        if (!['usg19', 'edgar'].includes(elem.id)) {
+            location.hash = elem.id;
+        }
         fetch(this.href + ".json")
         .then(function(response) {
             return response.json();
@@ -10,7 +18,6 @@ document.querySelectorAll('.item').forEach(function(elem) {
         .then(function(json) {
             document.querySelector('article.project').innerHTML = json.content;
             document.querySelector('main').classList.add('show-project');
-            window.location.hash = 'img';
             // accessibility
             if ((!elem.href.includes('usg19')) && (!elem.href.includes('edgar'))) {
                 ariaSelectors = '#main-container > aside.right, footer, body > header, #list';
@@ -83,7 +90,15 @@ document.querySelectorAll('#list li > span').forEach(function(elem) {
     }
 });
 
+document.querySelectorAll('#anchors a').forEach(function(elem) {
+    elem.addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector(elem.dataset.anchor).scrollIntoView();
+    });
+});
+
 function onClose() {
+    window.location.hash = '';
     document.querySelector('main').classList.remove('no-scroll');
     document.querySelector('main').classList.remove('show-project');
     document.querySelectorAll('video').forEach(function(vid){

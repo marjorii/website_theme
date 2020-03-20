@@ -4,7 +4,8 @@
     <ul>
         {% for item in pages.find('/projects/content').collection %}
         <li><span class="project-list {% if item.header.plusplusegal %}plusplusegal{% endif %}" data-type="{{ item.header.categories|join(',') }}">
-            <a href="{{ item.url }}" class="item">
+            <a href="{{ item.url }}" class="item" id="{{ item.slug }}">
+                {{ dump(item) }}
                 {% set img = item.media[item.header.picked_image] %}
                 <img class="tooltip-img" src="{{ img.resize(img.height >= img.width ? 350 : 500, auto).url }}"/>
                 <span class="tooltip-text">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}.</span>
@@ -28,10 +29,10 @@
     </article>
     <button href="#" id="cross" tabindex="0" aria-label="{{ "PROJECT.CLOSE"|t }}">✕</button>
     <aside class="menu-bar right" aria-hidden="true">
-        <ul tabindex="-1">
-            <li><a href="#img" class="selected" tabindex="-1">Images</a></li>
-            <li><a href="#txt" tabindex="-1">{{ "PROJECT.MENU_TXT"|t }}</a></li>
-            <li><a href="#links" tabindex="-1">{{ "PROJECT.MENU_LKS"|t }}</a></li>
+        <ul id="anchors" tabindex="-1">
+            <li><a href="" data-anchor="#img" class="selected" tabindex="-1">Images</a></li>
+            <li><a href="" data-anchor="#txt" tabindex="-1">{{ "PROJECT.MENU_TXT"|t }}</a></li>
+            <li><a href="" data-anchor="#links" tabindex="-1">{{ "PROJECT.MENU_LKS"|t }}</a></li>
         </ul>
     </aside>
     <footer class="menu-bar" aria-hidden="true">
