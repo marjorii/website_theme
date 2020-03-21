@@ -1,12 +1,12 @@
 #prev, #next {
-    display: none;
-    // cursor: default;
-    // &.selected {
-    //     font-weight: normal;
-    // }
-    // &:active, &:focus {
-    //     pointer-events: none;
-    // }
+    &.selected {
+        font-weight: normal;
+    }
+}
+@media (max-width: 767px) and (orientation: portrait) {
+    #prev, #next {
+        display: none;
+    }
 }
 
 main {

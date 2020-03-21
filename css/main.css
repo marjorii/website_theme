@@ -387,9 +387,12 @@ footer.flex-line {
       .image-collection main .img-container div .hover-text dl, .image-collection main .img-container div .hover-text dt, .image-collection main .img-container div .hover-text dd {
         display: none; }
 
-#prev, #next {
-  display: none; }
+#prev.selected, #next.selected {
+  font-weight: normal; }
 
+@media (max-width: 767px) and (orientation: portrait) {
+  #prev, #next {
+    display: none; } }
 main #project-container {
   display: none; }
 

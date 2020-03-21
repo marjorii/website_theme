@@ -1,9 +1,30 @@
+
+var activeLink;
+
 window.onload = function(event) {
     if (window.location.hash !== '') {
         document.querySelector(window.location.hash).click();
     }
 };
-var activeLink;
+
+document.querySelectorAll('#prev, #next').forEach(function(changeElem) {
+    changeElem.addEventListener('click', function changeProject(event) {
+        let projects = document.querySelectorAll('.item');
+        let index = Array.prototype.indexOf.call(projects, activeLink);
+        let direction = changeElem.id == 'prev' ? -1 : 1;
+        let nextPrevProject = projects[index + direction];
+        if (nextPrevProject == undefined) {
+            if (direction == -1) {
+                nextPrevProject = projects[projects.length -1];
+            }
+            else {
+                nextPrevProject = projects[0];
+            }
+        }
+        nextPrevProject.click();
+    });
+});
+
 document.querySelectorAll('.item').forEach(function(elem) {
     elem.addEventListener('auxclick', function(event) {
             event.preventDefault();
@@ -11,9 +32,10 @@ document.querySelectorAll('.item').forEach(function(elem) {
     elem.addEventListener('click', function(event) {
         event.preventDefault();
         activeLink = elem;
-        if (!['usg19', 'edgar'].includes(elem.id)) {
-            location.hash = elem.id;
-        }
+
+        location.hash = elem.id;
+        document.querySelector('#project-container').dataset.project = elem.id;
+
         fetch(this.dataset.url + ".json")
         .then(function(response) {
             return response.json();
@@ -22,42 +44,24 @@ document.querySelectorAll('.item').forEach(function(elem) {
             document.querySelector('article.project').innerHTML = json.content;
             document.querySelector('main').classList.add('show-project');
             // accessibility
-            if ((!elem.href.includes('usg19')) && (!elem.href.includes('edgar'))) {
-                ariaSelectors = '#main-container > aside.right, footer, body > header, #list';
-                document.querySelectorAll(ariaSelectors).forEach(function(element) {
-                    element.setAttribute('aria-hidden', 'true');
-                });
-                tabSelectors = 'body > header > nav > ul > li > *, .item, #main-container > aside.right > *, #main-container > aside.right > ul > li > *';
-                document.querySelectorAll(tabSelectors).forEach(function(element) {
-                    element.setAttribute('tabindex', '-1');
-                });
-            }
+            ariaSelectors = '#main-container > aside.right, footer, body > header, #list';
+            document.querySelectorAll(ariaSelectors).forEach(function(element) {
+                element.setAttribute('aria-hidden', 'true');
+            });
+            tabSelectors = 'body > header > nav > ul > li > *, .item, #main-container > aside.right > *, #main-container > aside.right > ul > li > *';
+            document.querySelectorAll(tabSelectors).forEach(function(element) {
+                element.setAttribute('tabindex', '-1');
+            });
 
             var category = elem.parentElement.dataset.type;
             var categories = document.querySelectorAll('aside.left a');
             if (document.querySelector('main').classList.contains('show-project')) {
-                if (elem.href.includes('usg19')) {
-                    document.querySelector('main').classList.remove('show-project');
-                    window.open('http://marjorieober.com/usg19', '_blank');
-                }
-                if (elem.href.includes('edgar')) {
-                    document.querySelector('main').classList.remove('show-project');
-                    window.open('http://e-d-g-a-r.fr/super-image-2/', '_blank');
-                }
                 if (elem.href.includes('super-image')) {
                     document.querySelector('#img > img:first-of-type').classList.add('portrait');
                 }
                 categories.forEach(function(cat) {
                     if (!category.includes(cat.dataset.type)) {
-                        if (!elem.href.includes('edgar') || !elem.href.includes('usg19')) {
-                            cat.classList.add('hide');
-                        }
-                        if (elem.href.includes('edgar')) {
-                            cat.classList.remove('hide');
-                        }
-                        if (elem.href.includes('usg19')) {
-                            cat.classList.remove('hide');
-                        }
+                        cat.classList.add('hide');
                     }
                 });
             }
@@ -77,9 +81,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
             else {
                 document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.remove('hide');
             }
-            if (!elem.href.includes('usg19') && !elem.href.includes('edgar')) {
-                document.querySelector('main').classList.add('no-scroll');
-            }
+            document.querySelector('main').classList.add('no-scroll');
         });
     });
 });
@@ -180,8 +182,6 @@ var isTactile = false;
 if ( /Android|webOS|iPhone|iPad|Kindle|Tablet|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     isTactile = true;
     document.querySelector('#project-container > aside.right').style.cssText = 'right: 0';
-    document.getElementById('prev').style.cssText = 'display: none';
-    document.getElementById('next').style.cssText = 'display: none';
 }
 else {
     isTactile = false;

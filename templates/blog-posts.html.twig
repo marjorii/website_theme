@@ -9,7 +9,7 @@
                 <time datetime="{{ item.date|date('c') }}">
                     {{ [item.date|date('d'), 'MONTHS'|ta(item.date|date('n') -1), item.date|date('Y') ]|join(' ') }}
                 </time>
-                <a href="{{ item.url }}" target="_blank" aria-label="" class="external-link">🔗</a>
+                <a href="{{ item.url }}" target="_blank" class="external-link">🔗</a>
             </div>
             <div class="content hide">
                 {% for med in item.media.all %}
