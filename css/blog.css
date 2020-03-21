@@ -188,22 +188,32 @@
       width: 100%; }
       .posts main #list ul li:not(:first-of-type) {
         padding-top: 5.5vh; }
-      .posts main #list ul li a {
+      .posts main #list ul li a, .posts main #list ul li h1 {
         color: black;
         text-decoration: none;
         font-size: 1rem;
-        line-height: 1.25; }
-        .posts main #list ul li a::before {
+        line-height: 1.25;
+        display: block; }
+        .posts main #list ul li a::before, .posts main #list ul li h1::before {
           content: "●";
           margin-left: 7vw;
           margin-right: 2%;
           font-family: Verdana, "Liberation Sans", "DejaVu Sans";
           font-size: 1rem;
           position: relative; }
-      .posts main #list ul li time {
-        display: block;
-        padding: 1rem 0 0 0;
+      .posts main #list ul li #details {
+        display: inline-block;
+        padding-top: 1rem;
         margin: 0 0 0 7vw; }
+        .posts main #list ul li #details .external-link {
+          display: inline-block;
+          font-size: 1rem;
+          line-height: 0;
+          margin-left: 10px; }
+          .posts main #list ul li #details .external-link::before {
+            content: "";
+            margin-left: 0;
+            margin-right: 0; }
       .posts main #list ul li .content {
         margin: 0 15vw; }
         .posts main #list ul li .content img, .posts main #list ul li .content video {
@@ -234,12 +244,13 @@
           line-height: 1.3;
           color: blue;
           pointer-events: auto;
-          word-wrap: break-word; }
+          word-wrap: break-word;
+          display: inline-block; }
           .posts main #list ul li .content .content-link::before {
             content: none;
             margin: 0; }
       @supports (-webkit-appearance: none) {
-        .posts main #list ul li a::before {
+        .posts main #list ul li a::before, .posts main #list ul li h1::before {
           font-size: 1.75rem; } }
       .posts main #list ul li::before {
         bottom: 2px; }
@@ -252,7 +263,7 @@
     padding: 20px; }
     .posts main #list a:before, .posts main #list time, .posts main #list figcaption, .posts main #list figcaption a.content-link {
       font-size: 0.75rem !important; }
-    .posts main #list time {
+    .posts main #list #details {
       padding-top: 0.5rem !important; }
     .posts main #list p {
       padding-bottom: 0.5rem !important; }
@@ -262,9 +273,9 @@
   .posts main .content {
     margin: 0 !important; } }
 @media (min-width: 767px) {
-  .posts main #list ul li a {
+  .posts main #list ul li a, .posts main #list ul li h1 {
     font-size: 1.5rem; }
-    .posts main #list ul li a::before {
+    .posts main #list ul li a::before, .posts main #list ul li h1::before {
       bottom: 5px; } }
 @media (max-width: 1024px) {
   .posts main .content p {
@@ -273,7 +284,7 @@
   .posts main #list {
     width: 100%;
     padding: 5%; }
-    .posts main #list ul li a {
+    .posts main #list ul li a, .posts main #list ul li h1 {
       font-size: 2.25rem; }
     .posts main #list ul li::before {
       bottom: 5px; }

@@ -2,17 +2,16 @@
 {% block content %}
 <div id="list">
     <ul>
-        {% for item in page.collection %}
+        {{ dump(page) }}
         <li><span class="project-list"  data-type="{{ item.header.categories|join(',') }}"  >
-            <a href="javascript:void(0);" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}</a>
+            <h1 class="item" tabindex="0">{{ page.title }}{% if page.header.subtitle is not empty %}, {{ page.header.subtitle }}{% endif %}</h1>
             <div id="details">
-                <time datetime="{{ item.date|date('c') }}">
-                    {{ [item.date|date('d'), 'MONTHS'|ta(item.date|date('n') -1), item.date|date('Y') ]|join(' ') }}
+                <time datetime="{{ page.header.date|date('c') }}">
+                    {{ [page.header.date|date('d'), 'MONTHS'|ta(page.header.date|date('n') -1), page.header.date|date('Y') ]|join(' ') }}
                 </time>
-                <a href="{{ item.url }}" target="_blank" aria-label="" class="external-link">🔗</a>
             </div>
-            <div class="content hide">
-                {% for med in item.media.all %}
+            <div class="content flex" tabindex="0">
+                {% for med in page.media.all %}
                 {% if med.items.type == 'image' and med.height >= med.width %}
                 {{ med.html('', '', 'portrait') }}
                 {% else %}
@@ -22,15 +21,14 @@
                 {{ med.html() }}
                 {% endif %}
                 {% endif %}
-                {% set note = item.header.notes[loop.index0].text %}
+                {% set note = page.header.notes[loop.index0].text %}
                 {% if note != ' ' %}
                 <figcaption>{{ note }}</figcaption>
                 {% endif %}
                 {% endfor %}
-                {{ item.content }}
+                {{ page.content }}
             </div>
         </span></li>
-        {% endfor %}
     </ul>
 </div>
 {% endblock %}
