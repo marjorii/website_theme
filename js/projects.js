@@ -34,7 +34,6 @@ document.querySelectorAll('.item').forEach(function(elem) {
         event.preventDefault();
         activeLink = elem;
 
-        location.hash = elem.id;
         document.querySelector('#project-container').dataset.project = elem.id;
 
         fetch(this.dataset.url + ".json")
@@ -83,7 +82,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
             }
             document.querySelector('main').classList.add('no-scroll');
             document.querySelector('#project-container').scrollTop = 0;
-
+            location.hash = elem.id;
         });
     });
 });
@@ -105,7 +104,6 @@ document.querySelectorAll('#anchors a').forEach(function(elem) {
 });
 
 function onClose() {
-    window.location.hash = '';
     document.querySelector('main').classList.remove('no-scroll');
     document.querySelector('main').classList.remove('show-project');
     document.querySelectorAll('video').forEach(function(vid){
@@ -132,11 +130,13 @@ function onClose() {
 }
 
 document.querySelector('#cross').addEventListener('click', function(event) {
+    window.location.hash = '';
     onClose();
 });
 window.addEventListener('keyup', function(event) {
     if (event.keyCode == 27) {
         if (document.querySelector('main').classList.contains('show-project')) {
+            window.location.hash = '';
             onClose();
         }
     }
