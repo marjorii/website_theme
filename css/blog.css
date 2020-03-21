@@ -162,8 +162,7 @@
   font-weight: normal; }
 .posts header, .posts footer {
   right: 20px;
-  width: 100%;
-  padding-left: 70px; }
+  width: 100%; }
 .posts footer.flex-line a {
   text-transform: none; }
 @media (max-width: 767px) {
