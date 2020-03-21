@@ -21,6 +21,7 @@ document.querySelectorAll('#prev, #next').forEach(function(changeElem) {
                 nextPrevProject = projects[0];
             }
         }
+        onClose();
         nextPrevProject.click();
     });
 });
@@ -52,7 +53,6 @@ document.querySelectorAll('.item').forEach(function(elem) {
             document.querySelectorAll(tabSelectors).forEach(function(element) {
                 element.setAttribute('tabindex', '-1');
             });
-
             var category = elem.parentElement.dataset.type;
             var categories = document.querySelectorAll('aside.left a');
             if (document.querySelector('main').classList.contains('show-project')) {
@@ -108,8 +108,6 @@ function onClose() {
     window.location.hash = '';
     document.querySelector('main').classList.remove('no-scroll');
     document.querySelector('main').classList.remove('show-project');
-    console.log(document.querySelector('#project-container').scrollTop);
-    document.querySelector('#project-container').scrollTop = 0;//.scrollIntoView({behavior: "smooth", block: "start", inline: "center"});
     document.querySelectorAll('video').forEach(function(vid){
         vid.pause();
         vid.currentTime = 0;
