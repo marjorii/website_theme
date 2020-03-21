@@ -4,7 +4,7 @@
     <ul>
         {% for item in pages.find('/projects/content').collection %}
         <li><span class="project-list {% if item.header.plusplusegal %}plusplusegal{% endif %}" data-type="{{ item.header.categories|join(',') }}">
-            <a href="javascript:void(0);" aria-label="{{ item.title }}" data-url="{{ item.url }}" class="item" id="{{ item.slug }}">
+            <a href="javascript:void(0);" aria-label='{{ item.title }}' data-url="{{ item.url }}" class="item" id="{{ item.slug }}">
                 {% set img = item.media[item.header.picked_image] %}
                 <img class="tooltip-img" src="{{ img.resize(img.height >= img.width ? 350 : 500, auto).url }}"/>
                 <span class="tooltip-text">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}.</span>
