@@ -82,6 +82,8 @@ document.querySelectorAll('.item').forEach(function(elem) {
                 document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.remove('hide');
             }
             document.querySelector('main').classList.add('no-scroll');
+            document.querySelector('#project-container').scrollTop = 0;
+
         });
     });
 });
@@ -106,6 +108,8 @@ function onClose() {
     window.location.hash = '';
     document.querySelector('main').classList.remove('no-scroll');
     document.querySelector('main').classList.remove('show-project');
+    console.log(document.querySelector('#project-container').scrollTop);
+    document.querySelector('#project-container').scrollTop = 0;//.scrollIntoView({behavior: "smooth", block: "start", inline: "center"});
     document.querySelectorAll('video').forEach(function(vid){
         vid.pause();
         vid.currentTime = 0;
