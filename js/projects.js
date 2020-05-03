@@ -63,6 +63,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
                         cat.classList.add('hide');
                     }
                 });
+                enlargeImg();
             }
             document.querySelectorAll('#project-container aside.right a').forEach(function(elem) {
                 elem.addEventListener('click', function(event) {
@@ -187,4 +188,13 @@ if ( /Android|webOS|iPhone|iPad|Kindle|Tablet|iPod|BlackBerry|IEMobile|Opera Min
 }
 else {
     isTactile = false;
+}
+
+function enlargeImg() {
+    const img = document.querySelectorAll('#project-container img');
+    for(let i = 0; i < img.length; i++) {
+        img[i].addEventListener("click", function() {
+            window.location = img[i].src;
+        });
+    }
 }

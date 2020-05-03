@@ -5,3 +5,5 @@ var categories = document.querySelectorAll('aside.left a');
             cat.classList.add('hide');
         }
 });
+
+enlargeImg();

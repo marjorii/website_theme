@@ -485,6 +485,8 @@ main #project-container {
         width: 55%; }
       .show-project #img img::before, .show-project #img video::before {
         display: none; }
+    .show-project #img img {
+      cursor: pointer; }
     @media (orientation: portrait) {
       .show-project #img img.portrait {
         width: 100%; } }
@@ -554,59 +556,62 @@ main #project-container {
 .about main {
   font-family: "Vollkorn";
   line-height: 1.3;
-  padding: 12%;
+  padding: 0;
   background-color: #f7eef3;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  overflow-y: hidden; }
   .about main > div {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
     width: 100%;
-    height: auto; }
-    .about main > div p {
-      margin: 0 70px 30px 0; }
-    .about main > div p:last-of-type {
-      margin: 0 70px 0 0; }
+    height: 100%; }
     .about main > div a {
       text-decoration: none;
       color: blue; }
     .about main > div section {
-      width: 50%; }
-      .about main > div section.left p::before {
-        content: "";
-        display: inline-block;
-        width: 70px;
-        background-color: red; }
-      .about main > div section.right, .about main > div section.right div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; }
-        .about main > div section.right div ul, .about main > div section.right div div ul {
-          display: flex;
-          flex-wrap: wrap;
-          width: 85%;
-          margin-left: 70px; }
-          .about main > div section.right div ul li, .about main > div section.right div div ul li {
-            width: 50%;
-            text-align: left; }
-        .about main > div section.right div p, .about main > div section.right div div p {
-          margin-left: 70px; }
-        .about main > div section.right div a, .about main > div section.right div div a {
-          color: black; }
-        .about main > div section.right div a:hover, .about main > div section.right div a:active, .about main > div section.right div div a:hover, .about main > div section.right div div a:active {
-          color: blue; }
+      width: 50%;
+      overflow-y: scroll;
+      overflow-x: hidden; }
+      .about main > div section.left {
+        padding: 50px 150px; }
+        .about main > div section.left p {
+          margin: 0 0 50px 0; }
+          .about main > div section.left p::before {
+            content: "";
+            display: inline-block;
+            width: 70px; }
+      .about main > div section.right {
+        padding: 50px;
+        display: block; }
+        .about main > div section.right > div {
+          padding-bottom: 50px; }
+          .about main > div section.right > div ul {
+            width: 100%;
+            margin-left: 70px; }
+            .about main > div section.right > div ul li {
+              width: 50%;
+              text-align: left; }
+          .about main > div section.right > div p {
+            margin: 0 0 0 70px; }
+          .about main > div section.right > div a {
+            color: black; }
+          .about main > div section.right > div a:hover, .about main > div section.right > div a:active {
+            color: blue; }
 @media (max-width: 1280px), (max-height: 900px) {
   .about .about-usg *:not(p) {
     width: 100% !important; }
   .about main {
-    padding: 8%;
-    align-items: flex-start; }
+    padding: 100px 150px;
+    align-items: flex-start;
+    overflow-y: auto; }
     .about main > div {
       display: block;
       padding-bottom: 50px; }
   .about section {
-    width: 100% !important; }
+    width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important; }
     .about section *:not(p) {
       width: 100% !important;
       overflow: hidden; }
@@ -614,10 +619,6 @@ main #project-container {
       margin-bottom: 50px; }
       .about section.left p, .about section.left p:last-of-type {
         margin-right: 0; }
-    .about section.right > :last-child {
-      margin-top: 50px; }
-    .about section.right p, .about section.right p:last-of-type {
-      margin-right: 0; }
     .about section.right div div ul li a {
       color: blue; } }
 @media (max-width: 767px) and (orientation: portrait) {
@@ -629,11 +630,13 @@ main #project-container {
       padding-bottom: 20px; }
     .about div:first-of-type main h3 {
       font-weight: bold; }
-  .about div:first-of-type section.left p, .about div:first-of-type section.left p:last-of-type {
-    margin-left: 0;
-    text-align: left; }
-  .about div:first-of-type section.left p::before {
-    width: 0 !important; }
+  .about div:first-of-type section.left {
+    margin-bottom: 0; }
+    .about div:first-of-type section.left p, .about div:first-of-type section.left p:last-of-type {
+      margin-left: 0;
+      text-align: left; }
+    .about div:first-of-type section.left p::before {
+      width: 0 !important; }
   .about div:first-of-type section.right p, .about div:first-of-type section.right p:last-of-type, .about div:first-of-type section.right ul, .about div:first-of-type section.right li {
     margin-left: 0;
     text-align: left; } }

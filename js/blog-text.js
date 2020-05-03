@@ -17,3 +17,5 @@ window.addEventListener('keyup', function(event) {
 
 document.querySelector('#main-container > aside.right').setAttribute('aria-hidden', 'true');
 document.querySelector('#main-container > aside.right > ul > li > a').setAttribute('tabindex', '-1');
+
+enlargeImg();

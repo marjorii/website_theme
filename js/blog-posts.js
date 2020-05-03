@@ -32,3 +32,5 @@ document.querySelectorAll('aside.left a').forEach(function(elem) {
         });
     }
 });
+
+enlargeImg();

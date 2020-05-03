@@ -118,7 +118,8 @@
       align-items: center; }
       .text main article.two img {
         width: 100%;
-        padding: 2rem 0 1rem 0; }
+        padding: 2rem 0 1rem 0;
+        cursor: pointer; }
         .text main article.two img:first-of-type {
           padding-top: 0; }
       .text main article.two figcaption {
@@ -192,7 +193,7 @@
         text-decoration: none;
         font-size: 1rem;
         line-height: 1.25;
-        display: block; }
+        display: inline; }
         .posts main #list ul li a::before, .posts main #list ul li h1::before {
           content: "●";
           margin-left: 7vw;
@@ -201,7 +202,7 @@
           font-size: 1rem;
           position: relative; }
       .posts main #list ul li #details {
-        display: inline-block;
+        display: block;
         padding-top: 1rem;
         margin: 0 0 0 7vw; }
         .posts main #list ul li #details .external-link {
@@ -218,6 +219,8 @@
         .posts main #list ul li .content img, .posts main #list ul li .content video {
           width: 100%;
           padding: 2rem 0 1rem 0; }
+        .posts main #list ul li .content img {
+          cursor: pointer; }
         .posts main #list ul li .content figcaption {
           font-family: "Vollkorn";
           text-align: center;

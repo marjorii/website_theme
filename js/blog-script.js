@@ -38,3 +38,12 @@ if ( /Android|iPhone|BlackBerry/i.test(navigator.userAgent) && window.innerWidth
 else {
     isPhone = false;
 }
+
+function enlargeImg() {
+    const img = document.querySelectorAll('img');
+    for(let i = 0; i < img.length; i++) {
+        img[i].addEventListener("click", function() {
+            window.location = img[i].src;
+        });
+    }
+}

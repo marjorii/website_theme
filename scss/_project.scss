@@ -134,6 +134,9 @@ main {
                 display: none;
             }
         }
+        img {
+            cursor: pointer;
+        }
         @media (orientation: portrait) {
             img {
                 &.portrait {
