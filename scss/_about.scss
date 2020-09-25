@@ -17,12 +17,15 @@
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
         font-weight: normal;
     }
+    header {
+        padding-left: 25px;
+        @media (min-width: 767px) {
+            padding-left: 50px;
+        }
+    }
     @media (max-width: 767px) {
         .menu-bar, .menu-bar a, .menu-bar p {
             font-size: 0.75rem !important;
-        }
-        header {
-            padding-left: 50px;
         }
         aside.left > ul {
             margin: 0 !important;

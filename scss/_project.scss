@@ -34,20 +34,15 @@ main {
         justify-content: center;
         header {
             left: 0;
-            // a:not(.selected):hover, a:not(.selected):active {
-            //     font-weight: bold;
-            // }
         }
-        @media (min-width: 280px) {
-            #cross {
-                position: fixed;
-                top: 50px;
-                right: 50px;
-                font-size: 2rem;
-                color: black;
-                text-decoration: none;
-                z-index: 1000;
-            }
+        #cross {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            font-size: 2rem;
+            color: black;
+            text-decoration: none;
+            z-index: 1000;
         }
         @media (min-width: 768px) {
             #cross {

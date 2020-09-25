@@ -1,10 +1,4 @@
 .texts {
-    // overflow-y: auto;
-    // background-color: $ghost-green;
-    // .menu-bar {
-    //     position: fixed;
-    //     z-index: 997;
-    // }
     .menu-bar.right a:hover, .menu-bar.right a:active {
         font-weight: bold;
     }
@@ -12,9 +6,7 @@
         font-weight: normal;
     }
     header, footer {
-        // right: 20px;
         width: 100%;
-        // padding-left: 70px;
     }
     footer.flex-line {
         justify-content: center;
@@ -31,83 +23,49 @@
             font-size: 0.9rem !important;
             margin-right: 5px;
         }
-        header {
-            padding-left: 50px;
+        aside.left > ul, aside.right > ul {
+            margin: 0 !important;
         }
         aside.left > ul {
-            margin: 0 !important;
             width: 100%;
         }
         footer {
             padding: 0 !important;
         }
     }
-    // footer {
-    //     bottom: 0;
-    // }
-    // #main-container aside.right {
-    //     right: 20px;
-    // }
-    // @supports (-webkit-appearance:none) {
-    //     header, footer, #main-container aside.right {
-    //         right: 15px;
-    //     }
-    // }
-    // @media (max-width: 1024px) {
-    //     header, footer, #main-container aside.right {
-    //         right: 0;
-    //     }
-    // }
     main {
-        // @media (min-width: 280px) {
-        //     margin: 25px;
-        //     width: 100%;
-        // }
-        // @media (min-width: 767px) and (orientation: portrait) {
-        //     margin: 50px 25px;
-        // }
-        // @media (min-width: 1023px) {
-        //     margin: 25px 50px;
-        //     width: calc(100% - 100px);
-        // }
-
-        @media (min-width: 280px) {
-            #list {
-                padding: 0;
-                height: auto;
-                ul {
-                    li {
-                        width: 100%;
-                        padding: 0;
-                        padding-bottom: 5.5vh;
-                        a {
-                            color: black;
-                            text-decoration: none;
-                            font-size: 1rem;
-                            line-height: 1.25;
-                            &::before {
-                                content: "●";
-                                margin-left: 7vw;
-                                margin-right: 2%;
-                                font-family: Verdana, "Liberation Sans", "DejaVu Sans";
-                                font-size: 1rem;
-                                position: relative;
-                            }
-                        }
-                        @supports (-webkit-appearance:none) {
-                            a::before {
-                                font-size: 1.75rem;
-                            }
-                        }
+        #list {
+            padding: 5%;
+            height: auto;
+            ul {
+                li {
+                    width: 100%;
+                    padding: 0;
+                    padding-bottom: 5.5vh;
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        font-size: 1rem;
+                        line-height: 1.25;
                         &::before {
-                            bottom: 2px;
+                            content: "●";
+                            margin-left: 7vw;
+                            margin-right: 2%;
+                            font-family: Verdana, "Liberation Sans", "DejaVu Sans";
+                            font-size: 1rem;
+                            position: relative;
                         }
-                        &:last-of-type {
-                            margin-bottom: 15vh;
+                    }
+                    @supports (-webkit-appearance:none) {
+                        a::before {
+                            font-size: 1.75rem;
                         }
-                        .match a {
-                            color: $magenta;
-                        }
+                    }
+                    &::before {
+                        bottom: 2px;
+                    }
+                    .match a {
+                        color: $magenta;
                     }
                 }
             }
@@ -133,7 +91,6 @@
         @media (min-width: 1023px) {
             #list {
                 width: 100%;
-                padding: 5%;
                 ul {
                     li {
                         a {
@@ -141,9 +98,6 @@
                         }
                         &::before {
                             bottom: 5px;
-                        }
-                        &:last-of-type {
-                            margin-bottom: 5.5vh;
                         }
                     }
                 }

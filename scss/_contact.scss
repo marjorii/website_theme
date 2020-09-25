@@ -41,8 +41,10 @@
         header {
             padding-left: 50px;
         }
-        aside.left > ul {
+        aside.left > ul, aside.right > ul {
             margin: 0 !important;
+        }
+        aside.left > ul {
             width: 100%;
         }
     }
@@ -56,17 +58,22 @@
         }
         p {
             position: absolute;
-            bottom: 60px;
-            right: 80px;
+            width: 100%;
+            bottom: 30px;
+            right: 0;
+            padding: 0 50px;
             font-family: $altfont;
             color: white;
             font-size: 0.75rem;
-        }
-        @media (max-width: 767px) and (orientation: portrait) {
-            p {
-                right: 0;
-                padding: 0 50px;
-                text-align: center;
+            text-align: center;
+            @media (min-width: 767px) {
+                bottom: 60px;
+                padding: 0 100px;
+            }
+            @media (min-width: 767px) and (orientation: landscape) {
+                width: auto;
+                right: 80px;
+                padding: 0;
             }
         }
         a {

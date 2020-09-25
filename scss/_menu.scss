@@ -8,8 +8,11 @@
 }
 .menu-bar {
     background-color: red;
-    height: 50px;
+    height: 25px;
     color: white;
+    @media (min-width: 767px) {
+        height: 50px;
+    }
     nav, ul:not(#select-page) {
         height: 100%;
     }
@@ -56,9 +59,6 @@
             margin-right: 5px;
             bottom: -1px;
         }
-        header {
-            padding-left: 50px;
-        }
         aside.left > ul {
             margin: 0 !important;
             width: 100%;
@@ -73,8 +73,11 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 25px;
     z-index: 1000;
+    @media (min-width: 767px) {
+        top: 50px;
+    }
     li {
         padding: 10px 0;
         border: 1px solid red;
@@ -102,7 +105,10 @@
     justify-content: space-between;
     align-items: center;
     a {
-        margin-right: 50px;
+        margin-right: 25px;
+        @media (min-width: 767px) {
+            margin-right: 50px;
+        }
     }
 }
 .flex-line {
@@ -113,8 +119,12 @@
 }
 
 header, footer {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    @media (min-width: 767px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
 
 #main-container {
@@ -122,16 +132,22 @@ header, footer {
 
     & > aside {
         position: absolute;
-        width: calc(100vh - 100px);
+        width: calc(100vh - 50px);
         bottom: 0;
+        @media (min-width: 767px) {
+            width: calc(100vh - 100px);
+        }
+        & > ul {
+            margin: 0 25px;
+            @media (min-width: 767px) {
+                margin: 0 50px;
+            }
+        }
         &.left {
             transform: rotate(-90deg);
             transform-origin: left top;
-            & > ul {
-                margin: 0 50px;
-            }
-            @media (max-width: 767px) and (orientation: landscape) {
-                & > ul {
+            ul {
+                @media (max-width: 767px) and (orientation: landscape) {
                     display: none;
                 }
             }
@@ -142,12 +158,10 @@ header, footer {
             right: 0;
             & > ul {
                 justify-content: flex-start;
-                margin-left: 50px;
             }
             @media (max-width: 600px), (max-height: 600px) {
                 & > ul {
                     justify-content: space-between;
-                    margin-left: 0;
                     li {
                         margin-right: 25px;
                     }
@@ -163,11 +177,15 @@ header, footer {
 main {
     overflow-y: auto;
     width: 100%;
-    height: calc(100vh - 100px);
-    margin: 0 50px;
-    padding: 25px 50px;
+    height: calc(100vh - 50px);
+    margin: 0 25px;
+    // padding: 25px 50px;
     &.no-scroll {
         overflow-y: hidden;
+    }
+    @media (min-width: 767px) {
+        height: calc(100vh - 100px);
+        margin: 0 50px;
     }
 }
 footer.flex-line {

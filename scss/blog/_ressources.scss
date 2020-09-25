@@ -5,7 +5,6 @@
     .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
         font-weight: normal;
     }
-
     aside.left a {
         pointer-events: none;
     }
@@ -30,11 +29,10 @@
             font-size: 0.9rem !important;
             margin-right: 5px;
         }
-        header {
-            padding-left: 50px;
+        aside.left > ul, aside.right > ul {
+            margin: 0 !important;
         }
         aside.left > ul {
-            margin: 0 !important;
             width: 100%;
         }
     }
@@ -100,7 +98,7 @@
             overflow-y: auto;
         }
         section {
-            padding: 25px 75px !important;
+            padding: 25px 50px !important;
             width: 100% !important;
             overflow-y: hidden !important;
             &.reads ul:last-child li p {
@@ -111,7 +109,7 @@
     @media (max-height: 767px) and (orientation: landscape) {
         main {
             padding: 0 !important;
-            margin-right: 50px;
+            margin-right: 25px;
         }
         section {
             padding: 25px !important;
