@@ -273,6 +273,10 @@ footer.flex-line {
       padding: 0; }
       .text-collection main #list ul li:not(:last-of-type) {
         border-bottom: 2px solid red; }
+      .text-collection main #list ul li:hover {
+        background-color: red; }
+        .text-collection main #list ul li:hover a {
+          color: white; }
       .text-collection main #list ul li a {
         display: flex;
         flex-direction: row;
@@ -294,17 +298,14 @@ footer.flex-line {
         border-left: 2px solid red; }
       .text-collection main #list ul li .match a {
         color: red; }
-      .text-collection main #list ul li:hover {
-        position: relative;
-        z-index: 999; }
-        .text-collection main #list ul li:hover .tooltip-img {
-          display: block;
-          overflow: hidden;
-          position: fixed; }
-      .text-collection main #list ul li .tooltip-img {
-        display: none;
-        pointer-events: none;
-        z-index: -1; }
+        .text-collection main #list ul li .match a:hover {
+          color: white; }
+    .text-collection main #list ul li span.plusplusegal:hover span.box div, .text-collection main #list ul li span.plusplusegal:hover.match span.box div {
+      background-image: url("/home/user/themes/website_theme/images/++=3.png");
+      background-color: white; }
+    .text-collection main #list ul li span.plusplusegal.match span.box div {
+      background-image: url("/home/user/themes/website_theme/images/++=2.png");
+      background-color: red; }
     .text-collection main #list ul li span.plusplusegal span.tooltip-text {
       width: 80%;
       border-right: 2px solid red; }
@@ -312,8 +313,6 @@ footer.flex-line {
       width: 10%;
       display: flex;
       justify-content: center; }
-      .text-collection main #list ul li span.plusplusegal span.box.match {
-        background-image: url("/home/user/themes/website_theme/images/++=2.png"); }
       .text-collection main #list ul li span.plusplusegal span.box div {
         background-color: black;
         border-radius: 50%;
@@ -337,10 +336,14 @@ footer.flex-line {
       width: 100%; }
       .text-collection main #list ul li a {
         font-size: 2.25rem; }
-      .text-collection main #list ul li span.plusplusegal span.box div {
-        background-size: 40px 40px;
-        width: 40px;
-        height: 40px; } }
+      .text-collection main #list ul li span.plusplusegal span.tooltip-text {
+        width: 85%; }
+      .text-collection main #list ul li span.plusplusegal span.box {
+        width: 5%; }
+        .text-collection main #list ul li span.plusplusegal span.box div {
+          background-size: 40px 40px;
+          width: 40px;
+          height: 40px; } }
 
 .image-collection {
   background-color: #fffccf; }
@@ -413,8 +416,11 @@ main #project-container {
 
 .show-project {
   overflow-y: hidden; }
-  .show-project .item, .show-project span.plusplusegal::before {
-    opacity: 0.15; }
+  .show-project .blur {
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    opacity: 0.75; }
   .show-project #project-container {
     position: fixed;
     top: 0;
@@ -514,7 +520,8 @@ main #project-container {
     margin: auto;
     margin-bottom: 5vw;
     justify-content: center;
-    word-wrap: break-word; }
+    word-wrap: break-word;
+    padding: 10px; }
     .show-project #txt p:first-of-type, .show-project #links p:first-of-type {
       margin-top: 0; }
     .show-project #txt dl dt, .show-project #links dl dt {
@@ -546,6 +553,12 @@ main #project-container {
     margin-left: 3vw; }
   .show-project #links p {
     margin: 0; }
+
+.text-collection #txt, .text-collection #links {
+  background-color: #f4fefe; }
+
+.image-collection #txt, .image-collection #links {
+  background-color: #fffccf; }
 
 .about footer a {
   text-transform: none; }

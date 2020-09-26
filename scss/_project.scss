@@ -17,8 +17,11 @@ main {
 
 .show-project {
     overflow-y: hidden;
-    .item, span.plusplusegal::before {
-        opacity: 0.15;
+    .blur {
+        -moz-filter: blur(5px);
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+        opacity: 0.75;
     }
     #project-container {
         position: fixed;
@@ -153,6 +156,8 @@ main {
         margin-bottom: 5vw;
         justify-content: center;
         word-wrap: break-word;
+        padding: 10px;
+        // border: 4px solid red;
         p:first-of-type {
             margin-top: 0;
         }
@@ -205,5 +210,15 @@ main {
         p {
             margin: 0;
         }
+    }
+}
+.text-collection {
+    #txt, #links {
+        background-color: $ghost-green;
+    }
+}
+.image-collection {
+    #txt, #links {
+        background-color: $ghost-yellow;
     }
 }

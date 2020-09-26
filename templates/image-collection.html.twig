@@ -3,7 +3,7 @@
 {% block content %}
 <div class="img-container">
 {% for item in pages.find('/projects/content').collection %}
-    <div class="project-list" data-type="{{ item.header.categories|join(',') }}">
+    <div class="project-list blur" data-type="{{ item.header.categories|join(',') }}">
         <a href="javascript:void(0);" aria-label="{{ item.title }}" data-url="{{ item.url }}" class="item" id="{{ item.slug }}">{{ item.media[item.header.picked_image].resize(500, auto) }}</a>
         <div class="hover-text">{{ item.summary }}</div>
     </div>

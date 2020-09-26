@@ -57,6 +57,12 @@
                     &:not(:last-of-type) {
                         border-bottom: 2px solid red;
                     }
+                    &:hover {
+                        background-color: red;
+                        a {
+                            color: white;
+                        }
+                    }
                     a {
                         display: flex;
                         flex-direction: row;
@@ -80,28 +86,26 @@
                         padding: 10px;
                         border-left: 2px solid red;
                     }
-                    // span.box {
-                    //     width: 10%;
-                    // }
                     .match a {
                         color: red;
-                    }
-                    &:hover {
-                        position: relative;
-                        z-index: 999;
-                        .tooltip-img {
-                            display: block;
-                            overflow: hidden;
-                            position: fixed;
+                        &:hover {
+                            color: white;
                         }
-                    }
-                    .tooltip-img {
-                        display: none;
-                        pointer-events: none;
-                        z-index: -1;
                     }
                 }
                 li span.plusplusegal {
+                    &:hover {
+                        span.box div, &.match span.box div {
+                            background-image: url('/home/user/themes/website_theme/images/++=3.png');
+                            background-color: white;
+                        }
+                    }
+                    &.match {
+                        span.box div {
+                            background-image: url('/home/user/themes/website_theme/images/++=2.png');
+                            background-color: red;
+                        }
+                    }
                     span.tooltip-text {
                         width: 80%;
                         border-right: 2px solid red;
@@ -110,9 +114,6 @@
                         width: 10%;
                         display: flex;
                         justify-content: center;
-                        &.match {
-                            background-image: url('/home/user/themes/website_theme/images/++=2.png');
-                        }
                         div {
                             background-color: black;
                             border-radius: 50%;
@@ -152,10 +153,16 @@
                             font-size: 2.25rem;
                         }
                         span.plusplusegal {
-                            span.box div {
-                                background-size: 40px 40px;
-                                width: 40px;
-                                height: 40px;
+                            span.tooltip-text {
+                                width: 85%;
+                            }
+                            span.box {                                
+                                width: 5%;
+                                div {
+                                    background-size: 40px 40px;
+                                    width: 40px;
+                                    height: 40px;
+                                }
                             }
                         }
                     }

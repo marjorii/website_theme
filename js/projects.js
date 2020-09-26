@@ -77,6 +77,7 @@ document.querySelectorAll('.item').forEach(function(elem) {
             document.querySelector('footer p').innerHTML = json.footer + '.';
             if (!json.links) {
                 document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.add('hide');
+                document.getElementById('links').classList.add('hide');
             }
             else {
                 document.querySelector('#project-container aside.right li:nth-of-type(3)').classList.remove('hide');
@@ -88,14 +89,14 @@ document.querySelectorAll('.item').forEach(function(elem) {
     });
 });
 
-document.querySelectorAll('#list li > span').forEach(function(elem) {
-    elem.onmousemove = function(e) {
-        var x = (e.pageX - 100) + 'px',
-            y = (e.pageY - 100) + 'px';
-        elem.querySelector('img').style.top = y;
-        elem.querySelector('img').style.left = x;
-    }
-});
+// document.querySelectorAll('#list li > span').forEach(function(elem) {
+//     elem.onmousemove = function(e) {
+//         var x = (e.pageX - 100) + 'px',
+//             y = (e.pageY - 100) + 'px';
+//         elem.querySelector('img').style.top = y;
+//         elem.querySelector('img').style.left = x;
+//     }
+// });
 
 document.querySelectorAll('#anchors a').forEach(function(elem) {
     elem.addEventListener('click', function(event) {
