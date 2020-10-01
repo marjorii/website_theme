@@ -39,47 +39,53 @@
         }
     }
     main {
-        @media (max-width: 767px) and (orientation: landscape) {
-            padding: 0;
-        }
+        // @media (max-width: 767px) and (orientation: landscape) {
+        //     padding: 0;
+        // }
         .img-container {
-            padding: 5%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, 30vh);
-            grid-auto-flow: row;
-            justify-content: center;
-            grid-column-gap: 9vh;
-            grid-row-gap: 9vh;
-            div {
+            grid-template-columns: auto auto auto auto auto;
+            @media (max-width: 1024px) {
+                grid-template-columns: auto auto auto;
+            }
+            @media (max-width: 600px) and (orientation: portrait) {
+                grid-template-columns: auto;
+            }
+            & > div {
+                border-bottom: 3px solid red;
+                border-right: 3px solid red;
+                width: 100%;
+                a {
+                    height: 100%;
+                    width: 100%;
+                    padding: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+                div {
+                   position: relative;
+                }
                 &.match {
+                    div {
+                        background-color: red;
+                    }
                     img {
-                        border: 5px solid red;
-                    }
-                }
-                &:hover {
-                    .hover-text {
                         display: block;
+                        mix-blend-mode: screen;
+                        -webkit-filter: grayscale(100%);
+                        filter: grayscale(100%);
+                        border: 3px solid red;
                     }
                 }
-                &:first-of-type {
+                & > :first-of-type {
                     grid-column: 1;
                 }
                 img {
                     width: 100%;
-                }
-                .hover-text {
-                    display: none;
-                    font-family: $altfont;
-                    font-size: 0.7rem;
-                    line-height: 1.5;
-                    text-align: justify;
-                    padding-top: 20px;
-                    p {
-                        margin: 0;
-                    }
-                    dl, dt, dd {
-                        display: none;
-                    }
                 }
             }
 

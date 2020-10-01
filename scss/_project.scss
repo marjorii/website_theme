@@ -15,6 +15,11 @@ main {
     }
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
 .show-project {
     overflow-y: hidden;
     .blur {
@@ -29,12 +34,18 @@ main {
         left: 0;
         margin: 0;
         padding: 0;
-        width: 100%;
+        width: 101%;
         height: 100%;
         overflow-y: scroll;
         z-index: 998;
         display: flex;
         justify-content: center;
+        @media (max-width: 1200px) {
+            width: 102%;
+        }
+        @media (max-width: 700px) {
+            width: 103%;
+        }
         header {
             left: 0;
         }

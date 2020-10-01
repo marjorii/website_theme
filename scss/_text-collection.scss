@@ -55,7 +55,7 @@
                     padding: 0;
                     // margin-bottom: 5.5vh;
                     &:not(:last-of-type) {
-                        border-bottom: 2px solid red;
+                        border-bottom: 3px solid red;
                     }
                     &:hover {
                         background-color: red;
@@ -84,7 +84,7 @@
                     span.tooltip-text {
                         width: 90%;
                         padding: 10px;
-                        border-left: 2px solid red;
+                        border-left: 3px solid red;
                     }
                     .match a {
                         color: red;
@@ -108,7 +108,7 @@
                     }
                     span.tooltip-text {
                         width: 80%;
-                        border-right: 2px solid red;
+                        border-right: 3px solid red;
                     }
                     span.box {
                         width: 10%;
@@ -131,16 +131,16 @@
         @media (min-width: 767px) {
             #list ul li {
                 &:not(:last-of-type) {
-                    border-bottom: 4px solid red;
+                    border-bottom: 3px solid red;
                 }
                 a {
                     font-size: 1.5rem;
                     span.tooltip-text {
-                        border-left: 4px solid red;
+                        border-left: 3px solid red;
                     }
                 }
                 span.plusplusegal span.tooltip-text {
-                    border-right: 4px solid red;
+                    border-right: 3px solid red;
                 }
             }
         }
@@ -156,7 +156,7 @@
                             span.tooltip-text {
                                 width: 85%;
                             }
-                            span.box {                                
+                            span.box {
                                 width: 5%;
                                 div {
                                     background-size: 40px 40px;

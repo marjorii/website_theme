@@ -144,7 +144,7 @@ em {
       top: 50px; } }
   #select-page li {
     padding: 10px 0;
-    border: 1px solid red;
+    border: 3px solid red;
     border-top: none;
     width: 100%;
     display: flex;
@@ -272,7 +272,7 @@ footer.flex-line {
       width: 100%;
       padding: 0; }
       .text-collection main #list ul li:not(:last-of-type) {
-        border-bottom: 2px solid red; }
+        border-bottom: 3px solid red; }
       .text-collection main #list ul li:hover {
         background-color: red; }
         .text-collection main #list ul li:hover a {
@@ -295,7 +295,7 @@ footer.flex-line {
       .text-collection main #list ul li span.tooltip-text {
         width: 90%;
         padding: 10px;
-        border-left: 2px solid red; }
+        border-left: 3px solid red; }
       .text-collection main #list ul li .match a {
         color: red; }
         .text-collection main #list ul li .match a:hover {
@@ -308,7 +308,7 @@ footer.flex-line {
       background-color: red; }
     .text-collection main #list ul li span.plusplusegal span.tooltip-text {
       width: 80%;
-      border-right: 2px solid red; }
+      border-right: 3px solid red; }
     .text-collection main #list ul li span.plusplusegal span.box {
       width: 10%;
       display: flex;
@@ -324,13 +324,13 @@ footer.flex-line {
         height: 20px; }
   @media (min-width: 767px) {
     .text-collection main #list ul li:not(:last-of-type) {
-      border-bottom: 4px solid red; }
+      border-bottom: 3px solid red; }
     .text-collection main #list ul li a {
       font-size: 1.5rem; }
       .text-collection main #list ul li a span.tooltip-text {
-        border-left: 4px solid red; }
+        border-left: 3px solid red; }
     .text-collection main #list ul li span.plusplusegal span.tooltip-text {
-      border-right: 4px solid red; } }
+      border-right: 3px solid red; } }
   @media (min-width: 1023px) {
     .text-collection main #list {
       width: 100%; }
@@ -374,36 +374,42 @@ footer.flex-line {
       width: 100%; }
     .image-collection footer {
       padding: 0 !important; } }
-  @media (max-width: 767px) and (orientation: landscape) {
-    .image-collection main {
-      padding: 0; } }
   .image-collection main .img-container {
-    padding: 5%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 30vh);
-    grid-auto-flow: row;
-    justify-content: center;
-    grid-column-gap: 9vh;
-    grid-row-gap: 9vh; }
-    .image-collection main .img-container div.match img {
-      border: 5px solid red; }
-    .image-collection main .img-container div:hover .hover-text {
-      display: block; }
-    .image-collection main .img-container div:first-of-type {
-      grid-column: 1; }
-    .image-collection main .img-container div img {
+    grid-template-columns: auto auto auto auto auto; }
+    @media (max-width: 1024px) {
+      .image-collection main .img-container {
+        grid-template-columns: auto auto auto; } }
+    @media (max-width: 600px) and (orientation: portrait) {
+      .image-collection main .img-container {
+        grid-template-columns: auto; } }
+    .image-collection main .img-container > div {
+      border-bottom: 3px solid red;
+      border-right: 3px solid red;
       width: 100%; }
-    .image-collection main .img-container div .hover-text {
-      display: none;
-      font-family: "Vollkorn";
-      font-size: 0.7rem;
-      line-height: 1.5;
-      text-align: justify;
-      padding-top: 20px; }
-      .image-collection main .img-container div .hover-text p {
-        margin: 0; }
-      .image-collection main .img-container div .hover-text dl, .image-collection main .img-container div .hover-text dt, .image-collection main .img-container div .hover-text dd {
-        display: none; }
+      .image-collection main .img-container > div a {
+        height: 100%;
+        width: 100%;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .image-collection main .img-container > div a:hover {
+          background-color: red; }
+      .image-collection main .img-container > div div {
+        position: relative; }
+      .image-collection main .img-container > div.match div {
+        background-color: red; }
+      .image-collection main .img-container > div.match img {
+        display: block;
+        mix-blend-mode: screen;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        border: 3px solid red; }
+      .image-collection main .img-container > div > :first-of-type {
+        grid-column: 1; }
+      .image-collection main .img-container > div img {
+        width: 100%; }
 
 #prev.selected, #next.selected {
   font-weight: normal; }
@@ -413,6 +419,10 @@ footer.flex-line {
     display: none; } }
 main #project-container {
   display: none; }
+
+footer {
+  position: absolute;
+  bottom: 0; }
 
 .show-project {
   overflow-y: hidden; }
@@ -427,12 +437,18 @@ main #project-container {
     left: 0;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 101%;
     height: 100%;
     overflow-y: scroll;
     z-index: 998;
     display: flex;
     justify-content: center; }
+    @media (max-width: 1200px) {
+      .show-project #project-container {
+        width: 102%; } }
+    @media (max-width: 700px) {
+      .show-project #project-container {
+        width: 103%; } }
     .show-project #project-container header {
       left: 0; }
     .show-project #project-container #cross {
@@ -560,6 +576,8 @@ main #project-container {
 .image-collection #txt, .image-collection #links {
   background-color: #fffccf; }
 
+.about footer {
+  width: 100%; }
 .about footer a {
   text-transform: none; }
 .about footer p:last-of-type {
@@ -671,6 +689,8 @@ main #project-container {
     margin-left: 0;
     text-align: left; } }
 
+.contact footer {
+  width: 100%; }
 .contact footer.flex-line {
   justify-content: space-between; }
   .contact footer.flex-line span:first-of-type::after {

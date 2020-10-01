@@ -8,6 +8,9 @@
     aside.left a {
         pointer-events: none;
     }
+    footer {
+        width: 100%;
+    }
     footer.flex-line {
         justify-content: space-between;
         a {

@@ -2,7 +2,6 @@
 {% block content %}
 <div id="list">
     <ul>
-        {{ dump(page) }}
         <li><span class="project-list"  data-type="{{ page.header.categories|join(',') }}"  >
             <h1 class="item" tabindex="0">{{ page.title }}{% if page.header.subtitle is not empty %}, {{ page.header.subtitle }}{% endif %}</h1>
             <div id="details">

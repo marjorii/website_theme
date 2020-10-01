@@ -168,7 +168,6 @@
 .posts .menu-bar nav a:not(.selected):hover, .posts .menu-bar nav a:not(.selected):active {
   font-weight: normal; }
 .posts header, .posts footer {
-  right: 20px;
   width: 100%; }
 .posts footer.flex-line a {
   text-transform: none; }
@@ -328,6 +327,8 @@ footer .title {
   font-weight: normal; }
 .ressources aside.left a {
   pointer-events: none; }
+.ressources footer {
+  width: 100%; }
 .ressources footer.flex-line {
   justify-content: space-between; }
   .ressources footer.flex-line a {
