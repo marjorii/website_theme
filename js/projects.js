@@ -169,17 +169,25 @@ document.querySelectorAll('aside.left a').forEach(function(elem) {
     }
 });
 
-document.querySelectorAll('.project-list').forEach(function(proj) {
-    if (proj.querySelector('.item').href.includes('/projects/content/cache_cache')) {
-        proj.querySelector('img').classList.add('last');
-        proj.onmouseenter = function(e) {
-            proj.querySelector('img').classList.remove('last');
+// document.querySelectorAll('.project-list').forEach(function(proj) {
+//     if (proj.querySelector('.item').href.includes('/projects/content/cache_cache')) {
+//         proj.querySelector('img').classList.add('last');
+//         proj.onmouseenter = function(e) {
+//             proj.querySelector('img').classList.remove('last');
+//         }
+//         proj.onmouseleave = function(e) {
+//             proj.querySelector('img').classList.add('last');
+//         }
+//     }
+// });
+
+if (document.querySelector('body').classList.contains('image-collection')) {
+    document.querySelectorAll('.project-list').forEach(function(proj) {
+        if (proj.firstElementChild.id == 'rmll18') {
+            proj.querySelector('div').classList.add('rounded');
         }
-        proj.onmouseleave = function(e) {
-            proj.querySelector('img').classList.add('last');
-        }
-    }
-});
+    });
+}
 
 
 var isTactile = false;
