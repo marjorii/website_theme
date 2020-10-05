@@ -53,9 +53,22 @@
                     &:not(:last-of-type) {
                         border-bottom: 3px solid red;
                     }
-                    &:hover {
-                        background-color: red;
-                        a {
+                    a {
+                        &:hover, &:active, &:focus {
+                            background-color: red;
+                            color: white;
+                        }
+                    }
+                    .plusplusegal a, .plusplusegal.match a {
+                        &:hover, &:active, &:focus {
+                            span.box div {
+                                background-image: url('/home/user/themes/website_theme/images/++=3.png');
+                                background-color: white;
+                            }
+                        }
+                    }
+                    .match a {
+                        &:hover, &:active, &:focus {
                             color: white;
                         }
                     }
@@ -84,18 +97,9 @@
                     }
                     .match a {
                         color: red;
-                        &:hover {
-                            color: white;
-                        }
                     }
                 }
                 li span.plusplusegal {
-                    &:hover {
-                        span.box div, &.match span.box div {
-                            background-image: url('/home/user/themes/website_theme/images/++=3.png');
-                            background-color: white;
-                        }
-                    }
                     &.match {
                         span.box div {
                             background-image: url('/home/user/themes/website_theme/images/++=2.png');

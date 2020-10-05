@@ -138,7 +138,8 @@ em {
   flex-direction: column;
   position: absolute;
   top: 25px;
-  z-index: 1000; }
+  z-index: 1000;
+  background-color: white; }
   @media (min-width: 767px) {
     #select-page {
       top: 50px; } }
@@ -231,7 +232,8 @@ main {
       margin: 0 50px; } }
 
 footer.flex-line {
-  justify-content: center; }
+  justify-content: center;
+  width: 100% !important; }
 
 .hide {
   visibility: hidden; }
@@ -273,10 +275,14 @@ footer.flex-line {
       padding: 0; }
       .text-collection main #list ul li:not(:last-of-type) {
         border-bottom: 3px solid red; }
-      .text-collection main #list ul li:hover {
-        background-color: red; }
-        .text-collection main #list ul li:hover a {
-          color: white; }
+      .text-collection main #list ul li a:hover, .text-collection main #list ul li a:active, .text-collection main #list ul li a:focus {
+        background-color: red;
+        color: white; }
+      .text-collection main #list ul li .plusplusegal a:hover span.box div, .text-collection main #list ul li .plusplusegal a:active span.box div, .text-collection main #list ul li .plusplusegal a:focus span.box div, .text-collection main #list ul li .plusplusegal.match a:hover span.box div, .text-collection main #list ul li .plusplusegal.match a:active span.box div, .text-collection main #list ul li .plusplusegal.match a:focus span.box div {
+        background-image: url("/home/user/themes/website_theme/images/++=3.png");
+        background-color: white; }
+      .text-collection main #list ul li .match a:hover, .text-collection main #list ul li .match a:active, .text-collection main #list ul li .match a:focus {
+        color: white; }
       .text-collection main #list ul li a {
         display: flex;
         flex-direction: row;
@@ -298,11 +304,6 @@ footer.flex-line {
         border-left: 3px solid red; }
       .text-collection main #list ul li .match a {
         color: red; }
-        .text-collection main #list ul li .match a:hover {
-          color: white; }
-    .text-collection main #list ul li span.plusplusegal:hover span.box div, .text-collection main #list ul li span.plusplusegal:hover.match span.box div {
-      background-image: url("/home/user/themes/website_theme/images/++=3.png");
-      background-color: white; }
     .text-collection main #list ul li span.plusplusegal.match span.box div {
       background-image: url("/home/user/themes/website_theme/images/++=2.png");
       background-color: red; }
@@ -401,7 +402,7 @@ footer.flex-line {
         display: flex;
         justify-content: center;
         align-items: center; }
-        .image-collection main .img-container > div a:hover, .image-collection main .img-container > div a:active {
+        .image-collection main .img-container > div a:hover, .image-collection main .img-container > div a:active, .image-collection main .img-container > div a:focus {
           background-color: red; }
       .image-collection main .img-container > div div {
         position: relative; }
@@ -442,13 +443,15 @@ footer.flex-line {
               width: 40px;
               height: 40px; } }
       .image-collection main .img-container > div.match div {
-        background-color: red; }
+        background-color: red;
+        border: 3px solid red; }
       .image-collection main .img-container > div.match img {
         display: block;
         mix-blend-mode: screen;
         -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-        border: 3px solid red; }
+        filter: grayscale(100%); }
+      .image-collection main .img-container > div.match:hover div {
+        border-color: white; }
       .image-collection main .img-container > div > :first-of-type {
         grid-column: 1; }
       .image-collection main .img-container > div img {
@@ -460,8 +463,10 @@ footer.flex-line {
 @media (max-width: 767px) and (orientation: portrait) {
   #prev, #next {
     display: none; } }
-main #project-container {
-  display: none; }
+main {
+  padding: 0; }
+  main #project-container {
+    display: none; }
 
 footer {
   position: absolute;
@@ -599,7 +604,7 @@ footer {
       width: 100%; } }
   @media (max-width: 767px) and (orientation: portrait) {
     .show-project #txt, .show-project #links {
-      padding: 0 20px;
+      padding: 20px;
       margin-bottom: 15vw; } }
   @media (max-width: 1024px) and (orientation: landscape) {
     .show-project #txt, .show-project #links {

@@ -75,6 +75,7 @@
     position: absolute;
     top: 25px;
     z-index: 1000;
+    background-color: white;
     @media (min-width: 767px) {
         top: 50px;
     }
@@ -179,7 +180,6 @@ main {
     width: 100%;
     height: calc(100vh - 50px);
     margin: 0 25px;
-    // padding: 25px 50px;
     &.no-scroll {
         overflow-y: hidden;
     }
@@ -190,4 +190,5 @@ main {
 }
 footer.flex-line {
     justify-content: center;
+    width: 100% !important;
 }
