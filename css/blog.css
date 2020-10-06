@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.text .menu-bar.right.plus a:hover, .text .menu-bar.right.plus a:active, .text footer a:hover, .text footer.flex-line a.active {
+.text .menu-bar.right.plus a:hover, .text .menu-bar.right.plus a:active, .text .menu-bar.right.plus a:focus, .text footer a:hover, .text footer a:active, .text footer a:focus, .text footer.flex-line a.hover, .text footer.flex-line a.active, .text footer.flex-line a.focus {
   font-weight: bold !important; }
-.text .menu-bar nav a:not(.selected):hover, .text .menu-bar nav a:not(.selected):active {
+.text .menu-bar nav a:not(.selected):hover, .text .menu-bar nav a:not(.selected):active, .text .menu-bar nav a:not(.selected):focus {
   font-weight: normal; }
 @media (max-width: 767px) {
   .text .menu-bar, .text .menu-bar a, .text .menu-bar p {
@@ -34,7 +34,7 @@
       .text aside.right.plus > ul a {
         position: absolute;
         top: 6px; }
-      .text aside.right.plus > ul a:not(.selected):hover, .text aside.right.plus > ul a:not(.selected):active {
+      .text aside.right.plus > ul a:not(.selected):hover, .text aside.right.plus > ul a:not(.selected):active, .text aside.right.plus > ul a:not(.selected):focus {
         font-weight: normal; }
   @media (min-width: 767px) {
     .text aside {
@@ -163,9 +163,9 @@
   .contact main p {
     text-align: center; } }
 
-.posts .menu-bar.right a:hover, .posts .menu-bar.right a:active, .posts footer a:hover, .posts footer.flex-line a.active {
+.posts .menu-bar.right a:hover, .posts .menu-bar.right a:active, .posts .menu-bar.right a:focus, .posts footer a:hover, .posts footer a:active, .posts footer a:focus, .posts footer.flex-line a:hover, .posts footer.flex-line a:active, .posts footer.flex-line a:focus {
   font-weight: bold; }
-.posts .menu-bar nav a:not(.selected):hover, .posts .menu-bar nav a:not(.selected):active {
+.posts .menu-bar nav a:not(.selected):hover, .posts .menu-bar nav a:not(.selected):active, .posts .menu-bar nav a:not(.selected):focus {
   font-weight: normal; }
 .posts header, .posts footer {
   width: 100%; }
@@ -321,9 +321,9 @@ footer .title {
     footer .title {
       line-height: 50px; } }
 
-.ressources .menu-bar.right a:hover, .ressources .menu-bar.right a:active, .ressources footer a:hover, .ressources footer.flex-line a.active {
+.ressources .menu-bar.right a:hover, .ressources .menu-bar.right a:active, .ressources .menu-bar.right a:focus, .ressources footer a:hover, .ressources footer a:active, .ressources footer a:focus, .ressources footer.flex-line a:hover, .ressources footer.flex-line a:active, .ressources footer.flex-line a:focus {
   font-weight: bold !important; }
-.ressources .menu-bar nav a:not(.selected):hover, .ressources .menu-bar nav a:not(.selected):active {
+.ressources .menu-bar nav a:not(.selected):hover, .ressources .menu-bar nav a:not(.selected):active, .ressources .menu-bar nav a:not(.selected):focus {
   font-weight: normal; }
 .ressources aside.left a {
   pointer-events: none; }
@@ -406,9 +406,9 @@ footer .title {
   .ressources section {
     padding: 25px !important; } }
 
-.texts .menu-bar.right a:hover, .texts .menu-bar.right a:active {
+.texts .menu-bar.right a:hover, .texts .menu-bar.right a:active, .texts .menu-bar.right a:focus {
   font-weight: bold; }
-.texts .menu-bar nav a:not(.selected):hover, .texts .menu-bar nav a:not(.selected):active {
+.texts .menu-bar nav a:not(.selected):hover, .texts .menu-bar nav a:not(.selected):active, .texts .menu-bar nav a:not(.selected):focus {
   font-weight: normal; }
 .texts header, .texts footer {
   width: 100%; }
@@ -494,11 +494,11 @@ footer .title {
   border: 1px solid #FF00FF;
   border-top: none;
   background-color: white; }
-  #select-page li:hover, #select-page li:focus, #select-page li:active {
-    background-color: #FF00FF; }
-    #select-page li:hover a, #select-page li:focus a, #select-page li:active a {
-      color: white;
-      font-weight: bold; }
+  #select-page li a {
+    color: white;
+    font-weight: bold; }
+    #select-page li a:hover, #select-page li a:focus, #select-page li a:active {
+      background-color: #FF00FF; }
   #select-page li a {
     color: #FF00FF; }
 

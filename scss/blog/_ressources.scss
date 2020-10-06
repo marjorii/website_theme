@@ -1,8 +1,8 @@
 .ressources {
-    .menu-bar.right a:hover, .menu-bar.right a:active, footer a:hover, footer.flex-line a.active {
+    .menu-bar.right a:hover, .menu-bar.right a:active, .menu-bar.right a:focus, footer a:hover, footer a:active, footer a:focus, footer.flex-line a:hover, footer.flex-line a:active, footer.flex-line a:focus {
         font-weight: bold !important;
     }
-    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active, .menu-bar nav a:not(.selected):focus {
         font-weight: normal;
     }
     aside.left a {

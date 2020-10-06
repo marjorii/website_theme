@@ -1,9 +1,9 @@
 .image-collection {
     background-color: $ghost-yellow;
-    .menu-bar.right a:hover, .menu-bar.right a:active {
+    .menu-bar.right a:hover, .menu-bar.right a:active, .menu-bar.right a:focus {
         font-weight: bold;
     }
-    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active, .menu-bar nav a:not(.selected):focus {
         font-weight: normal;
     }
     header, footer {
@@ -71,7 +71,7 @@
                    }
                 }
                 &.plusplusegal {
-                    &:hover {
+                    a:hover, a:active, a:focus {
                         span.box {
                             background-color: red;
                             border-color: white;
@@ -126,7 +126,7 @@
                         -webkit-filter: grayscale(100%);
                         filter: grayscale(100%);
                     }
-                    &:hover {
+                    a:hover, a:active, a:focus {
                         div {
                             border-color: white;
                         }

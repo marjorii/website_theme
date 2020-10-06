@@ -84,7 +84,7 @@ footer {
                 & > ul {
                     justify-content: flex-start;
                     margin-left: 50px;
-                    a:not(.selected):hover, a:not(.selected):active {
+                    a:not(.selected):hover, a:not(.selected):active, a:not(.selected):focus {
                         font-weight: normal;
                     }
                 }

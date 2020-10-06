@@ -11,13 +11,13 @@
     footer.flex-line {
         justify-content: space-between;
     }
-    .menu-bar:not(.left) a:hover, .menu-bar:not(.left) a:active {
+    .menu-bar:not(.left) a:hover, .menu-bar:not(.left) a:active, .menu-bar:not(.left) a:focus {
         font-weight: bold;
     }
     .menu-bar.left a {
         pointer-events: none;
     }
-    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active, .menu-bar nav a:not(.selected):focus {
         font-weight: normal;
     }
     header {
@@ -56,22 +56,57 @@
                 width: 50%;
                 overflow-y: scroll;
                 overflow-x: hidden;
+                & > div {
+                    padding: 50px;
+                }
+                & > div:not(:last-of-type) {
+                    border-bottom: 3px solid red;
+                }
                 &.left {
-                    padding: 50px 150px;
-                    p {
-                        margin: 0 0 50px 0;
-                        &::before {
-                            content: "";
-                            display: inline-block;
-                            width: 70px;
+                    border-right: 3px solid red;
+                    & > div:first-of-type {
+                        li {
+                            &.line-through {
+                                text-decoration: line-through;
+                                // opacity: 0.5;
+                            }
+                            &::before {
+                                content: "●";
+                                font-family: Verdana, "Liberation Sans", "DejaVu Sans";
+                                position: relative;
+                                display: inline;
+                                font-size: 1rem;
+                                margin-right: 1%;
+                                margin-left: 70px;
+                            }
+                            dl {
+
+                            }
+                            dl, dt, dd, dd > p {
+                                display: inline;
+                            }
+                            p {
+                                margin: 0;
+                            }
                         }
+                    }
+                    & > div:last-of-type p {
+                        &:not(:last-of-type) {
+                            margin: 0 0 50px 0;
+                        }
+                        &:last-of-type {
+                            margin: 0;
+                        }
+                    }
+                    & > div:last-of-type p::before {
+                        content: "";
+                        display: inline-block;
+                        width: 70px;
                     }
                 }
                 &.right {
-                    padding: 50px;
                     display: block;
                     & > div {
-                        padding-bottom: 50px;
                         ul {
                             width: 100%;
                             margin-left: 70px;
@@ -86,7 +121,7 @@
                         a {
                             color: black;
                         }
-                        a:hover, a:active {
+                        a:hover, a:active, a:focus {
                             color: blue;
                         }
                     }
@@ -102,12 +137,10 @@
             }
         }
         main {
-            padding: 100px 150px;
             align-items: flex-start;
             overflow-y: auto;
             & > div {
                 display: block;
-                padding-bottom: 50px;
             }
         }
         section {
@@ -119,7 +152,13 @@
                 overflow: hidden;
             }
             &.left {
-                margin-bottom: 50px;
+                border-right: 0 !important;
+                border-bottom: 3px solid red;
+                & > div:last-of-type p {
+                    &:not(:last-of-type) {
+                        margin: 0 0 25px 0 !important;
+                    }
+                }
                 p, p:last-of-type {
                     margin-right: 0;
                 }
@@ -135,16 +174,17 @@
         div:first-of-type {
             main {
                 flex-direction: column;
-                padding: 20px;
                 & > div {
                     flex-direction: column;
-                    padding-bottom: 20px;
                 }
                 h3 {
                     font-weight: bold;
                 }
             }
             section {
+                & > div {
+                    padding: 25px;
+                }
                 &.left {
                     margin-bottom: 0;
                     p, p:last-of-type {

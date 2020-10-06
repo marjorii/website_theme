@@ -6,16 +6,31 @@ form:
       fields:
         content:
           fields:
+            header.news:
+              type: list
+              label: News
+              fields:
+                .date:
+                  type: datetime
+                  label: Date
+                .event:
+                  type: text
+                  style: vertical
+                  label: Événement
+                .text:
+                  type: text
+                  style: vertical
+                  label: Descriptif
             header.friends:
               type: list
               label: À découvrir
               fields:
                 .name:
                   type: text
-                  label: nom
+                  label: Nom
                 .url:
                   type: text
-                  label: url
+                  label: Url
             header.licences:
               type: textarea
               style: vertical

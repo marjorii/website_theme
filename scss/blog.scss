@@ -30,11 +30,11 @@
         border: 1px solid $magenta;
         border-top: none;
         background-color: white;
-        &:hover, &:focus, &:active {
-            background-color: $magenta;
-            a {
-                color: white;
-                font-weight: bold;
+        a {
+            color: white;
+            font-weight: bold;
+            &:hover, &:focus, &:active {
+                background-color: $magenta;
             }
         }
         a {

@@ -80,17 +80,18 @@
         top: 50px;
     }
     li {
-        padding: 10px 0;
         border: 3px solid red;
         border-top: none;
         width: 100%;
         display: flex;
         justify-content: center;
-        &:hover, &:focus, &:active {
-            background-color: red;
-            a {
+        a {
+            width: 100%;
+            padding: 10px 0;
+            font-weight: bold;
+            &:hover, &:focus, &:active {
                 color: white;
-                font-weight: bold;
+                background-color: red;
             }
         }
         a {

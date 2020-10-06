@@ -1,8 +1,8 @@
 .text {
-    .menu-bar.right.plus a:hover, .menu-bar.right.plus a:active, footer a:hover, footer.flex-line a.active {
+    .menu-bar.right.plus a:hover, .menu-bar.right.plus a:active, .menu-bar.right.plus a:focus, footer a:hover, footer a:active, footer a:focus, footer.flex-line a.hover, footer.flex-line a.active, footer.flex-line a.focus {
         font-weight: bold !important;
     }
-    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active, .menu-bar nav a:not(.selected):focus {
         font-weight: normal;
     }
     @media (max-width: 767px) {
@@ -44,7 +44,7 @@
                     position: absolute;
                     top: 6px;
                 }
-                a:not(.selected):hover, a:not(.selected):active {
+                a:not(.selected):hover, a:not(.selected):active, a:not(.selected):focus {
                     font-weight: normal;
                 }
             }

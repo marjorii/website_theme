@@ -3,7 +3,26 @@
 {% block content %}
 <div>
     <section class="left" tabindex="0">
-        {{page.content}}
+        <div>
+            <h3 tabindex="0">News</h3>
+            <div>
+                <ul>
+                    {% for new in page.header.news %}
+                    <li class="{% if new.date|date('U') < '2020-01-01'|date('U') %}line-through{% endif %}">
+                        <dl>
+                            {% set alt_locale = grav.language.getActive ? 'fr' : 'en' %}
+                            <dt>{{ alt_locale == 'fr' ? new.date|date('m-d-Y, H:i') : new.date|date('d-m-Y, H:i') }} :</dt>
+                            <dd>{{new.event|markdown}}</dd>
+                        </dl>
+                        <p>{{new.text|markdown}}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div>
+            {{page.content}}
+        </div>
     </section>
     <section class="right">
         <div>

@@ -1,8 +1,8 @@
 .texts {
-    .menu-bar.right a:hover, .menu-bar.right a:active {
+    .menu-bar.right a:hover, .menu-bar.right a:active, .menu-bar.right a:focus {
         font-weight: bold;
     }
-    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active {
+    .menu-bar nav a:not(.selected):hover, .menu-bar nav a:not(.selected):active, .menu-bar nav a:not(.selected):focus {
         font-weight: normal;
     }
     header, footer {
