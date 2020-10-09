@@ -19,6 +19,13 @@
         }
     }
     main p {
+        a {
+            color: $magenta;
+            &:hover, &:active, &:focus {
+                color: white;
+                background-color: $magenta;
+            }
+        }
         @media (max-width : 767px) {
             text-align: center;
         }

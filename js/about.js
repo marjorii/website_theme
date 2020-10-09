@@ -2,6 +2,15 @@ document.getElementById('select-page').style.cssText = 'background-color: #f7eef
 document.querySelectorAll('footer > *').forEach(function(element) {
     element.setAttribute('tabindex', '0');
 });
+
+const years = document.querySelectorAll('.time');
+yearsArr = Array.from(years);
+yearsArr.forEach((event) => {
+    event.onclick = (e) => {
+        event.nextElementSibling.classList.toggle('hidden');
+    }
+});
+
 var isTactile = false;
 if ( /Android|webOS|iPhone|iPad|Kindle|Tablet|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     isTactile = true;

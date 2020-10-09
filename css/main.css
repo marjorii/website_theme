@@ -263,12 +263,11 @@ footer.flex-line {
     .text-collection nav > ul > li > a.selected::before, .text-collection nav > ul > li > button.selected::before {
       font-size: 0.9rem !important;
       margin-right: 5px; }
-    .text-collection aside.left > ul, .text-collection aside.right > ul {
-      margin: 0 !important; }
-    .text-collection aside.left {
-      width: 100%; }
     .text-collection footer {
       padding: 0 !important; } }
+  @media (max-width: 600px), (max-height: 600px) {
+    .text-collection aside.left > ul, .text-collection aside.right > ul {
+      margin: 0 !important; } }
   .text-collection main #list {
     height: auto; }
     .text-collection main #list ul li {
@@ -347,7 +346,7 @@ footer.flex-line {
     .text-collection main #list {
       width: 100%; }
       .text-collection main #list ul li a {
-        font-size: 2.25rem; }
+        font-size: 2rem; }
       .text-collection main #list ul li span.plusplusegal span.tooltip-text {
         width: 85%; }
       .text-collection main #list ul li span.plusplusegal span.box {
@@ -377,11 +376,11 @@ footer.flex-line {
     .image-collection nav > ul > li > a.selected::before {
       font-size: 0.9rem !important;
       margin-right: 5px; }
-    .image-collection aside.left > ul {
-      margin: 0 !important;
-      width: 100%; }
     .image-collection footer {
       padding: 0 !important; } }
+  @media (max-width: 600px), (max-width: 600px) {
+    .image-collection aside.left > ul, .image-collection aside.right > ul {
+      margin: 0 !important; } }
   .image-collection main .img-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto; }
@@ -499,8 +498,8 @@ footer {
       left: 0; }
     .show-project #project-container #cross {
       position: fixed;
-      top: 50px;
-      right: 50px;
+      top: 40px;
+      right: 40px;
       font-size: 2rem;
       color: black;
       text-decoration: none;
@@ -519,15 +518,18 @@ footer {
           content: none; }
     .show-project #project-container aside {
       position: absolute;
-      width: calc(100vh - 100px);
+      width: calc(100vh - 50px);
       bottom: 0; }
+      @media (min-width: 767px) {
+        .show-project #project-container aside {
+          width: calc(100vh - 100px); } }
       .show-project #project-container aside.right {
         transform: rotate(90deg);
         transform-origin: right top;
         right: 0; }
         .show-project #project-container aside.right > ul {
           justify-content: flex-start;
-          margin-left: 50px; }
+          margin-left: 25px; }
           .show-project #project-container aside.right > ul a:not(.selected):hover, .show-project #project-container aside.right > ul a:not(.selected):active, .show-project #project-container aside.right > ul a:not(.selected):focus {
             font-weight: normal; }
         @media (max-width: 600px), (max-height: 600px) {
@@ -535,6 +537,9 @@ footer {
             margin-left: 0; }
             .show-project #project-container aside.right > ul a {
               margin-right: 25px; } }
+        @media (min-width: 767px) {
+          .show-project #project-container aside.right > ul {
+            margin-left: 50px; } }
     .show-project #project-container footer {
       display: flex;
       justify-content: center;
@@ -583,9 +588,7 @@ footer {
     margin-bottom: 5vw;
     justify-content: center;
     word-wrap: break-word;
-    padding: 10px; }
-    .show-project #txt p:first-of-type, .show-project #links p:first-of-type {
-      margin-top: 0; }
+    text-align: center; }
     .show-project #txt dl dt, .show-project #links dl dt {
       display: inline-block; }
     .show-project #txt dl dd, .show-project #links dl dd {
@@ -598,23 +601,28 @@ footer {
     .show-project #txt dl p::before, .show-project #links dl p::before {
       margin-left: 0; }
     .show-project #txt a, .show-project #links a {
-      color: blue;
+      color: red;
       text-decoration: none; }
+      .show-project #txt a:hover, .show-project #txt a:active, .show-project #txt a:focus, .show-project #links a:hover, .show-project #links a:active, .show-project #links a:focus {
+        color: white;
+        background-color: red; }
   @media (orientation: portrait) {
     .show-project #txt, .show-project #links {
       width: 100%; } }
   @media (max-width: 767px) and (orientation: portrait) {
     .show-project #txt, .show-project #links {
-      padding: 20px;
       margin-bottom: 15vw; } }
   @media (max-width: 1024px) and (orientation: landscape) {
     .show-project #txt, .show-project #links {
       width: 100%; } }
-  .show-project #txt p::before {
-    content: "";
-    margin-left: 3vw; }
-  .show-project #links p {
-    margin: 0; }
+  .show-project #txt > p, .show-project #txt dl {
+    margin: 1rem 0.5rem; }
+  .show-project #links {
+    padding-bottom: 1rem; }
+    .show-project #links p {
+      margin: 1rem 0.5rem 0 0.5rem; }
+    .show-project #links a {
+      margin: 0 0.5rem 0 0.5rem; }
 
 .text-collection #txt, .text-collection #links {
   background-color: #f4fefe; }
@@ -643,10 +651,10 @@ footer {
       padding-left: 50px; } }
 @media (max-width: 767px) {
   .about .menu-bar, .about .menu-bar a, .about .menu-bar p {
-    font-size: 0.75rem !important; }
-  .about aside.left > ul {
-    margin: 0 !important;
-    width: 100%; } }
+    font-size: 0.75rem !important; } }
+@media (max-width: 600px), (max-height: 600px) {
+  .about aside.left > ul, .about aside.right > ul {
+    margin: 0 !important; } }
 .about main {
   font-family: "Vollkorn";
   line-height: 1.3;
@@ -655,63 +663,97 @@ footer {
   display: flex;
   align-items: center;
   overflow-y: hidden; }
+  .about main a {
+    color: red;
+    text-decoration: none; }
+    .about main a:hover, .about main a:active, .about main a:focus {
+      color: white;
+      background-color: red; }
   .about main > div {
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 100%; }
-    .about main > div a {
-      text-decoration: none;
-      color: blue; }
     .about main > div section {
       width: 50%;
       overflow-y: scroll;
       overflow-x: hidden; }
       .about main > div section > div {
-        padding: 50px; }
-      .about main > div section > div:not(:last-of-type) {
-        border-bottom: 3px solid red; }
+        position: relative;
+        text-align: center; }
+      .about main > div section h3 {
+        display: inline-block;
+        top: 0;
+        position: relative;
+        padding: 10px;
+        border: 3px solid red;
+        border-radius: 50%;
+        color: red;
+        font-family: 'Karmilla';
+        font-weight: bold;
+        margin: 50px 0 25px 0; }
       .about main > div section.left {
         border-right: 3px solid red; }
-        .about main > div section.left > div:first-of-type li.line-through {
-          text-decoration: line-through; }
-        .about main > div section.left > div:first-of-type li::before {
-          content: "●";
-          font-family: Verdana, "Liberation Sans", "DejaVu Sans";
-          position: relative;
-          display: inline;
-          font-size: 1rem;
-          margin-right: 1%;
-          margin-left: 70px; }
-        .about main > div section.left > div:first-of-type li dl, .about main > div section.left > div:first-of-type li dt, .about main > div section.left > div:first-of-type li dd, .about main > div section.left > div:first-of-type li dd > p {
-          display: inline; }
-        .about main > div section.left > div:first-of-type li p {
-          margin: 0; }
-        .about main > div section.left > div:last-of-type p:not(:last-of-type) {
-          margin: 0 0 50px 0; }
-        .about main > div section.left > div:last-of-type p:last-of-type {
-          margin: 0; }
+        .about main > div section.left > div:first-of-type {
+          border-bottom: 3px solid red; }
+          .about main > div section.left > div:first-of-type ul {
+            text-align: center; }
+          .about main > div section.left > div:first-of-type li {
+            padding: 0 50px 1rem 50px; }
+            .about main > div section.left > div:first-of-type li:first-of-type {
+              padding: 1rem; }
+            .about main > div section.left > div:first-of-type li.line-through {
+              text-decoration: line-through; }
+            .about main > div section.left > div:first-of-type li::before {
+              content: "●";
+              font-family: Verdana, "Liberation Sans", "DejaVu Sans";
+              position: relative;
+              display: inline;
+              font-size: 1rem;
+              margin-right: 1%; }
+            .about main > div section.left > div:first-of-type li p {
+              margin: 0; }
+          .about main > div section.left > div:first-of-type ul:last-of-type li:first-of-type {
+            border-top: 3px solid red; }
+          .about main > div section.left > div:first-of-type .time {
+            font-family: 'Karmilla';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid red;
+            height: 50px;
+            font-weight: bold;
+            border-bottom: 3px solid red; }
+          .about main > div section.left > div:first-of-type ul:last-of-type a.time:last-of-type {
+            border-bottom: 0; }
+          .about main > div section.left > div:first-of-type dl, .about main > div section.left > div:first-of-type dt, .about main > div section.left > div:first-of-type dt > p {
+            display: inline; }
+          .about main > div section.left > div:first-of-type dd {
+            font-size: 0.75rem; }
+        .about main > div section.left > div:last-of-type {
+          padding: 0 50px 50px 50px; }
+          .about main > div section.left > div:last-of-type p:not(:last-of-type) {
+            margin: 0 0 1rem 0; }
+          .about main > div section.left > div:last-of-type p:last-of-type {
+            margin: 0; }
         .about main > div section.left > div:last-of-type p::before {
           content: "";
           display: inline-block;
           width: 70px; }
       .about main > div section.right {
         display: block; }
-        .about main > div section.right > div ul {
-          width: 100%;
-          margin-left: 70px; }
-          .about main > div section.right > div ul li {
-            width: 50%;
-            text-align: left; }
-        .about main > div section.right > div p {
-          margin: 0 0 0 70px; }
-        .about main > div section.right > div a {
-          color: black; }
-        .about main > div section.right > div a:hover, .about main > div section.right > div a:active, .about main > div section.right > div a:focus {
-          color: blue; }
+        .about main > div section.right > div:first-of-type li {
+          padding: 0 50px; }
+        .about main > div section.right > div:first-of-type > div {
+          border-bottom: 3px solid red;
+          padding-bottom: 50px; }
+        .about main > div section.right > div:last-of-type {
+          padding: 0 50px 50px 50px; }
+          .about main > div section.right > div:last-of-type ul {
+            width: 100%; }
+          .about main > div section.right > div:last-of-type p {
+            margin: 0; }
 @media (max-width: 1280px), (max-height: 900px) {
-  .about .about-usg *:not(p) {
-    width: 100% !important; }
   .about main {
     align-items: flex-start;
     overflow-y: auto; }
@@ -722,36 +764,42 @@ footer {
     overflow: hidden !important;
     padding: 0 !important; }
     .about section *:not(p) {
-      width: 100% !important;
       overflow: hidden; }
     .about section.left {
       border-right: 0 !important;
       border-bottom: 3px solid red; }
-      .about section.left > div:last-of-type p:not(:last-of-type) {
-        margin: 0 0 25px 0 !important; }
       .about section.left p, .about section.left p:last-of-type {
         margin-right: 0; }
     .about section.right div div ul li a {
-      color: blue; } }
+      color: red; } }
 @media (max-width: 767px) and (orientation: portrait) {
   .about div:first-of-type main {
     flex-direction: column; }
     .about div:first-of-type main > div {
       flex-direction: column; }
-    .about div:first-of-type main h3 {
-      font-weight: bold; }
-  .about div:first-of-type section > div {
-    padding: 25px; }
+  .about div:first-of-type section h3 {
+    margin: 25px 0 25px 0; }
   .about div:first-of-type section.left {
     margin-bottom: 0; }
+    .about div:first-of-type section.left > div:first-of-type li {
+      padding: 0 25px 1rem 25px; }
+    .about div:first-of-type section.left > div:last-of-type {
+      padding: 0 25px 25px 25px; }
     .about div:first-of-type section.left p, .about div:first-of-type section.left p:last-of-type {
-      margin-left: 0;
-      text-align: left; }
+      margin-left: 0; }
     .about div:first-of-type section.left p::before {
       width: 0 !important; }
+  .about div:first-of-type section.right > div:first-of-type li {
+    padding: 0 25px; }
+  .about div:first-of-type section.right > div:first-of-type > div {
+    padding-bottom: 25px; }
+  .about div:first-of-type section.right > div:last-of-type {
+    padding: 0 25px 25px 25px; }
   .about div:first-of-type section.right p, .about div:first-of-type section.right p:last-of-type, .about div:first-of-type section.right ul, .about div:first-of-type section.right li {
-    margin-left: 0;
-    text-align: left; } }
+    margin-left: 0; } }
+
+.hidden {
+  display: none; }
 
 .contact footer {
   width: 100%; }
@@ -779,11 +827,10 @@ footer {
   .contact .menu-bar, .contact .menu-bar a, .contact .menu-bar p {
     font-size: 0.75rem !important; }
   .contact header {
-    padding-left: 50px; }
+    padding-left: 50px; } }
+@media (max-width: 600px), (max-height: 600px) {
   .contact aside.left > ul, .contact aside.right > ul {
-    margin: 0 !important; }
-  .contact aside.left > ul {
-    width: 100%; } }
+    margin: 0 !important; } }
 .contact main {
   padding: 0;
   overflow: hidden; }
@@ -813,9 +860,10 @@ footer {
   .contact main a {
     text-decoration: none;
     font-style: italic;
-    color: white; }
-  .contact main a:hover, .contact main a:active {
-    color: blue; }
+    color: red; }
+    .contact main a:hover, .contact main a:active, .contact main a:focus {
+      color: white;
+      background-color: red; }
 
 @font-face {
   font-family: 'Karmilla';

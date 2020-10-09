@@ -6,28 +6,46 @@
         <div>
             <h3 tabindex="0">News</h3>
             <div>
+                {% set minYear = 2016 %}
+                {% set currentYear = "now"|date("Y") %}
+                {% for year in (currentYear)..minYear %}
                 <ul>
+                <a href="#" class="time">{{ year }}</a>
+                <div class="event-container {% if year < currentYear %}hidden{% endif %}">
                     {% for new in page.header.news %}
-                    <li class="{% if new.date|date('U') < '2020-01-01'|date('U') %}line-through{% endif %}">
+                    {% if new.date|date('Y') == year %}
+                    <li>
                         <dl>
                             {% set alt_locale = grav.language.getActive ? 'fr' : 'en' %}
-                            <dt>{{ alt_locale == 'fr' ? new.date|date('m-d-Y, H:i') : new.date|date('d-m-Y, H:i') }} :</dt>
-                            <dd>{{new.event|markdown}}</dd>
+                            <dt>{{new.event|markdown}}</dt>
+                            <dd>{{ alt_locale == 'fr' ? new.date|date('m-d-Y, H:i') : new.date|date('d-m-Y, H:i') }}</dd>
                         </dl>
                         <p>{{new.text|markdown}}</p>
                     </li>
+                    {% endif %}
                     {% endfor %}
+                    </div>
                 </ul>
+                {% endfor %}
             </div>
         </div>
         <div>
+            <h3>{{ "ABOUT.BIO"|t }}</h3>
             {{page.content}}
         </div>
     </section>
     <section class="right">
         <div>
-            <h3 tabindex="0">{{ "ABOUT.SEE_ALSO"|t }}</h3>
             <div>
+                <h3 tabindex="0">{{ "ABOUT.REFS"|t }}</h3>
+                <ul>
+                    {% for ref in page.header.references %}
+                    <li><a href="{{ref.url}}" target="_blank">{{ref.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h3 tabindex="0">{{ "ABOUT.SEE_ALSO"|t }}</h3>
                 <ul>
                     {% for friend in page.header.friends %}
                     <li><a href="{{friend.url}}" target="_blank">{{friend.name}}</a></li>

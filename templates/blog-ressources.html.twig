@@ -2,7 +2,9 @@
 
 {% block content %}
 <section class="reads">
-    <h1>Bibliographie</h1>
+    <div>
+        <h1>Bibliographie</h1>
+    </div>
     {% for read in page.header.books %}
         <h2>Design</h2>
         <ul>
@@ -71,7 +73,9 @@
     {% endfor %}
 </section>
 <section class="web">
-    <h1>Sitographie</h1>
+    <div>
+        <h1>Sitographie</h1>
+    </div>
     {% for nav in page.header.web %}
         <h2>Actualités</h2>
         <ul>

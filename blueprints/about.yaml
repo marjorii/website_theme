@@ -21,6 +21,16 @@ form:
                   type: text
                   style: vertical
                   label: Descriptif
+            header.references:
+              type: list
+              label: Références
+              fields:
+                .name:
+                  type: text
+                  label: Nom
+                .url:
+                  type: text
+                  label: Url
             header.friends:
               type: list
               label: À découvrir

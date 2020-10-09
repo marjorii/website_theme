@@ -30,12 +30,13 @@
             font-size: 0.9rem !important;
             margin-right: 5px;
         }
-        aside.left > ul {
-            margin: 0 !important;
-            width: 100%;
-        }
         footer {
             padding: 0 !important;
+        }
+    }
+    @media (max-width: 600px), (max-width: 600px) {
+        aside.left > ul, aside.right > ul {
+            margin: 0 !important;
         }
     }
     main {

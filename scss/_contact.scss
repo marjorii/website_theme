@@ -44,11 +44,10 @@
         header {
             padding-left: 50px;
         }
+    }
+    @media (max-width: 600px), (max-height: 600px) {
         aside.left > ul, aside.right > ul {
             margin: 0 !important;
-        }
-        aside.left > ul {
-            width: 100%;
         }
     }
     main {
@@ -82,10 +81,11 @@
         a {
             text-decoration: none;
             font-style: italic;
-            color: white;
-        }
-        a:hover, a:active {
-            color: blue;
+            color: red;
+            &:hover, &:active, &:focus {
+                color: white;
+                background-color: red;
+            }
         }
     }
 }

@@ -30,9 +30,10 @@
         .menu-bar, .menu-bar a, .menu-bar p {
             font-size: 0.75rem !important;
         }
-        aside.left > ul {
+    }
+    @media (max-width: 600px), (max-height: 600px) {
+        aside.left > ul, aside.right > ul {
             margin: 0 !important;
-            width: 100%;
         }
     }
     main {
@@ -43,32 +44,53 @@
         display: flex;
         align-items: center;
         overflow-y: hidden;
+        a {
+            color: red;
+            text-decoration: none;
+            &:hover, &:active, &:focus {
+                color: white;
+                background-color: red;
+            }
+        }
         & > div {
             display: flex;
             justify-content: space-between;
             width: 100%;
             height: 100%;
-            a {
-                text-decoration: none;
-                color: blue;
-            }
             section {
                 width: 50%;
                 overflow-y: scroll;
                 overflow-x: hidden;
                 & > div {
-                    padding: 50px;
+                    position: relative;
+                    text-align: center;
                 }
-                & > div:not(:last-of-type) {
-                    border-bottom: 3px solid red;
+                h3 {
+                    display: inline-block;
+                    top: 0;
+                    position: relative;
+                    padding: 10px;
+                    border: 3px solid red;
+                    border-radius: 50%;
+                    color: red;
+                    font-family: 'Karmilla';
+                    font-weight: bold;
+                    margin: 50px 0 25px 0;
                 }
                 &.left {
                     border-right: 3px solid red;
                     & > div:first-of-type {
+                        border-bottom: 3px solid red;
+                        ul {
+                            text-align: center;
+                        }
                         li {
+                            padding: 0 50px 1rem 50px;
+                            &:first-of-type {
+                                padding: 1rem;
+                            }
                             &.line-through {
                                 text-decoration: line-through;
-                                // opacity: 0.5;
                             }
                             &::before {
                                 content: "●";
@@ -77,25 +99,42 @@
                                 display: inline;
                                 font-size: 1rem;
                                 margin-right: 1%;
-                                margin-left: 70px;
-                            }
-                            dl {
-
-                            }
-                            dl, dt, dd, dd > p {
-                                display: inline;
                             }
                             p {
                                 margin: 0;
                             }
                         }
-                    }
-                    & > div:last-of-type p {
-                        &:not(:last-of-type) {
-                            margin: 0 0 50px 0;
+                        ul:last-of-type li:first-of-type {
+                            border-top: 3px solid red;
                         }
-                        &:last-of-type {
-                            margin: 0;
+                        .time {
+                            font-family: 'Karmilla';
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                            border-bottom: 3px solid red;
+                            height: 50px;
+                            font-weight: bold;
+                            border-bottom: 3px solid red;
+                        }
+                        ul:last-of-type a.time:last-of-type {
+                            border-bottom: 0;
+                        }
+                        dl, dt, dt > p {
+                            display: inline;
+                        }
+                        dd {
+                            font-size: 0.75rem;
+                        }
+                    }
+                    & > div:last-of-type {
+                        padding: 0 50px 50px 50px;
+                        p {
+                            &:not(:last-of-type) {
+                                margin: 0 0 1rem 0;
+                            }
+                            &:last-of-type {
+                                margin: 0;
+                            }
                         }
                     }
                     & > div:last-of-type p::before {
@@ -106,23 +145,22 @@
                 }
                 &.right {
                     display: block;
-                    & > div {
+                    & > div:first-of-type {
+                        li {
+                            padding: 0 50px;
+                        }
+                    }
+                    & > div:first-of-type > div {
+                        border-bottom: 3px solid red;
+                        padding-bottom: 50px;
+                    }
+                    & > div:last-of-type {
+                        padding: 0 50px 50px 50px;
                         ul {
                             width: 100%;
-                            margin-left: 70px;
-                            li {
-                                width: 50%;
-                                text-align: left;
-                            }
                         }
                         p {
-                            margin: 0 0 0 70px;
-                        }
-                        a {
-                            color: black;
-                        }
-                        a:hover, a:active, a:focus {
-                            color: blue;
+                            margin: 0;
                         }
                     }
 
@@ -131,11 +169,6 @@
         }
     }
     @media (max-width: 1280px), (max-height: 900px) {
-        .about-usg {
-            *:not(p) {
-                width: 100% !important;
-            }
-        }
         main {
             align-items: flex-start;
             overflow-y: auto;
@@ -148,24 +181,18 @@
             overflow: hidden !important;
             padding: 0 !important;
             *:not(p) {
-                width: 100% !important;
                 overflow: hidden;
             }
             &.left {
                 border-right: 0 !important;
                 border-bottom: 3px solid red;
-                & > div:last-of-type p {
-                    &:not(:last-of-type) {
-                        margin: 0 0 25px 0 !important;
-                    }
-                }
                 p, p:last-of-type {
                     margin-right: 0;
                 }
             }
             &.right {
                 div div ul li a {
-                    color: blue;
+                    color: red;
                 }
             }
         }
@@ -177,31 +204,47 @@
                 & > div {
                     flex-direction: column;
                 }
-                h3 {
-                    font-weight: bold;
-                }
             }
             section {
-                & > div {
-                    padding: 25px;
+                h3 {
+                    margin: 25px 0 25px 0;
                 }
                 &.left {
                     margin-bottom: 0;
+                    & > div:first-of-type {
+                        li {
+                            padding: 0 25px 1rem 25px;
+                        }
+                    }
+                    & > div:last-of-type {
+                        padding: 0 25px 25px 25px;
+                    }
                     p, p:last-of-type {
                         margin-left: 0;
-                        text-align: left;
                     }
                     p::before {
                         width: 0 !important;
                     }
                 }
                 &.right {
+                    & > div:first-of-type li {
+                        padding: 0 25px;
+                    }
+                    & > div:first-of-type > div {
+                        padding-bottom: 25px;
+                    }
+                    & > div:last-of-type {
+                        padding: 0 25px 25px 25px;
+                    }
                     p, p:last-of-type, ul, li {
                         margin-left: 0;
-                        text-align: left;
                     }
                 }
             }
         }
     }
+}
+
+.hidden {
+    display: none;
 }

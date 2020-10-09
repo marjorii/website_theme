@@ -17,12 +17,13 @@
             font-size: 0.9rem !important;
             margin-right: 5px;
         }
-        aside.left > ul, aside.right.plus > ul {
-            margin: 0 !important;
-            width: 100%;
-        }
         footer {
             padding: 0 !important;
+        }
+    }
+    @media (max-width: 600px), (max-height: 600px) {
+        aside.left > ul, aside.right.plus > ul {
+            margin: 0 !important;
         }
     }
     aside.left a {
@@ -95,6 +96,9 @@
                 right: 90px;
             }
         }
+        @media (max-width: 767px) and (orientation: portrait) {
+            width: calc(100% - 25px);
+        }
         article {
             overflow-y: auto;
             overflow-x: hidden;
@@ -140,22 +144,30 @@
                     font-size: 0.75rem;
                     line-height: 1.3;
                     color: $magenta;
-                    a, a:hover, a:active, a:focus {
+                    a {
                         color: $magenta;
                         text-decoration: underline;
                         &::before, &::after {
                             content: none;
+                        }
+                        &:hover, &:active, &:focus {
+                            color: white;
+                            background-color: $magenta;
                         }
                     }
                     &:last-of-type {
                         padding-bottom: 1rem;
                     }
                 }
-                a, a:hover, a:active, a:focus {
+                a {
                     text-decoration: none;
-                    color: blue;
+                    color: $magenta;
                     ::before {
                         margin: 0;
+                    }
+                    &:hover, &:active, &:focus {
+                        color: white;
+                        background-color: $magenta;
                     }
                 }
                 h1 {
@@ -200,7 +212,7 @@
             overflow-y: auto;
             padding: 0 25px 25px 25px;
         }
-        article {
+        article.one, article.two {
             width: 100% !important;
             padding: 20px !important;
         }

@@ -12,11 +12,11 @@
   .text nav > ul > li > a.selected::before {
     font-size: 0.9rem !important;
     margin-right: 5px; }
-  .text aside.left > ul, .text aside.right.plus > ul {
-    margin: 0 !important;
-    width: 100%; }
   .text footer {
     padding: 0 !important; } }
+@media (max-width: 600px), (max-height: 600px) {
+  .text aside.left > ul, .text aside.right.plus > ul {
+    margin: 0 !important; } }
 .text aside.left a {
   pointer-events: none; }
 .text aside {
@@ -71,6 +71,9 @@
       .text main #cross {
         top: 75px;
         right: 90px; } }
+  @media (max-width: 767px) and (orientation: portrait) {
+    .text main {
+      width: calc(100% - 25px); } }
   .text main article {
     overflow-y: auto;
     overflow-x: hidden;
@@ -103,18 +106,24 @@
         font-size: 0.75rem;
         line-height: 1.3;
         color: #FF00FF; }
-        .text main article.one blockquote a, .text main article.one blockquote a:hover, .text main article.one blockquote a:active, .text main article.one blockquote a:focus {
+        .text main article.one blockquote a {
           color: #FF00FF;
           text-decoration: underline; }
-          .text main article.one blockquote a::before, .text main article.one blockquote a::after, .text main article.one blockquote a:hover::before, .text main article.one blockquote a:hover::after, .text main article.one blockquote a:active::before, .text main article.one blockquote a:active::after, .text main article.one blockquote a:focus::before, .text main article.one blockquote a:focus::after {
+          .text main article.one blockquote a::before, .text main article.one blockquote a::after {
             content: none; }
+          .text main article.one blockquote a:hover, .text main article.one blockquote a:active, .text main article.one blockquote a:focus {
+            color: white;
+            background-color: #FF00FF; }
         .text main article.one blockquote:last-of-type {
           padding-bottom: 1rem; }
-      .text main article.one a, .text main article.one a:hover, .text main article.one a:active, .text main article.one a:focus {
+      .text main article.one a {
         text-decoration: none;
-        color: blue; }
-        .text main article.one a ::before, .text main article.one a:hover ::before, .text main article.one a:active ::before, .text main article.one a:focus ::before {
+        color: #FF00FF; }
+        .text main article.one a ::before {
           margin: 0; }
+        .text main article.one a:hover, .text main article.one a:active, .text main article.one a:focus {
+          color: white;
+          background-color: #FF00FF; }
       .text main article.one h1 {
         font-family: 'Vollkorn';
         padding-top: 2rem; }
@@ -145,7 +154,7 @@
     display: block;
     overflow-y: auto;
     padding: 0 25px 25px 25px; }
-  .text article {
+  .text article.one, .text article.two {
     width: 100% !important;
     padding: 20px !important; } }
 
@@ -159,6 +168,11 @@
     content: "@"; }
   .contact footer.flex-line span:last-of-type::after {
     content: ".com"; }
+.contact main p a {
+  color: #FF00FF; }
+  .contact main p a:hover, .contact main p a:active, .contact main p a:focus {
+    color: white;
+    background-color: #FF00FF; }
 @media (max-width: 767px) {
   .contact main p {
     text-align: center; } }
@@ -179,11 +193,10 @@
     margin-right: 5px; }
   .posts nav > ul > li > a.selected::before {
     font-size: 0.9rem !important;
-    margin-right: 5px; }
+    margin-right: 5px; } }
+@media (max-width: 600px), (max-height: 600px) {
   .posts aside.left > ul, .posts aside.right > ul {
-    margin: 0 !important; }
-  .posts aside.left > ul {
-    width: 100%; } }
+    margin: 0 !important; } }
 .posts main #list {
   padding: 5%;
   height: auto; }
@@ -199,15 +212,16 @@
       display: inline; }
       .posts main #list ul li a::before, .posts main #list ul li h1::before {
         content: "●";
-        margin-left: 7vw;
         margin-right: 2%;
         font-family: Verdana, "Liberation Sans", "DejaVu Sans";
         font-size: 1rem;
         position: relative; }
+    .posts main #list ul li.match a:not(.external-link):hover, .posts main #list ul li.match a:not(.external-link):active, .posts main #list ul li.match a:not(.external-link):focus, .posts main #list ul li a:not(.external-link):hover, .posts main #list ul li a:not(.external-link):active, .posts main #list ul li a:not(.external-link):focus {
+      color: white !important;
+      background-color: #FF00FF; }
     .posts main #list ul li #details {
       display: block;
-      padding-top: 1rem;
-      margin: 0 0 0 7vw; }
+      padding-top: 1rem; }
       .posts main #list ul li #details .external-link {
         display: inline-block;
         font-size: 1rem;
@@ -247,33 +261,32 @@
         margin: 0;
         padding: 0;
         line-height: 1.3;
-        color: blue;
+        color: #FF00FF;
         pointer-events: auto;
         word-wrap: break-word;
         display: inline-block; }
         .posts main #list ul li .content .content-link::before {
           content: none;
           margin: 0; }
+        .posts main #list ul li .content .content-link:hover, .posts main #list ul li .content .content-link:active, .posts main #list ul li .content .content-link:focus {
+          color: white;
+          background-color: #FF00FF; }
     @supports (-webkit-appearance: none) {
       .posts main #list ul li a::before, .posts main #list ul li h1::before {
         font-size: 1.75rem; } }
     .posts main #list ul li::before {
       bottom: 2px; }
-    .posts main #list ul li:last-of-type {
-      margin-bottom: 5.5vh; }
     .posts main #list ul li .match a {
       color: #FF00FF; }
 @media (max-width: 767px) {
-  .posts main {
-    padding: 20px; }
-    .posts main #list a:before, .posts main #list time, .posts main #list figcaption, .posts main #list figcaption a.content-link {
-      font-size: 0.75rem !important; }
-    .posts main #list #details {
-      padding-top: 0.5rem !important; }
-    .posts main #list p {
-      padding-bottom: 0.5rem !important; }
-      .posts main #list p.text-space {
-        padding-bottom: 2rem !important; } }
+  .posts main #list a:before, .posts main #list time, .posts main #list figcaption, .posts main #list figcaption a.content-link {
+    font-size: 0.75rem !important; }
+  .posts main #list #details {
+    padding-top: 0.5rem !important; }
+  .posts main #list p {
+    padding-bottom: 0.5rem !important; }
+    .posts main #list p.text-space {
+      padding-bottom: 2rem !important; } }
 @media (max-width: 767px) and (orientation: portrait) {
   .posts main .content {
     margin: 0 !important; } }
@@ -289,11 +302,9 @@
   .posts main #list {
     width: 100%; }
     .posts main #list ul li a, .posts main #list ul li h1 {
-      font-size: 2.25rem; }
+      font-size: 2rem; }
     .posts main #list ul li::before {
       bottom: 5px; }
-    .posts main #list ul li:last-of-type {
-      margin-bottom: 5.5vh; }
     .posts main #list .content p.text-content {
       width: 55%; } }
 @media (max-width: 1024px) {
@@ -343,11 +354,10 @@ footer .title {
     margin-right: 5px; }
   .ressources nav > ul > li > a.selected::before {
     font-size: 0.9rem !important;
-    margin-right: 5px; }
+    margin-right: 5px; } }
+@media (max-width: 600px), (max-height: 600px) {
   .ressources aside.left > ul, .ressources aside.right > ul {
-    margin: 0 !important; }
-  .ressources aside.left > ul {
-    width: 100%; } }
+    margin: 0 !important; } }
 .ressources main {
   display: flex;
   flex-direction: row;
@@ -356,6 +366,10 @@ footer .title {
   .ressources main section {
     width: 50%;
     overflow-y: scroll; }
+    .ressources main section > div {
+      display: flex;
+      width: 100%;
+      justify-content: center; }
     .ressources main section h1, .ressources main section h2, .ressources main section p, .ressources main section a {
       font-family: "Vollkorn";
       line-height: 1.3;
@@ -364,7 +378,14 @@ footer .title {
     .ressources main section h1 {
       color: #FF00FF;
       top: 0;
-      left: 0; }
+      left: 0;
+      padding: 10px;
+      border: 3px solid #FF00FF;
+      border-radius: 50%;
+      color: #FF00FF;
+      font-family: 'Karmilla';
+      font-weight: bold;
+      display: inline; }
     .ressources main section h2 {
       margin-top: 2rem; }
     .ressources main section ul {
@@ -383,16 +404,18 @@ footer .title {
     .ressources main section.web {
       padding: 50px 50px 0 50px; }
       .ressources main section.web a {
-        color: black;
+        color: #FF00FF;
         text-decoration: none; }
         .ressources main section.web a:hover, .ressources main section.web a:active, .ressources main section.web a:focus {
-          color: blue; }
+          color: white;
+          background-color: #FF00FF; }
 @media (max-width: 767px) and (orientation: portrait) {
   .ressources main {
     display: block;
     padding: 0;
     margin: 0;
-    overflow-y: auto; }
+    overflow-y: auto;
+    width: calc(100% - 25px); }
   .ressources section {
     padding: 25px 50px !important;
     width: 100% !important;
@@ -401,8 +424,7 @@ footer .title {
       padding-bottom: 0 !important; } }
 @media (max-height: 767px) and (orientation: landscape) {
   .ressources main {
-    padding: 0 !important;
-    margin-right: 25px; }
+    padding: 0 !important; }
   .ressources section {
     padding: 25px !important; } }
 
@@ -423,12 +445,13 @@ footer .title {
   .texts nav > ul > li > a.selected::before {
     font-size: 0.9rem !important;
     margin-right: 5px; }
-  .texts aside.left > ul, .texts aside.right > ul {
-    margin: 0 !important; }
   .texts aside.left > ul {
     width: 100%; }
   .texts footer {
     padding: 0 !important; } }
+@media (max-width: 600px), (min-height: 600px) {
+  .texts aside.left > ul, .texts aside.right > ul {
+    margin: 0 !important; } }
 .texts main #list {
   padding: 5%;
   height: auto; }
@@ -443,11 +466,13 @@ footer .title {
       line-height: 1.25; }
       .texts main #list ul li a::before {
         content: "●";
-        margin-left: 7vw;
         margin-right: 2%;
         font-family: Verdana, "Liberation Sans", "DejaVu Sans";
         font-size: 1rem;
         position: relative; }
+    .texts main #list ul li.match a:hover, .texts main #list ul li.match a:active, .texts main #list ul li.match a:focus, .texts main #list ul li a:hover, .texts main #list ul li a:active, .texts main #list ul li a:focus {
+      color: white !important;
+      background-color: #FF00FF; }
     @supports (-webkit-appearance: none) {
       .texts main #list ul li a::before {
         font-size: 1.75rem; } }
@@ -456,10 +481,8 @@ footer .title {
     .texts main #list ul li .match a {
       color: #FF00FF; }
 @media (max-width: 767px) {
-  .texts main {
-    padding: 20px !important; }
-    .texts main #list ul li a::before {
-      font-size: 0.75rem; } }
+  .texts main #list ul li a::before {
+    font-size: 0.75rem; } }
 @media (min-width: 767px) {
   .texts main #list ul li a {
     font-size: 1.5rem; }
@@ -469,7 +492,7 @@ footer .title {
   .texts main #list {
     width: 100%; }
     .texts main #list ul li a {
-      font-size: 2.25rem; }
+      font-size: 2rem; }
     .texts main #list ul li::before {
       bottom: 5px; } }
 
@@ -491,7 +514,7 @@ footer .title {
   .portrait {
     width: 100% !important; } }
 #select-page li {
-  border: 1px solid #FF00FF;
+  border: 3px solid #FF00FF;
   border-top: none;
   background-color: white; }
   #select-page li a {

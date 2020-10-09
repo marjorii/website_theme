@@ -49,8 +49,8 @@ footer {
         }
         #cross {
             position: fixed;
-            top: 50px;
-            right: 50px;
+            top: 40px;
+            right: 40px;
             font-size: 2rem;
             color: black;
             text-decoration: none;
@@ -75,15 +75,18 @@ footer {
         }
         aside {
             position: absolute;
-            width: calc(100vh - 100px);
+            width: calc(100vh - 50px);
             bottom: 0;
+            @media (min-width: 767px) {
+                width: calc(100vh - 100px);
+            }
             &.right {
                 transform: rotate(90deg);
                 transform-origin: right top;
                 right: 0;
                 & > ul {
                     justify-content: flex-start;
-                    margin-left: 50px;
+                    margin-left: 25px;
                     a:not(.selected):hover, a:not(.selected):active, a:not(.selected):focus {
                         font-weight: normal;
                     }
@@ -94,6 +97,11 @@ footer {
                         a {
                             margin-right: 25px;
                         }
+                    }
+                }
+                @media (min-width: 767px) {
+                    & > ul {
+                        margin-left: 50px;
                     }
                 }
             }
@@ -165,10 +173,7 @@ footer {
         margin-bottom: 5vw;
         justify-content: center;
         word-wrap: break-word;
-        padding: 10px;
-        p:first-of-type {
-            margin-top: 0;
-        }
+        text-align: center;
         dl {
             dt {
                 display: inline-block;
@@ -188,8 +193,12 @@ footer {
             }
         }
         a {
-            color: blue;
+            color: red;
             text-decoration: none;
+            &:hover, &:active, &:focus {
+                color: white;
+                background-color: red;
+            }
         }
     }
     @media (orientation: portrait) {
@@ -199,7 +208,6 @@ footer {
     }
     @media (max-width: 767px) and (orientation: portrait) {
         #txt, #links {
-        padding: 20px;
         margin-bottom: 15vw;
         }
     }
@@ -209,14 +217,17 @@ footer {
         }
     }
     #txt {
-        p::before {
-            content: "";
-            margin-left: 3vw;
+        & > p, dl {
+            margin: 1rem 0.5rem;
         }
     }
     #links {
+        padding-bottom: 1rem;
         p {
-            margin: 0;
+            margin: 1rem 0.5rem 0 0.5rem;
+        }
+        a {
+            margin: 0 0.5rem 0 0.5rem;
         }
     }
 }
