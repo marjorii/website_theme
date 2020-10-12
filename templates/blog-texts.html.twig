@@ -11,6 +11,9 @@
             <a href="{{ item.url }}" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
             </a>
             {% endif %}
+            <div class="details">
+                <p>{{ item.header.desc }}</p>
+            </div>
         </span></li>
         {% endfor %}
     </ul>

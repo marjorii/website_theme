@@ -241,10 +241,11 @@
       background-color: #FF00FF; }
   .posts main #pages-menu .articles {
     border: 3px solid #FF00FF;
-    width: calc(100% - 150px); }
+    max-width: calc(100% - 150px); }
     @media (max-width: 767px) and (orientation: portrait) {
       .posts main #pages-menu .articles {
-        width: 100%; } }
+        width: 100%;
+        max-width: none; } }
     .posts main #pages-menu .articles > a, .posts main #pages-menu .articles li:not(:last-of-type) a {
       border-bottom: 3px solid #FF00FF; }
     .posts main #pages-menu .articles a {
@@ -276,15 +277,15 @@
     .posts main #list ul li.match a:not(.external-link):hover, .posts main #list ul li.match a:not(.external-link):active, .posts main #list ul li.match a:not(.external-link):focus, .posts main #list ul li a:not(.external-link):hover, .posts main #list ul li a:not(.external-link):active, .posts main #list ul li a:not(.external-link):focus {
       color: white !important;
       background-color: #FF00FF; }
-    .posts main #list ul li #details {
+    .posts main #list ul li .details {
       display: block;
       padding-top: 1rem; }
-      .posts main #list ul li #details .external-link {
+      .posts main #list ul li .details .external-link {
         display: inline-block;
         font-size: 1rem;
         line-height: 0;
         margin-left: 10px; }
-        .posts main #list ul li #details .external-link::before {
+        .posts main #list ul li .details .external-link::before {
           content: "";
           margin-left: 0;
           margin-right: 0; }
@@ -338,7 +339,7 @@
 @media (max-width: 767px) {
   .posts main #list a:before, .posts main #list time, .posts main #list figcaption, .posts main #list figcaption a.content-link {
     font-size: 0.75rem !important; }
-  .posts main #list #details {
+  .posts main #list .details {
     padding-top: 0.5rem !important; }
   .posts main #list p {
     padding-bottom: 0.5rem !important; }
@@ -506,12 +507,15 @@ footer .title {
     width: 100%; }
   .texts footer {
     padding: 0 !important; } }
-@media (max-width: 600px), (min-height: 600px) {
+@media (max-width: 600px), (max-height: 600px) {
   .texts aside.left > ul, .texts aside.right > ul {
     margin: 0 !important; } }
 .texts main #list {
-  padding: 5%;
+  padding: 25px;
   height: auto; }
+  @media (min-width: 767px) {
+    .texts main #list {
+      padding: 50px; } }
   .texts main #list ul li {
     width: 100%;
     padding: 0;
@@ -537,9 +541,16 @@ footer .title {
       bottom: 2px; }
     .texts main #list ul li .match a {
       color: #FF00FF; }
+    .texts main #list ul li .details {
+      padding-top: 1rem; }
+    .texts main #list ul li p {
+      font-size: 1rem;
+      margin: 0; }
 @media (max-width: 767px) {
-  .texts main #list ul li a::before {
-    font-size: 0.75rem; } }
+  .texts main #list ul li a::before, .texts main #list ul li p {
+    font-size: 0.75rem; }
+  .texts main #list ul li .details {
+    padding-top: 0.5rem; } }
 @media (min-width: 767px) {
   .texts main #list ul li a {
     font-size: 1.5rem; }

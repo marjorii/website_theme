@@ -19,6 +19,10 @@ form:
                 .text:
                   type: text
                   style: vertical
+            header.desc:
+              type: text
+              style: vertical
+              label: Descriptif
             header.categories:
               type: select
               size: long

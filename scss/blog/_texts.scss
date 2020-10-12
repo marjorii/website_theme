@@ -30,15 +30,18 @@
             padding: 0 !important;
         }
     }
-    @media (max-width: 600px), (min-height: 600px) {
+    @media (max-width: 600px), (max-height: 600px) {
         aside.left > ul, aside.right > ul {
             margin: 0 !important;
         }
     }
     main {
         #list {
-            padding: 5%;
+            padding: 25px;
             height: auto;
+            @media (min-width: 767px) {
+                padding: 50px;
+            }
             ul {
                 li {
                     width: 100%;
@@ -75,13 +78,23 @@
                     .match a {
                         color: $magenta;
                     }
+                    .details {
+                        padding-top: 1rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                        margin: 0;
+                    }
                 }
             }
         }
         @media (max-width: 767px) {
             #list {
-                ul li a::before {
+                ul li a::before, ul li p {
                     font-size: 0.75rem;
+                }
+                ul li .details {
+                    padding-top: 0.5rem;
                 }
             }
         }

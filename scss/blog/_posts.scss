@@ -89,9 +89,10 @@
             }
             .articles {
                 border: 3px solid $magenta;
-                width: calc(100% - 150px);
+                max-width: calc(100% - 150px);
                 @media (max-width: 767px) and (orientation: portrait) {
-                    width: 100%
+                    width: 100%;
+                    max-width: none;
                 }
                 & > a, li:not(:last-of-type) a {
                     border-bottom: 3px solid $magenta;
@@ -137,7 +138,7 @@
                             background-color: $magenta;
                         }
                     }
-                    #details {
+                    .details {
                         display: block;
                         padding-top: 1rem;
                         // margin: 0 0 0 7vw;
@@ -222,7 +223,7 @@
                 a:before, time, figcaption, figcaption a.content-link {
                     font-size: 0.75rem !important;
                 }
-                #details {
+                .details {
                     padding-top: 0.5rem !important;
                 }
                 p {
