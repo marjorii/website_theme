@@ -1,5 +1,22 @@
 {% extends 'blog-default.html.twig' %}
 {% block content %}
+<div id="pages-menu">
+    <input type="button" value="Rechercher" aria-expanded="false" />
+    <ul id="pages" class="hidden">
+    {% for posts in page.children.order('dir', 'desc').batch(page.collection.params.limit) %}
+    <li class="page">
+        <button aria-expanded="false">Page&nbsp;{{ loop.index }}</button>
+        <ul class="articles hidden">
+            <a href="{{ page.url ~ '/page:' ~ loop.index }}">Tous les articles</a>
+            {% for item in posts %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+
 <div id="list">
     <ul>
         {% for item in page.collection %}
@@ -13,7 +30,6 @@
             </div>
             <div class="content hide">
                 {% for med in item.media.all %}
-                {{ dump(med, med.width, med.height) }}
                 {% if med.items.type == 'image' and med.height >= med.width %}
                 {{ med.html('', '', 'portrait') }}
                 {% else %}

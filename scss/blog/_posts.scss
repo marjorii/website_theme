@@ -32,9 +32,84 @@
         }
     }
     main {
+        #pages-menu {
+            margin: 25px 25px 0 25px;
+            @media (min-width: 767px) {
+                margin: 50px 50px 0 50px;
+            }
+            input, .page > button {
+                width: 150px;
+            }
+            input {
+                font-family: 'Karmilla';
+                font-size: 1rem;
+            }
+            .page > button {
+                font-weight: bold;
+            }
+            #pages {
+                & > li:not(.hidden) {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    @media (max-width: 767px) and (orientation: portrait) {
+                        flex-direction: column;
+                    }
+                    & > button {
+                        border: 3px solid $magenta;
+                    }
+                }
+                & > li:not(:first-of-type) > button {
+                    border-top: 0;
+                }
+                & > li > button.stroke {
+                    border-top: 3px solid $magenta;
+                    @media (max-width: 767px) and (orientation: portrait) {
+                        border-top: 0;
+                    }
+                }
+                & > li > button[aria-expanded="true"] {
+                    @media (max-width: 767px) and (orientation: portrait) {
+                        border-bottom: 0;
+                    }
+                    @media (min-width: 767px) {
+                        border-right: 0;
+                    }
+                }
+                button, a {
+                    color: $magenta;
+                    padding: 5px;
+                    text-decoration: none;
+                    height: 100%;
+                    &:hover, &:active, &:focus {
+                        color: white !important;
+                        background-color: $magenta;
+                    }
+                }
+            }
+            .articles {
+                border: 3px solid $magenta;
+                width: calc(100% - 150px);
+                @media (max-width: 767px) and (orientation: portrait) {
+                    width: 100%
+                }
+                & > a, li:not(:last-of-type) a {
+                    border-bottom: 3px solid $magenta;
+                }
+                a {
+                    display: block;
+                }
+                & > a {
+                    text-transform: uppercase;
+                }
+            }
+        }
         #list {
-            padding: 5%;
+            padding: 25px;
             height: auto;
+            @media (min-width: 767px) {
+                padding: 50px;
+            }
             ul {
                 li {
                     width: 100%;

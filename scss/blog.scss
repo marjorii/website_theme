@@ -9,22 +9,31 @@
     background-color:$magenta;
     // background-color: #00ff40;
 }
+
 .hide {
     display: none;
 }
+
+.hidden {
+    display: none;
+}
+
 .flex {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .portrait {
     width: 55% !important;
 }
+
 @media (max-width: 767px) and (orientation: portrait) {
     .portrait {
         width: 100% !important;
     }
 }
+
 #select-page {
     li {
         border: 3px solid $magenta;
