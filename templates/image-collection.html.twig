@@ -4,7 +4,7 @@
 <div class="img-container">
 {% for item in pages.find('/projects/content').collection %}
     <div class="project-list blur {% if item.header.plusplusegal %}plusplusegal{% endif %}" data-type="{{ item.header.categories|join(',') }}">
-        <a href="javascript:void(0);" aria-label="{{ item.title }}" data-url="{{ item.url }}" class="item" id="{{ item.slug }}">{% if item.header.plusplusegal %}<span class="box"><div></div></span>{% endif %}<div>{{ item.media[item.header.picked_image].resize(500, auto) }}</div></a>
+        <a href="javascript:void(0);" aria-label="{{ item.title }}" data-url="{{ item.url }}" class="item" id="{{ item.slug }}">{% if item.header.plusplusegal %}<span class="box"><div class="ppe-icon"></div></span>{% endif %}<div>{{ item.media[item.header.picked_image].resize(500, auto) }}</div></a>
     </div>
 {% endfor %}
 </div>
