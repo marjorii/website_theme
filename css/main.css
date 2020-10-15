@@ -279,8 +279,7 @@ footer.flex-line {
         background-color: red;
         color: white; }
       .text-collection main #list ul li .plusplusegal a:hover span.box div, .text-collection main #list ul li .plusplusegal a:active span.box div, .text-collection main #list ul li .plusplusegal a:focus span.box div, .text-collection main #list ul li .plusplusegal.match a:hover span.box div, .text-collection main #list ul li .plusplusegal.match a:active span.box div, .text-collection main #list ul li .plusplusegal.match a:focus span.box div {
-        background-image: url("/home/user/themes/website_theme/images/++=3.png");
-        background-color: white; }
+        background-image: url("/home/user/themes/website_theme/images/++=3.png"); }
       .text-collection main #list ul li .match a:hover, .text-collection main #list ul li .match a:active, .text-collection main #list ul li .match a:focus {
         color: white; }
       .text-collection main #list ul li a {
@@ -305,8 +304,7 @@ footer.flex-line {
       .text-collection main #list ul li .match a {
         color: red; }
     .text-collection main #list ul li span.plusplusegal.match span.box div {
-      background-image: url("/home/user/themes/website_theme/images/++=2.png");
-      background-color: red; }
+      background-image: url("/home/user/themes/website_theme/images/++=2.png"); }
     .text-collection main #list ul li span.plusplusegal span.tooltip-text {
       width: 80%;
       border-right: 3px solid red; }
@@ -315,7 +313,6 @@ footer.flex-line {
       display: flex;
       justify-content: center; }
       .text-collection main #list ul li span.plusplusegal span.box div {
-        background-color: black;
         border-radius: 50%;
         background-image: url("/home/user/themes/website_theme/images/++=.png");
         content: "";
@@ -412,11 +409,9 @@ footer.flex-line {
         background-color: red;
         border-color: white; }
       .image-collection main .img-container > div.plusplusegal a:hover span.box div, .image-collection main .img-container > div.plusplusegal a:hover.match span.box div, .image-collection main .img-container > div.plusplusegal a:active span.box div, .image-collection main .img-container > div.plusplusegal a:active.match span.box div, .image-collection main .img-container > div.plusplusegal a:focus span.box div, .image-collection main .img-container > div.plusplusegal a:focus.match span.box div {
-        background-image: url("/home/user/themes/website_theme/images/++=3.png");
-        background-color: white; }
+        background-image: url("/home/user/themes/website_theme/images/++=3.png"); }
       .image-collection main .img-container > div.plusplusegal.match span.box div {
-        background-image: url("/home/user/themes/website_theme/images/++=2.png");
-        background-color: red; }
+        background-image: url("/home/user/themes/website_theme/images/++=2.png"); }
       .image-collection main .img-container > div.plusplusegal span.box {
         position: absolute;
         bottom: 0;
@@ -429,7 +424,6 @@ footer.flex-line {
         padding: 20px;
         background-color: #fffccf; }
         .image-collection main .img-container > div.plusplusegal span.box div {
-          background-color: black;
           border-radius: 50%;
           background-image: url("/home/user/themes/website_theme/images/++=.png");
           content: "";

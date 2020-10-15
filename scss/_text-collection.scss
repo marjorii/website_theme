@@ -62,7 +62,6 @@
                         &:hover, &:active, &:focus {
                             span.box div {
                                 background-image: url('/home/user/themes/website_theme/images/++=3.png');
-                                background-color: white;
                             }
                         }
                     }
@@ -102,7 +101,6 @@
                     &.match {
                         span.box div {
                             background-image: url('/home/user/themes/website_theme/images/++=2.png');
-                            background-color: red;
                         }
                     }
                     span.tooltip-text {
@@ -114,7 +112,6 @@
                         display: flex;
                         justify-content: center;
                         div {
-                            background-color: black;
                             border-radius: 50%;
                             background-image: url('/home/user/themes/website_theme/images/++=.png');
                             content:"";

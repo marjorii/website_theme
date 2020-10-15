@@ -79,13 +79,11 @@
                         }
                         span.box div, &.match span.box div {
                             background-image: url('/home/user/themes/website_theme/images/++=3.png');
-                            background-color: white;
                         }
                     }
                     &.match {
                         span.box div {
                             background-image: url('/home/user/themes/website_theme/images/++=2.png');
-                            background-color: red;
                         }
                     }
                     span.box {
@@ -100,7 +98,6 @@
                         padding: 20px;
                         background-color: $ghost-yellow;
                         div {
-                            background-color: black;
                             border-radius: 50%;
                             background-image: url('/home/user/themes/website_theme/images/++=.png');
                             content:"";
