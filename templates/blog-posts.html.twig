@@ -7,9 +7,9 @@
     <li class="page">
         <button aria-expanded="false">Page&nbsp;{{ loop.index }}</button>
         <ul class="articles hidden">
-            <a href="{{ page.url ~ '/page:' ~ loop.index }}">Tous les articles</a>
+            <a href="{{ page.url ~ '/page:' ~ loop.index }}" target="_blank">Tous les articles</a>
             {% for item in posts %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            <li><a href="{{ item.url }}"  target="_blank">{{ item.title }}</a></li>
             {% endfor %}
         </ul>
     </li>
