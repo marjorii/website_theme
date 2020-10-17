@@ -4,7 +4,7 @@
     <ul>
         <li><span class="project-list"  data-type="{{ page.header.categories|join(',') }}"  >
             <h1 class="item" tabindex="0">{{ page.title }}{% if page.header.subtitle is not empty %}, {{ page.header.subtitle }}{% endif %}</h1>
-            <div id="details">
+            <div class="details">
                 <time datetime="{{ page.header.date|date('c') }}">
                     {{ [page.header.date|date('d'), 'MONTHS'|ta(page.header.date|date('n') -1), page.header.date|date('Y') ]|join(' ') }}
                 </time>
