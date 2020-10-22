@@ -9,7 +9,7 @@
         <ul class="articles hidden">
             <a href="{{ page.url ~ '/page:' ~ loop.index }}" target="_blank">Tous les articles</a>
             {% for item in posts %}
-            <li><a href="{{ item.url }}"  target="_blank">{{ item.title }}</a></li>
+            <li><a href="{{ item.url }}"  target="_blank">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}</a></li>
             {% endfor %}
         </ul>
     </li>
