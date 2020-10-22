@@ -206,7 +206,8 @@
     width: 150px; }
   .posts main #pages-menu input {
     font-family: 'Karmilla';
-    font-size: 1rem; }
+    font-size: 1rem;
+    cursor: pointer; }
   .posts main #pages-menu .page > button {
     font-weight: bold; }
   .posts main #pages-menu #pages > li:not(.hidden) {
