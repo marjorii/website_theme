@@ -29,7 +29,7 @@
 </header>
 <div id="main-container">
     <aside class="menu-bar left" aria-hidden="true">
-        <ul class="flex-line" tabindex="-1">
+        <ul class="flex-line {% if page.template == 'blog-post' %}no-pointer{% endif %}" tabindex="-1">
             <li><a href="#" data-type="images" tabindex="-1"><span>Images</span></a></li>
             <li><a href="#" data-type="grrrls" tabindex="-1">♀</a></li>
             <li><a href="#" data-type="culture" tabindex="-1">Culture</a></li>

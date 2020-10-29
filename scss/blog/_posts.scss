@@ -13,6 +13,9 @@
             text-transform: none;
         }
     }
+    aside.left > ul.no-pointer a {
+        pointer-events: none;
+    }
     @media (max-width: 767px) {
         .menu-bar, .menu-bar a, .menu-bar p {
             font-size: 0.75rem !important;
