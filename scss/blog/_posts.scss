@@ -224,7 +224,7 @@
         }
         @media (max-width: 767px) {
             #list {
-                a:before, time, figcaption, figcaption a.content-link {
+                a::before, h1::before, time, figcaption, figcaption a.content-link {
                     font-size: 0.75rem !important;
                 }
                 .details {

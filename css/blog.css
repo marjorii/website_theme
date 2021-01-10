@@ -469,7 +469,7 @@
   color: #FF00FF;
 }
 @media (max-width: 767px) {
-  .posts main #list a:before, .posts main #list time, .posts main #list figcaption, .posts main #list figcaption a.content-link {
+  .posts main #list a::before, .posts main #list h1::before, .posts main #list time, .posts main #list figcaption, .posts main #list figcaption a.content-link {
     font-size: 0.75rem !important;
   }
   .posts main #list .details {
