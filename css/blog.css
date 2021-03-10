@@ -627,7 +627,7 @@ footer .title {
 .ressources main section ul li {
   margin-left: 3vw;
 }
-.ressources main section ul:last-child li:last-child p, .ressources main section ul:last-child a {
+.ressources main section ul:last-child li:last-child p, .ressources main section ul:last-child li:last-child a {
   padding-bottom: 2rem !important;
 }
 .ressources main section p::before {
