@@ -75,6 +75,35 @@ form:
                     .name:
                       type: text
                       label: nom
+            header.movies:
+              type: list
+              style: vertical
+              label: Filmographie
+              fields:
+                .series:
+                  type: list
+                  style: vertical
+                  label: Séries télévisées
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .films:
+                  type: list
+                  style: vertical
+                  label: Films, courts métrages
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
+                .animes:
+                  type: list
+                  style: vertical
+                  label: Films d'animation
+                  fields:
+                    .name:
+                      type: text
+                      label: nom
             header.web:
               label: Sitographie
               type: list

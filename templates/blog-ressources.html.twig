@@ -71,6 +71,35 @@
             {% endfor %}
         </ul>
     {% endfor %}
+    <div>
+        <h1>Filmographie</h1>
+    </div>
+    {% for watch in page.header.movies %}
+        <h2>Séries télévisées</h2>
+        <ul>
+        {% for serie in watch.series %}
+            <li>
+                <p>{{ serie.name }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+        <h2>Films, courts métrages</h2>
+        <ul>
+        {% for film in watch.films %}
+            <li>
+                <p>{{ film.name }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+        <h2>Films d'animation</h2>
+        <ul>
+        {% for anime in watch.animes %}
+            <li>
+                <p>{{ anime.name }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
 </section>
 <section class="web">
     <div>

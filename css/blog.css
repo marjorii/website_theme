@@ -640,6 +640,9 @@ footer .title {
 .ressources main section.reads p {
   padding-bottom: 0;
 }
+.ressources main section.reads div:last-of-type {
+  margin-top: 50px;
+}
 .ressources main section.web {
   padding: 50px 50px 0 50px;
 }

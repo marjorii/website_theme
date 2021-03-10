@@ -92,6 +92,9 @@
                 p {
                     padding-bottom: 0;
                 }
+                div:last-of-type {
+                    margin-top: 50px;
+                }
             }
             &.web {
                 padding: 50px 50px 0 50px;
