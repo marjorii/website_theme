@@ -91,7 +91,7 @@ form:
                 .films:
                   type: list
                   style: vertical
-                  label: Films, courts métrages
+                  label: Films, documentaires
                   fields:
                     .name:
                       type: text
