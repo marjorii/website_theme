@@ -4,12 +4,12 @@
     <ul>
         {% for item in page.collection %}
         <li><span class="project-list"  data-type="{{ item.header.categories|join(',') }}"  >
-            {% if item.slug == 'si_2019' %}
-            <a href="javascript:void(0);" class="item" id="{{ item.slug }}">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
-            </a>
+            {% if item.slug == 'body' %}
+                <a href="https://marjorieober.com/nextcloud/s/We35Ndi4JEHYXt6" class="item" id="{{ item.slug }}">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}</a>
+            {% elseif item.slug == 'si_2019' %}
+                <a href="https://marjorieober.com/home/user/themes/website_theme/docs/SI_2019.pdf" class="item" id="{{ item.slug }}">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}</a>
             {% else %}
-            <a href="{{ item.url }}" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}
-            </a>
+                <a href="{{ item.url }}" class="item">{{ item.title }}{% if item.header.subtitle is not empty %}, {{ item.header.subtitle }}{% endif %}</a>
             {% endif %}
             <div class="details">
                 <p>{{ item.header.desc }}</p>

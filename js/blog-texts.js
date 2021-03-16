@@ -22,13 +22,3 @@ document.querySelectorAll('aside.left a').forEach(function(elem) {
         });
     }
 });
-document.querySelectorAll('.item').forEach(function(elem) {
-    if (elem.id == 'si_2019') {
-        elem.addEventListener('auxclick', function(event) {
-            event.preventDefault();
-        });
-        elem.addEventListener('click', function(event) {
-            window.open('https://marjorieober.com/home/user/themes/website_theme/docs/SI_2019.pdf', '_self');
-        });
-    }
-});
