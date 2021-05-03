@@ -220,7 +220,7 @@
   pointer-events: none;
 }
 .contact .postcard {
-  object-position: bottom;
+  object-position: center;
 }
 .contact footer.flex-line {
   justify-content: center;
@@ -230,6 +230,9 @@
 }
 .contact footer.flex-line span:last-of-type::after {
   content: ".com";
+}
+.contact main p {
+  color: black;
 }
 .contact main p a {
   color: #FF00FF;
