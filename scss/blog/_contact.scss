@@ -3,7 +3,7 @@
         pointer-events: none;
     }
     .postcard {
-        object-position: bottom;
+        object-position: center;
     }
     footer.flex-line {
         justify-content: center;
@@ -19,6 +19,7 @@
         }
     }
     main p {
+        color: $text-color;
         a {
             color: $magenta;
             &:hover, &:active, &:focus {
