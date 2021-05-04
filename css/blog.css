@@ -231,9 +231,6 @@
 .contact footer.flex-line span:last-of-type::after {
   content: ".com";
 }
-.contact main p {
-  color: black;
-}
 .contact main p a {
   color: #FF00FF;
 }
